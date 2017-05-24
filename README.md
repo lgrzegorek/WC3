@@ -1,4 +1,4 @@
 # WC3
 Browser game
 
-Hi! I've created new repository for making game similar to Warcraft 3.
+The game for fans of Warcraft 3, but you can play thanks to network browser.
