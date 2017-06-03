@@ -18,7 +18,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="Stylesheet" type="text/css" href="style.css" />    
     <script src="script.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/fontello.css"
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
 </head>
 <body>
 <div id="container">
