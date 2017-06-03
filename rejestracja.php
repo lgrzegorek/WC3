@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	
 	if (isset($_POST['email'])){
 		//Jesli udana walidacja
 		$flaga = true;
@@ -105,25 +105,16 @@
 	}
 ?>
 
-<!DOCTYPE HTML>
-<html lang="pl">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Osadnicy - załóż darmowe konto</title>
-	<script src='https://www.google.com/recaptcha/api.js'></script>
-	<link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
-	<form method="post">
-		Nick: </br><input type="text" name="nick"/> <br/>
-		<?php
+            <?php include('menu.php'); ?>
+            <form method="post">
+		      Nick: <br><input type="text" name="nick"/> <br/>
+		  <?php
 			if (isset($_SESSION['e_nick'])){
 				echo '<div class="error">'.$_SESSION['e_nick'].'</div';
 				unset($_SESSION['e_nick']);
 			}
-		?>
+		  ?>
 		E-mail: <br/><input type="text" name="email"/> <br/>
 		<?php
 			if (isset($_SESSION['e_email'])){
@@ -157,7 +148,7 @@
 			}
 		?>
 		
-		<div class="g-recaptcha" data-sitekey="6LecySIUAAAAAHtMCx5xItKeSMSe7oJKfNiKh9QC"></div></br>
+		<div class="g-recaptcha" data-sitekey="6LecySIUAAAAAHtMCx5xItKeSMSe7oJKfNiKh9QC"></div><br>
 		<?php
 			if (isset($_SESSION['e_bot'])) {
 				echo '<div class="error">'.$_SESSION['e_bot'].'</div';
@@ -166,6 +157,6 @@
 		?>
 		
 		<input type="submit" value="Zarejestruj się"/>
-	</form>
-</body>
-</html>
+	       </form>
+
+        <?php include('stopka.php'); ?>
