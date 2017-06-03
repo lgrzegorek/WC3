@@ -1,5 +1,5 @@
 <?php
-	
+	//session_start();
 	if (isset($_POST['email'])){
 		//Jesli udana walidacja
 		$flaga = true;
@@ -44,15 +44,6 @@
 			$_SESSION['e_regulamin'] = "Potwierdź akceptację regulaminu.";
 		}
 		
-		//Sprawdzanie captcha
-		$klucz = "6LecySIUAAAAAJ2Tqux5-2vRlh6cbpA9i1S874IS";
-		$sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$klucz.'&response='.$_POST['g-recaptcha-response']);
-		$odpowiedz = json_decode($sprawdz);
-		
-		if (!($odpowiedz->success)) {
-			$flaga = false;
-			$_SESSION['e_bot'] = "Potwierdź, że nie jesteś botem.";
-		}
 		
 		
 		//Laczenie z baza danych
@@ -105,16 +96,17 @@
 	}
 ?>
 
-
-            <?php include('menu.php'); ?>
-            <form method="post">
-		      Nick: <br><input type="text" name="nick"/> <br/>
-		  <?php
+<?php
+include ('menu.php');
+?>
+	<form method="post">
+		Nick: </br><input type="text" name="nick"/> <br/>
+		<?php
 			if (isset($_SESSION['e_nick'])){
 				echo '<div class="error">'.$_SESSION['e_nick'].'</div';
 				unset($_SESSION['e_nick']);
 			}
-		  ?>
+		?>
 		E-mail: <br/><input type="text" name="email"/> <br/>
 		<?php
 			if (isset($_SESSION['e_email'])){
@@ -129,7 +121,7 @@
 				unset ($_SESSION['e_haslo']);
 			}
 		?>
-		Powtórz hasło: <br/><input type="password" name="haslo2"/> <br>
+		Powtórz hasło: <br/><input type="password" name="haslo2"/> </br>
 		<?php
 			if (isset($_SESSION['e_haslo'])) {
 				echo '<div class="error">'.$_SESSION['e_haslo'].'</div';
@@ -141,6 +133,7 @@
 		<label>
 			<input type="checkbox" name="regulamin"/>Akceptuję regulamin
 		</label>
+		
 		<?php
 			if (isset($_SESSION['e_regulamin'])) {
 				echo '<div class="error">'.$_SESSION['e_regulamin'].'</div';
@@ -148,15 +141,10 @@
 			}
 		?>
 		
-		<div class="g-recaptcha" data-sitekey="6LecySIUAAAAAHtMCx5xItKeSMSe7oJKfNiKh9QC"></div><br>
-		<?php
-			if (isset($_SESSION['e_bot'])) {
-				echo '<div class="error">'.$_SESSION['e_bot'].'</div';
-				unset ($_SESSION['e_bot']);
-			}
-		?>
 		
 		<input type="submit" value="Zarejestruj się"/>
-	       </form>
+	</form>
 
-        <?php include('stopka.php'); ?>
+<?php
+	include ('stopka.php');
+?>
