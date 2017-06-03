@@ -177,3 +177,71 @@ form{
     margin-left: 5%;
     font-style: italic;
 }
+
+
+.mediaWszystkie {
+	width: 12%;
+	min-height: 400px;
+	float: left;
+}
+
+.tworcy {
+	float: left;
+	min-height: 100px;
+	width: 80%;
+	margin: 10px;
+	font-size: 20px;
+}
+
+.fb {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #4668b3;
+}
+
+.yt {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #d94348;
+}
+
+.gplus {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #d95333;
+}
+
+.tw {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #3095d3;
+}
+
+.fb:hover {
+	background-color: #3557a2;
+}
+
+.yt:hover {
+	background-color: #c83237;
+}
+
+.gplus:hover {
+	background-color: #c84222;
+}
+
+.tw:hover {
+	background-color: #2084c2;
+}
+
+.tilelink {
+	text-decoration: none;
+	display: block;
+	height: 80px;
+	width: 60px;
+	color: white;
+}
+
