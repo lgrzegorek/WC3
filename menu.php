@@ -57,7 +57,7 @@
                 <a href="otworcach.php"><li>O twórcach</li></a>
                 <a href="regulamin.php"><li>Regulamin</li></a>
                 <a href="opinie.php"><li>Opinie</li></a>
-                <a href="zrzuty.php"><li>Zrzuty ekranu</li></a>
+                <a href="zrzuty.php"><li>Tapety</li></a>
                 <a href="rejestracja.php"><li>Zarejestruj się</li></a>
             </ul>
         </div>
