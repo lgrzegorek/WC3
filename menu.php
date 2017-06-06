@@ -25,7 +25,27 @@
         <div id="top">
             <div class="tpanel"><div id=clock></div></div>
             <div class="tpanel">b</div>
-            <div class="tpanel">ac</div>
+            <div class="tpanel">
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                    <div id="id01" class="modal">
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="container">
+                              <label><b>Username</b></label>
+                              <input type="text" placeholder="Login" name="uname" required>
+
+                              <label><b>Password</b></label>
+                              <input type="password" placeholder="Hasło" name="psw" required>
+                              <input type="checkbox" checked="checked"> Remember me
+                            </div>
+
+                            <div class="container" style="background-color: rgb(204, 102, 0";>
+                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                              <button type="submit" class="login2">Login</button>
+                              <span class="psw"><a href="#">Forgot password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+            </div>
             <div class="tpanel">d</div>
             <div class="tpanel">e</div>
         </div>
