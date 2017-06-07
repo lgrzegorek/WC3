@@ -4,6 +4,7 @@
 		//Jesli udana walidacja
 		$flaga = true;
 		
+		$rasa = $_POST['rasa'];
 		//Poprawnosc nicku
 		$nick = $_POST['nick'];
 		if (strlen($nick)<3 || strlen($nick)>20) {
@@ -52,6 +53,7 @@
 		
 		try {
 			$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+			$polaczenie1 = new mysqli($host, $db_user, $db_password, $db_name);
 			if ($polaczenie->connect_errno!=0) {
 				throw new Exception(mysqli_connect_errno());
 			}
@@ -77,10 +79,11 @@
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100)")) {
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100)") && $polaczenie1->query("insert into budynki values ('$nick', '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
 						$_SESSION['udanarejestracja'] = true;
 						header("Location: witamy.php");
 					}
+					
 					else {
 						throw new Exception($polaczenie->error);
 					}
@@ -132,7 +135,7 @@ include ('menu.php');
 		
 		<label>
 			<input type="checkbox" name="regulamin"/>Akceptuję regulamin
-		</label>
+		</label></br>
 		
 		<?php
 			if (isset($_SESSION['e_regulamin'])) {
@@ -140,7 +143,11 @@ include ('menu.php');
 				unset ($_SESSION['e_regulamin']);
 			}
 		?>
-		
+		Wybierz rasę:
+		<select type ="text" name="rasa">
+			<option>Orkowie</option>
+			<option>Ludzie</option>		
+		</select>
 		
 		<input type="submit" value="Zarejestruj się"/>
 	</form>
