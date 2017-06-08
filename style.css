@@ -1,55 +1,28 @@
-body {
-   margin-top: 0px;
-    border: 2px solid darkblue;
-   
-}
-#top > .tpanel {
-    float:left;
-    width:19.92%;
-    background-color: rgba(204, 102, 0, 0.5);
-    border-right: 1px solid black;
-    border-bottom: 1px solid grey;
-    font-size: 25px;
-}
-#top > clock{
-    float: left;
-    width:20%;
-}
-#container{
-    background-image: url(Grafika/tlo.jpg);
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
+.col-md-2{
+    border: 1px solid lightblue;
     text-align: center;
-    min-height: 650px;
+    color: gold;
+    border-radius: 5px;
+    background-color: rgba(204, 102, 0, 0.5);
 }
-#top{
-    color: whitesmoke;
-    border-top: 3px solid black;
-    font-size: 40px;
-    background-color: rgba(204, 102, 0, 0.6);
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 80px;
-}
+
 #content{
     min-height: 800;
 }
+
 #center{
-    float: left;
-    width: 900px;
+    width: auto;
+    min-height: 410px;
     background-color: rgba(0, 0, 0, 0.6);
     color: azure;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    min-height: 480px;
     border: 1px solid lightblue; 
-    text-align: left;
-    padding-left: 15px;
-    border-radius: 5px 5px 5px 5px;
-    margin-left: 40px;
-   
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 250px;
+    padding: 10px;
+    margin-bottom: 40px;
 }
 #center > h1
 {
@@ -60,56 +33,53 @@ body {
 }
 #nav{
     float: left;
-    width: 300px;
+    width: 230px;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.6);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
     margin-top: 40px;
     border: 1px solid lightblue;
-    border-radius: 3px 3px 3px 3px;
-    margin-left: 5px;
-    
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left:10px;
+    padding: 10px;
+    position: fixed;
 }
 #footer{
     text-align: center;
-    color: aliceblue;
+    width: 100%;
+    color: gold;
     font-size: 20px;
-    border-top: 3px solid black;
+    border: 1px solid lightblue;
+    border-radius: 5px;
     background-color: rgba(204, 102, 0, 0.5);
-   min-height: 30px;
-    
+    min-height: 30px;
+    bottom: 0px;
 }
 .space{
     width:100px;
     float:left;
     visibility: hidden;
 }
-#nav>ul{
-    margin-left: 0px;
-}
 
-#nav > ul > a > li{
+#nav > a > #button{
     list-style-type: none;
-    padding-left: 10px;
-    text-align: center;
     background-image: url(Grafika/przycisk2.png);
-    color:gold;
-    margin-left: 0px;
-    font-size:30px;
-    line-height: 150%;
-    width: 196px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid gold;
-    text-underline-position: none;
-
+    margin: 0 auto;
+    font-size:20px;
+    width: 200px;
+    height: 47px;
+    margin-bottom: 5px;
+    text-align: center;
+    line-height: 47px;
+    color: gold;
 }
 
-a{
+#nav > a > #button:hover{
+    color: royalblue;
     text-decoration: none;
-}
-#nav>ul>a>li:hover{
-    color:aliceblue;
+        
 }
 .error {
 	color: red;
@@ -123,14 +93,28 @@ form{
     margin-left: auto;
     margin-right: auto;
 }
-.g-recaptcha{
-   
-}
 
-.error {
-	color: red;
-	margin-bottom: 10px;
-	margin-top: 10px;
+@media screen and (max-width: 600px) {
+    #center {
+        width: 100%;
+        float:left;
+        margin-left: 0px;
+    }
+
+    #nav {
+        margin-left: 0px;
+        width: 100%;
+        position: static;
+    }
+
+    #pomocniczy {
+        width:100%;
+    }
+}
+.niezwlekaj{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 1%;
 }
 .zarejestruj{
     display: block;
@@ -144,11 +128,6 @@ form{
     margin-top: 3%;
     background-color: rgba(60, 60, 255, 0.3);
     
-}
-.niezwlekaj{
-    text-align: center;
-    font-size: 30px;
-    margin-top: 1%;
 }
 
 .cytat{
@@ -360,4 +339,30 @@ span.psw {
     width: auto;
     padding: 10px 18px;
     background-color: greenyellow;
+}
+.zakladka{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid black;
+    margin-bottom: 2%;
+}
+.zakladka_img{
+    width:20%;
+    display: inline-block;
+    align-items:flex-start;
+        
+}
+.opis{
+    width:53%;
+    display: inline-block;
+}
+.level{
+    width:10%;
+    display: inline-block;
+}
+.ulepsz{
+    width:15%;
+    display: inline-block;
 }
