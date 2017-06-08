@@ -30,16 +30,34 @@
 </head>
 <body background = "Grafika/tlo.jpg">
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2">Data</div>
-                <div class="col-md-2"><div id=clock></div></div>
-                <div class="col-md-2">Imieniny logo</div>
-                <div class="col-md-2">Zarejestrowani</div>
-                <div class="col-md-2">Zaloguj</div>
-                <div class="col-md-2">Aktywni</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">Data</div>
+        <div class="col-md-2"><div id=clock></div></div>
+        <div class="col-md-2">Imieniny logo</div>
+        <div class="col-md-2">Zarejestrowani</div>
+        <div class="col-md-2">
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="zaloguj.php" method="post">
+                        <div class="container">
+                            <label><b>Username</b></label><br>
+                            <input type="text" placeholder="Login" name="login" required><br>
+                            <label><b>Password</b></label><br>
+                            <input type="password" placeholder="Hasło" name="haslo" required><br>
+                            <input type="checkbox" checked="checked"> Remember me <br>
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"   class="cancelbtn">Cancel</button>
+                            <input type="submit" class="login2" value="Login"><br>
+                            <span class="psw"><a href="#">Forgot password?</a></span>
+                        </div>
+                    </form>
+                </div>
             </div>
+        <div class="col-md-2">
+            Aktywni
         </div>
+    </div>        
+</div>
 
         <div id="nav">
                 <a href="index.php"><div id="button">Strona główna</div></a>
@@ -52,3 +70,7 @@
         </div>
         
      <div id="center">
+         <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">Panel Body</div>
+        <div class="panel-footer">Panel Footer</div>
+      </div>
