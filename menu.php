@@ -70,7 +70,4 @@
         </div>
         
      <div id="center">
-         <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">Panel Body</div>
-        <div class="panel-footer">Panel Footer</div>
-      </div>
+     
