@@ -143,13 +143,13 @@ include ('menu.php');
 				unset ($_SESSION['e_regulamin']);
 			}
 		?>
-		Wybierz rasę:
-		<select type ="text" name="rasa">
+		Wybierz rasę: 
+		<select type ="text" name="rasa" style="color:black">
 			<option>Orkowie</option>
 			<option>Ludzie</option>		
 		</select>
-		
-		<input type="submit" value="Zarejestruj się"/>
+		<br><br><br>
+		<input type="submit" value="Zarejestruj się" style="color:black;" />
 	</form>
 
 <?php
