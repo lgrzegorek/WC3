@@ -79,7 +79,7 @@
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100, now())") && $polaczenie1->query("insert into budynki values ('$nick', '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100)") && $polaczenie1->query("insert into budynki values ('$nick', '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
 						$_SESSION['udanarejestracja'] = true;
 						header("Location: witamy.php");
 					}
@@ -143,13 +143,13 @@ include ('menu.php');
 				unset ($_SESSION['e_regulamin']);
 			}
 		?>
-		Wybierz rasę:
-		<select type ="text" name="rasa">
+		Wybierz rasę: 
+		<select type ="text" name="rasa" style="color:black">
 			<option>Orkowie</option>
 			<option>Ludzie</option>		
 		</select>
-		
-		<input type="submit" value="Zarejestruj się"/>
+		<br><br><br>
+		<input type="submit" value="Zarejestruj się" style="color:black;" />
 	</form>
 
 <?php

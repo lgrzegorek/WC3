@@ -1,5 +1,5 @@
 <?php include('menu.php'); ?>
-<h1> Zrzuty</h1>
+<h1> Tapety</h1>
 <div id="screens">
 <img src="Grafika/skriny/warcraft_skrin1.jpg">
 <img src="Grafika/skriny/warcraft_skrin2.jpg">

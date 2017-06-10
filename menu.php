@@ -34,7 +34,8 @@
     <div class="row">
         <div class="col-md-2">Data</div>
         <div class="col-md-2"><div id=clock></div></div>
-        <div class="col-md-2">Imieniny logo</div>
+        <div class="col-md-2">Imieniny </div>
+        <div class="col-md-2">Logo</div>
         <div class="col-md-2">Zarejestrowani</div>
         <div class="col-md-2">
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -65,7 +66,7 @@
                 <a href="otworcach.php"><div id="button">O twórcach</div></a>
                 <a href="regulamin.php"><div id="button">Regulamin</div></a>
                 <a href="opinie.php"><div id="button">Opinie</div></a>
-                <a href="zrzuty.php"><div id="button">Zrzuty ekranu</div></a>
+                <a href="zrzuty.php"><div id="button">Tapety</div></a>
                 <a href="rejestracja.php"><div id="button">Zarejestruj się</div></a>
         </div>
         

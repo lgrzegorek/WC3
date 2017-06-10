@@ -4,8 +4,6 @@
         <div id="footer">
             2017 wszelkie prawa zastrzeżone
         </div>
-        
-    </div>
-    
+
 </body>
 </html>
