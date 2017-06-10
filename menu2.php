@@ -35,10 +35,10 @@
         <div class="col-md-2">Data</div>
         <div class="col-md-2"><div id=clock></div></div>
         <div class="col-md-2">Rankingi</div>
-        <div class="col-md-2">Logo</div>
-        <div class="col-md-2">Wiadomości</div>
         <div class="col-md-2">Aktywni</div>
-      <!--  <div class="col-md-2">Notatki</div> -->
+        <div class="col-md-2">Wiadomości</div>
+        <div class="col-md-2">Notatki</div>
+      
         
     </div>        
 </div>
