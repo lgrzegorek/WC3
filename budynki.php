@@ -85,6 +85,27 @@
         <button type="button" class="btn btn-success">Ulepsz</button>
     </div>
 </div>
+<div class="zakladka">
+    <div class="main"> 
+        <div class="nazwa">
+            Farma
+        </div>
+        <div class="level">
+            Ilość:<b>1</b>
+        </div>
+    </div>
+   
+    <div class="zakladka_img">
+        <img src="Grafika/ludzie/budowle/house.png">
+    </div>
+    <div class="opis">
+        Farmy wytwarzają żywność, która jest potrzebna do utrzymania jednostek. Każda farma dostarcza 10 jednostek pożywienia.
+    </div>
+     <div class="wymagania">Wymagania: Złoto: 300  Drewno: 300</div>
+    <div class="ulepsz">
+        <button type="button" class="btn btn-success">Buduj</button>
+    </div>
+</div>
 <?php
 	include ('stopka.php');
 ?>
