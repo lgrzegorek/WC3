@@ -54,6 +54,7 @@
 		try {
 			$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 			$polaczenie1 = new mysqli($host, $db_user, $db_password, $db_name);
+			$polaczenie2 = new mysqli($host, $db_user, $db_password, $db_name);
 			if ($polaczenie->connect_errno!=0) {
 				throw new Exception(mysqli_connect_errno());
 			}
@@ -79,11 +80,16 @@
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100)") && $polaczenie1->query("insert into budynki values ('$nick', '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
-						$_SESSION['udanarejestracja'] = true;
-						header("Location: witamy.php");
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100, now())") && $polaczenie1->query("insert into budynki values ('$nick', '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
+						if ($rasa = "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',0,0,0,0,0,0,0)")) {
+							$_SESSION['udanarejestracja'] = true;
+							header("Location: witamy.php");
+						}
+						else if ($rasa = "Ludzie" && $polaczenie2->query("insert into ludzie values('$nick',0,0,0,0,0,0,0)")) {
+							$_SESSION['udanarejestracja'] = true;
+							header("Location: witamy.php");
+						}
 					}
-					
 					else {
 						throw new Exception($polaczenie->error);
 					}
