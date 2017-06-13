@@ -642,7 +642,7 @@ figure:nth-child(6) {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -654,7 +654,7 @@ figure:nth-child(6) {
 /* Modal Content */
 .modal-content2 {
   position: relative;
-  background-color: #fefefe;
+  background-color: black;
   margin: auto;
   padding: 0;
   width: 90%;
