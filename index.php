@@ -4,22 +4,22 @@
 
 <div class="css-slideshow">
 	<figure>
-		<img src="Grafika/skriny/warcraft_skrin1.jpg"  width="495" height="370"  /><figcaption><strong>IMG1</strong> Walka, krew i łzy! </figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin1.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Walka, krew i łzy! </figcaption> 
 	</figure>
 	<figure>
-		<img src="Grafika/skriny/warcraft_skrin2.jpg"  width="495" height="370"  /><figcaption><strong>IMG2</strong> OPIS ZDJECIA</figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin2.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Graj z przyjaciółmi! </figcaption> 
 	</figure>
 	<figure>
-		<img src="Grafika/skriny/warcraft_skrin3.jpg"  width="495" height="370"  /><figcaption><strong>IMG3</strong> OPIS ZDJECIA</figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin3.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Zawalcz o wieczną chwałę! </figcaption> 
 	</figure>
 	<figure>
-		<img src="Grafika/skriny/warcraft_skrin4.jpg"  width="495" height="370"  /><figcaption><strong>IMG4</strong> OPIS ZDJECIA</figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin4.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Pokonaj przeciwnika! </figcaption> 
 	</figure>
 <figure>
-		<img src="Grafika/skriny/warcraft_skrin5.jpg" width="495" height="370"  /><figcaption><strong>IMG5</strong> OPIS ZDJECIA</figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin5.jpg" width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Otrzymaj zaliczenie z www.</figcaption> 
 	</figure>
 	<figure>
-		<img src="Grafika/skriny/warcraft_skrin6.jpg"  width="495" height="370"  /><figcaption><strong>IMG6</strong> OPIS ZDJECIA</figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin6.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Arka Gdynia ...</figcaption> 
 	</figure>
 	
   </div>  
