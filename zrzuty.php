@@ -21,9 +21,9 @@
 </div>
 
     
-<div id="myModal" class="modal">
+<div class="modal2">
   <span class="close" onclick="closeModal()">&#10060;</span>
-  <div class="modal-content">
+  <div class="modal-content2">
 
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>

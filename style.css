@@ -365,49 +365,10 @@ span.psw {
 .login2:hover{
     opacity: 0.8;
 }
-.zakladka{
-    width:90%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid black;
-    margin-bottom: 2%;
-    padding: 1%;
-}
-.zakladka_img{
-    width:10%;
-    display: inline-block;
-    align-items:flex-start;
-        
-}
-.zakladka_img img{
-    width:100%;
-}
-.opis{
-    width:40%;
-    display: inline-block;
-    font-size: 10px;
-}
-.level{
-   text-align: left;
-    
-}
-.ulepsz{
-    width:15%;
-    display: inline-block;
-}
-.nazwa{
-    text-align: center;
-}
 .main{ 
    display: inline-block;
     width: 10%;
 } 
-.wymagania{
-    display: inline-block;
-    width:10%;
-    font-size: 12px;   
-}
 #zasoby{
     background-color: rgba(0,0,0, 0.5);
     color:white;
@@ -469,6 +430,114 @@ span.psw {
 .chopki{
     text-align: left;
 }
+.rekrutuj{
+    display: inline-block;
+}
+.parametry{
+    display: inline-block;
+    width: 30%;
+}
+.jednostka{
+    border: 2px solid yellow;
+    padding: 2%;
+    display:inline-block;
+    margin: 2%;
+}
+.zakladka_opis{
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+    text-align: left;
+    padding:1%;
+    
+}
+
+.zakladka_opis>.level{
+    display: inline-block;
+    width:4%;
+    text-align: center;
+}
+.zakladka_opis>.zakladka_img{
+    width:10%;
+    display: inline-block;
+}
+.zakladka_opis>.opis{
+    width:23%;
+    text-align: center;
+}
+.zakladka_opis>.wymagania{
+    width:8%;
+    display: inline-block;
+}
+.zakladka_opis>.chopki{
+    width:5%;
+    display: inline-block;
+}
+
+.zakladka_opis>.chopki img{
+    width:30px;
+    height: 30px;
+}
+.akcja{
+    width:20%;
+    display: inline-block;
+    text-align: center;
+}
+.czas{
+    display: inline-block;
+    width:9%;
+    margin-left: 2%;
+    text-align: center;
+}
+.zakladka{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid black;
+    margin-bottom: 2%;
+    padding: 1%;
+    text-align: left;
+}
+.nazwa{
+    display: inline-block;
+    width:7%;
+}
+.level{
+    text-align: left;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+    width:4%;
+    text-align: center;
+}
+.zakladka_img{
+    width:10%;
+    display: inline-block;
+    text-align: center;
+    margin-right: 1%;    
+}
+.zakladka_img img{
+    width:100%;
+}
+.opis{
+    width:23%;
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 1%;
+}
+.wymagania{
+    display: inline-block;
+    width:8%;
+    font-size: 12px;   
+}
+.ulepsz{
+    width:15%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 4%;
+}
+
 /*-----------slide-show-------------*/
 .css-slideshow{
   position: relative;
@@ -504,6 +573,7 @@ span.psw {
 .css-slideshow figure{
   opacity:0;
 }
+
 figure:nth-child(1) {
   animation: xfade 36s 36s infinite;
 }
@@ -568,7 +638,7 @@ figure:nth-child(6) {
 }
 
 /* The Modal (background) */
-.modal {
+.modal2 {
   display: none;
   position: fixed;
   z-index: 1;
@@ -582,7 +652,7 @@ figure:nth-child(6) {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content2 {
   position: relative;
   background-color: #fefefe;
   margin: auto;

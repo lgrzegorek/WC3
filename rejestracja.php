@@ -83,11 +83,11 @@
 					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100, now())") && $polaczenie1->query("insert into budynki values ('$nick', '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
 						if ($rasa = "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',0,0,0,0,0,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
-							header("Location: witamy.php");
+							header("Location: podglad.php");
 						}
 						else if ($rasa = "Ludzie" && $polaczenie2->query("insert into ludzie values('$nick',0,0,0,0,0,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
-							header("Location: witamy.php");
+							header("Location: podglad.php");
 						}
 					}
 					else {

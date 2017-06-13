@@ -35,7 +35,6 @@
         <div class="col-md-2">Data</div>
         <div class="col-md-2"><div id=clock></div></div>
         <div class="col-md-2">Imieniny </div>
-        <div class="col-md-2">Logo</div>
         <div class="col-md-2">Zarejestrowani</div>
         <div class="col-md-2">
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
