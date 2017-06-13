@@ -21,38 +21,38 @@
 </div>
 
     
-<div class="modal2">
+<div id="myModal" class="modal2">
   <span class="close" onclick="closeModal()">&#10060;</span>
   <div class="modal-content2">
 
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>
-      <img src="Grafika/skriny/warcraft_skrin1.jpg" style="width:500px;  height:450px;">
+      <img src="Grafika/skriny/warcraft_skrin1.jpg" style="width:800px;  height:650px;">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">2 / 6</div>
-      <img src="Grafika/skriny/warcraft_skrin2.jpg" style="width:500px; height:450px;">
+      <img src="Grafika/skriny/warcraft_skrin2.jpg" style="width:800px; height:650px;">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">3 / 6</div>
-      <img src="Grafika/skriny/warcraft_skrin3.jpg" style="width:500px;  height:450px;">
+      <img src="Grafika/skriny/warcraft_skrin3.jpg" style="width:800px;  height:650px;">
     </div>
     
     <div class="mySlides">
       <div class="numbertext">4 / 6</div>
-      <img src="Grafika/skriny/warcraft_skrin4.jpg" style="width:500px;  height:450px;">
+      <img src="Grafika/skriny/warcraft_skrin4.jpg" style="width:800px;  height:650px;">
     </div>
       
     <div class="mySlides">
       <div class="numbertext">5 / 6</div>
-      <img src="Grafika/skriny/warcraft_skrin5.jpg" style="width:500px; height:450px;">
+      <img src="Grafika/skriny/warcraft_skrin5.jpg" style="width:800px; height:650px;">
     </div>
       
     <div class="mySlides">
       <div class="numbertext">6 / 6</div>
-      <img src="Grafika/skriny/warcraft_skrin6.jpg" style="width:500px; height:450px;">
+      <img src="Grafika/skriny/warcraft_skrin6.jpg" style="width:800px; height:650px;">
     </div>
     
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -84,4 +84,5 @@
   </div>
 </div>
   
+<script src="script.js"></script> 
 <?php include('stopka.php'); ?>
