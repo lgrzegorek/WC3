@@ -19,7 +19,7 @@
     <div class="rekrutuj">
         <form>
             <input type="text" style="width:30px;">
-            <button type="button" class="btn btn-success">Rekrutuj</button>
+            <button type="button" style="width:100px;" class="btn btn-success">Rekrutuj</button>
         </form>
     </div>
 
@@ -27,7 +27,7 @@
 
 <div class="jednostka">
     <b>Strzelec</b> <br>
-    <img src="Grafika/ludzie/jednostki/footman.png">
+    <img src="Grafika/ludzie/jednostki/sniper.png">
     <div class="parametry">
         Atk: <br>
         Obr: <br>
@@ -41,7 +41,7 @@
     <div class="rekrutuj">
         <form>
             <input type="text" style="width:30px; display:inline-block;">
-            <button type="button" class="btn btn-success" style="display:inline-block;">Rekrutuj</button>
+            <button type="button" style="width:100px;" class="btn btn-success" style="display:inline-block;">Rekrutuj</button>
         </form>
     </div>
 
@@ -63,14 +63,14 @@
     <div class="rekrutuj">
         <form>
             <input type="text" style="width:30px;">
-            <button type="button" class="btn btn-success">Rekrutuj</button>
+            <button type="button" style="width:100px;" class="btn btn-success">Rekrutuj</button>
         </form>
     </div>
 
 </div>
 <div class="jednostka">
     <b> Kanonierzy</b> <br>
-    <img src="Grafika/ludzie/jednostki/footman.png">
+    <img src="Grafika/ludzie/jednostki/canon.png">
     <div class="parametry">
         Atk: <br>
         Obr: <br>
@@ -84,7 +84,7 @@
     <div class="rekrutuj">
         <form>
             <input type="text" style="width:30px;">
-            <button type="button" class="btn btn-success">Rekrutuj</button>
+            <button type="button" style="width:100px;" class="btn btn-success">Rekrutuj</button>
         </form>
     </div>
 
@@ -92,7 +92,7 @@
 
 <div class="jednostka">
     <b> Jeździec gryfa </b><br>
-    <img src="Grafika/ludzie/jednostki/footman.png">
+    <img src="Grafika/ludzie/jednostki/gryph.png">
     <div class="parametry">
         Atk: <br>
         Obr: <br>
@@ -106,15 +106,15 @@
     <div class="rekrutuj">
         <form>
             <input type="text" style="width:30px; display:inline-block;">
-            <button type="button" class="btn btn-success" style="display:inline-block;">Rekrutuj</button>
+            <button type="button" style="width:100px;" class="btn btn-success" style="display:inline-block;">Rekrutuj</button>
         </form>
     </div>
 
 </div>
 
 <div class="jednostka">
-    <b> Snajper </b> <br>
-    <img src="Grafika/ludzie/jednostki/knight.png">
+    <b> Kapłan </b> <br>
+    <img src="Grafika/ludzie/jednostki/priest.png">
     <div class="parametry">
         Atk: <br>
         Obr: <br>
@@ -128,7 +128,7 @@
     <div class="rekrutuj">
         <form>
             <input type="text" style="width:30px;">
-            <button type="button" class="btn btn-success">Rekrutuj</button>
+            <button type="button" style="width:100px;" class="btn btn-success">Rekrutuj</button>
         </form>
     </div>
 
