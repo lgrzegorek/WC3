@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Stylesheet" type="text/css" href="styleee.css" />    
+    <link rel="stylesheet" type="text/css" href="styleee.css" />    
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
     <!-- Latest compiled and minified CSS -->
@@ -32,8 +32,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">Data</div>
-        <div class="col-md-2"><div id=clock></div></div>
+        <div class="col-md-2"><div id="datka"></div></div>
+        <div class="col-md-2"><div id="clock"></div></div>
         <div class="col-md-2">Imieniny </div>
         <div class="col-md-2">Zarejestrowani</div>
         <div class="col-md-2">

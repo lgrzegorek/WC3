@@ -1,4 +1,10 @@
- window.onload=startTime;
+window.onload=start;
+
+function start(){
+  startTime();
+  startData();
+}
+
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -10,6 +16,15 @@ function startTime() {
     h + ":" + m + ":" + s;
     var t = setTimeout(startTime, 500);
 }
+
+function startData(){
+    var today = new Date();
+    var dzien = today.getDate();
+    var miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+    document.getElementById('datka').innerHTML = dzien + ' ' + miesiace[today.getMonth()] + ' ' + today.getFullYear();
+  }
+
+
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
