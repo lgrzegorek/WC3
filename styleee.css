@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url('Grafika/tlo2.jpg');
+  background-image: url('Grafika/tlo.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -31,7 +31,6 @@ a:hover{
 }
 #center{
     width: auto;
-    max-height: 700px;
     height: auto;
     background-color: rgba(0, 0, 0, 0.6);
     color: azure;
@@ -81,11 +80,15 @@ a:hover{
     color: gold;
     font-size: 20px;
     height: 50px;
-    bottom: 0px;
-    position: fixed;
+    margin-top: 40px;
     text-align: center;
     line-height: 50px;
     font-family: friz;
+    border: 6px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .space{
     width:100px;
@@ -148,11 +151,6 @@ form{
     #footer{
       position: static;
     }
-
-    body{
-        background-image: url('Grafika/tlo.jpg');
-    }
-
 }
 
 .niezwlekaj{

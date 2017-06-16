@@ -19,6 +19,7 @@
 <div class="column">
 <img  src="Grafika/skriny/warcraft_skrin6.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow cursor" style="width:200px; height:150px;">
 </div>
+</div>
 
     
 <div id="myModal" class="modal2">
