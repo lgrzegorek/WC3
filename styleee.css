@@ -67,7 +67,6 @@ a:hover{
     border-radius: 5px;
     margin-left: 10px;
     padding: 10px;
-    position: fixed;
     margin-bottom: 50px;
     border: 6px solid transparent;
     border-image-source: url(Grafika/ramka.png);
@@ -75,6 +74,7 @@ a:hover{
     border-image-slice: 20;
 }
 #footer{
+    float: left;
     text-align: center;
     width: 100%;
     color: gold;
