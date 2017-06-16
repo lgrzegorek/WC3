@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Stylesheet" type="text/css" href="style.css" />    
+    <link rel="Stylesheet" type="text/css" href="styleee.css" />    
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
     <!-- Latest compiled and minified CSS -->
@@ -27,18 +27,15 @@
         <div class="col-md-2">Aktywni</div>
         <div class="col-md-2">Wiadomości</div>
         <div class="col-md-2">Notatki</div>
-      
-        
     </div>        
 </div>
-    <div id="top_panel">
-        <div id="logo"><img src="Grafika/logo.jpg"></div>
+
         <div id="zasoby"> 
             <div class="zasob" style="color:gold;">  <img src="Grafika/icon/gold.png"> Złoto: 203</div> 
             <div class="zasob" style="color:darkgoldenrod;"> <img src="Grafika/icon/wood.png">Drewno: 2402 </div>
             <div class="zasob" style="color:coral;"><img src="Grafika/icon/meat.png">Żywność: 23/100</div>
         </div>
-    </div>
+
     
     <div style="clear:both"></div>
         <div id="nav">
@@ -52,5 +49,5 @@
                 <a href="mapa.php"><div id="button">Mapa</div></a>
         </div>
         
-     <div id="center" style="margin-top:1%;">
+     <div id="center">
      

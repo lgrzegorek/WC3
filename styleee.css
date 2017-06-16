@@ -1,0 +1,786 @@
+@font-face {
+    font-family: friz;
+    src: url(font/friz_quadrata.ttf);
+}
+
+body {
+  background-image: url('Grafika/tlo2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.col-md-2{
+    text-align: center;
+    line-height: 28px;
+    color: gold;
+    height: 40px;
+    font-family: friz;
+    border: 6px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#content{
+    min-height: 800;
+}
+a:hover{
+    text-decoration: none;
+}
+#center{
+    width: auto;
+    max-height: 700px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: azure;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 250px;
+    padding-bottom: 30px;
+    padding: 30px;
+    overflow: auto;
+    border: 6px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+    font-family: friz;
+}
+#center > h1
+{
+    color: gold;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#nav{
+    float: left;
+    width: 230px;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    margin-top: 30px;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    position: fixed;
+    margin-bottom: 50px;
+    border: 6px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+}
+#footer{
+    text-align: center;
+    width: 100%;
+    color: gold;
+    font-size: 20px;
+    height: 50px;
+    bottom: 0px;
+    position: fixed;
+    text-align: center;
+    line-height: 50px;
+    font-family: friz;
+}
+.space{
+    width:100px;
+    float:left;
+    visibility: hidden;
+}
+
+#nav > a > #button{
+    list-style-type: none;
+    background-image: url(Grafika/przycisk.png);
+    margin: 0 auto;
+    font-size:20px;
+    width: 200px;
+    height: 47px;
+    margin-bottom: 5px;
+    text-align: center;
+    line-height: 47px;
+    color: gold;
+    font-family: friz;
+}
+
+#nav > a > #button:hover{
+    color: royalblue;
+    text-decoration: none;
+}
+.error {
+	color: red;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+form{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 992px) {
+    #center {
+        width: 100%;
+        float:left;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    #nav {
+        margin-left: 0px;
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #pomocniczy {
+        width:100%;
+    }
+
+    #footer{
+      position: static;
+    }
+
+    body{
+        background-image: url('Grafika/tlo.jpg');
+    }
+
+}
+
+.niezwlekaj{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 1%;
+}
+.zarejestruj{
+    display: block;
+    width:60%;
+    font-size: 40px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid lightblue;
+    margin-top: 3%;
+    background-color: rgba(60, 60, 255, 0.3);
+    
+}
+
+.cytat{
+    width: 72%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(90, 90, 90, 0.6);
+    border: 1px solid lightblue;
+    text-align: justify;
+    padding: 1%;
+    align-content: center;
+     
+}
+.cytat:last-child{
+        margin-bottom: 2%;
+}
+
+.zdjecie{
+    display: inline-block;
+    width:10%;
+    
+}
+.zdjecie img
+{
+	width: 90px;
+	height: 90px;
+}
+.tresc{
+    text-align: center;
+    display: inline-block;
+    margin-left: 5%;
+    font-style: italic;
+    line-height: 150%;
+    text-align: justify;  
+    -moz-text-align-last: right; /* Code for Firefox */
+    text-align-last: right;
+}
+
+
+.mediaWszystkie {
+	width: 12%;
+	min-height: 400px;
+	float: left;
+}
+
+.tworcy {
+	float: left;
+	min-height: 100px;
+	width: 80%;
+	margin: 10px;
+	font-size: 20px;
+}
+
+.fb {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #4668b3;
+}
+
+.yt {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #d94348;
+}
+
+.gplus {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #d95333;
+}
+
+.tw {
+	margin: 10px;
+	height: 80px;
+	width: 60px;
+	background-color: #3095d3;
+}
+
+.fb:hover {
+	background-color: #3557a2;
+}
+
+.yt:hover {
+	background-color: #c83237;
+}
+
+.gplus:hover {
+	background-color: #c84222;
+}
+
+.tw:hover {
+	background-color: #2084c2;
+}
+
+.tilelink {
+	text-decoration: none;
+	display: block;
+	height: 80px;
+	width: 60px;
+	color: white;
+}
+
+/*Zakladka Zrzuty ekranu*/
+#screens{
+    float: left;
+   
+   
+}
+
+#screens img{
+    border-radius: 50px;
+    border: 10px;
+    width:300px;
+    height:250px;
+    transition: transform 0.8s ease-in-out;
+     
+}
+#screens img:hover {
+   
+    transform: scale(2);
+    cursor:pointer;
+    
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password]{
+    width: 20%;
+    color:black;
+   
+}
+
+/* Set a style for all buttons */
+button {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    padding-right: 43%;
+    padding-left: 43%;
+    text-align: center;
+    background-color: crimson;
+    color: black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+
+.container {
+    width: 50px;
+    text-align: left;
+}
+
+span.psw {
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-image: url(Grafika/tlo.jpg);
+    align-content: center;
+    width: 20%; /* Could be more or less, depending on screen size */
+    border: 12px solid gold;
+}
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    .modal-content{
+        width:100%;
+    }
+}
+.login2{
+    width: auto;
+    padding: 10px 18px;
+    background-color: darkgreen;
+    
+}
+.login2:hover{
+    opacity: 0.8;
+}
+.main{ 
+   display: inline-block;
+    width: 10%;
+} 
+#zasoby{
+    background-color: rgba(0,0,0, 0.5);
+    font-size: 20px;
+    padding: 1%;
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+    border: 6px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+  
+}
+#zasoby img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.zasob{
+    margin-right: 50px;
+    display: inline-block;
+}
+#logo{
+    width:230px;
+    height: 70px;
+    float:left;
+   
+}
+#logo img{
+    width:100%;
+    height: 100%;
+}
+.gold_mine, .lumber_mill{
+    display: inline-block;
+    width:40%;
+    text-align:center;
+} 
+.gold_mine img, .lumber_mill img{
+    display: inline-block;
+    width:90%;
+    height: 150px;
+    text-align:center;
+    margin-bottom: 3%;
+} 
+.gold_mine >h1{
+    color:gold;
+}
+
+.lumber_mill >h1{
+    color:darkgoldenrod;
+}
+.gold_mine{
+    align-items: flex-start;
+}
+.gold_mine_2 img{
+    width:auto;
+    height: auto;
+}
+.chopki{
+    text-align: left;
+}
+.rekrutuj{
+    display: inline-block;
+}
+.parametry{
+    display: inline-block;
+    width: 30%;
+}
+.jednostka{
+    border: 2px solid yellow;
+    padding: 2%;
+    display:inline-block;
+    margin: 2%;
+}
+.zakladka_opis{
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+    text-align: left;
+    padding:1%;
+    
+}
+
+.zakladka_opis>.level{
+    display: inline-block;
+    width:4%;
+    text-align: center;
+}
+.zakladka_opis>.zakladka_img{
+    width:10%;
+    display: inline-block;
+}
+.zakladka_opis>.opis{
+    width:23%;
+    text-align: center;
+}
+.zakladka_opis>.wymagania{
+    width:8%;
+    display: inline-block;
+}
+.zakladka_opis>.chopki{
+    width:5%;
+    display: inline-block;
+}
+
+.zakladka_opis>.chopki img{
+    width:30px;
+    height: 30px;
+}
+.akcja{
+    width:20%;
+    display: inline-block;
+    text-align: center;
+}
+.czas{
+    display: inline-block;
+    width:9%;
+    margin-left: 2%;
+    text-align: center;
+}
+.zakladka{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid black;
+    margin-bottom: 2%;
+    padding: 1%;
+    text-align: left;
+}
+.nazwa{
+    display: inline-block;
+    width:7%;
+}
+.level{
+    text-align: left;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+    width:4%;
+    text-align: center;
+}
+.zakladka_img{
+    width:10%;
+    display: inline-block;
+    text-align: center;
+    margin-right: 1%;    
+}
+.zakladka_img img{
+    width:100%;
+}
+.opis{
+    width:23%;
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 1%;
+}
+.wymagania{
+    display: inline-block;
+    width:8%;
+    font-size: 12px;   
+}
+.ulepsz{
+    width:15%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 4%;
+}
+
+/*-----------slide-show-------------*/
+.css-slideshow{
+  position: relative;
+  max-width: 495px;
+  height: 370px;
+  margin: 5em auto .5em auto;
+}
+.css-slideshow figure{
+  margin: 0;
+  max-width: 495px;
+  height: 370px;
+  background: #000;
+  position: absolute;
+}
+.css-slideshow img{
+  box-shadow: 0 0 2px #666;
+}
+.css-slideshow figcaption{
+  position: absolute;
+  top: 0;
+  color: #fff;
+  background: rgba(0,0,0, .3);
+  font-size: .8em;
+  padding: 8px 12px;
+  opacity: 0;
+  transition: opacity .5s;
+}
+.css-slideshow:hover figure figcaption{
+  transition: opacity .5s;
+  opacity: 1;
+}
+
+.css-slideshow figure{
+  opacity:0;
+}
+
+figure:nth-child(1) {
+  animation: xfade 36s 36s infinite;
+}
+figure:nth-child(2) {
+  animation: xfade 36s 30s infinite;
+}
+figure:nth-child(3) {
+  animation: xfade 36s 24s infinite;
+}
+figure:nth-child(4) {
+  animation: xfade 36s 12s infinite;
+}
+figure:nth-child(5) {
+  animation: xfade 36s 6s infinite;
+}
+figure:nth-child(6) {
+  animation: xfade 36s 0s infinite;
+}
+
+
+@keyframes xfade{
+  0%{
+    opacity: 1;
+  }
+  10.5% {
+    opacity: 1;
+  }
+  12.5%{
+    opacity: 0;
+  }
+  98% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*-----------------zrzuty-ekranu-------------------------*/
+
+.row > .column {
+  padding: 0 12px;
+  margin-left: 80px;
+ 
+}
+.row img{
+    margin: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+.column:hover {
+    cursor:pointer;
+}
+
+/* The Modal (background) */
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content2 {
+  position: relative;
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: block;
+}
+
+/* Next & previous buttons */
+.prev,.next {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor:pointer;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+  cursor:pointer;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  cursor:pointer;
+}

@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Stylesheet" type="text/css" href="style.css" />    
+    <link rel="Stylesheet" type="text/css" href="styleee.css" />    
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
     <!-- Latest compiled and minified CSS -->
@@ -28,7 +28,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body background = "Grafika/tlo.jpg">
+<body>
 
 <div class="container-fluid">
     <div class="row">
@@ -37,7 +37,7 @@
         <div class="col-md-2">Imieniny </div>
         <div class="col-md-2">Zarejestrowani</div>
         <div class="col-md-2">
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" style="height:auto;">Login</button>
                 <div id="id01" class="modal">
                     <form class="modal-content animate" action="zaloguj.php" method="post">
                         <div class="container">
