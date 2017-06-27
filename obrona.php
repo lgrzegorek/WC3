@@ -6,7 +6,7 @@
     
     <div class="jednostka">
         <b> Wieża strażnicza </b> <br>
-        <img src="Grafika/ludzie/">
+        <img src="Grafika/ludzie/budowle/tower.png">
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
@@ -29,7 +29,7 @@
     
     <div class="jednostka">
         <b> Wieża snajperska </b> <br>
-        <img src="Grafika/ludzie/">
+        <img src="Grafika/ludzie/budowle/tower.png">
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
@@ -52,7 +52,7 @@
     
     <div class="jednostka">
         <b> Wieża artyleryjska </b> <br>
-        <img src="Grafika/ludzie/">
+        <img src="Grafika/ludzie/budowle/tower.png">
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
@@ -75,7 +75,7 @@
 
    <div class="jednostka">
         <b> Działo przeciwpancerne </b> <br>
-        <img src="Grafika/ludzie/">
+        <img src="Grafika/ludzie/budowle/tower.png">
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
