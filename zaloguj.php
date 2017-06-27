@@ -38,14 +38,23 @@
 					$_SESSION['id'] = $wiersz['id'];
 					$_SESSION['user'] = $wiersz['user'];
 					$_SESSION['drewno'] = $wiersz['drewno'];
-					$_SESSION['kamien'] = $wiersz['kamien'];
+					$_SESSION['zloto'] = $wiersz['zloto'];
 					$_SESSION['zywnosc'] = $wiersz['zywnosc'];
 					$_SESSION['email'] = $wiersz['email'];
 					//$_SESSION['dnipremium'] = $wiersz['dnipremium'];
-					
+				$rezultat2 = $polaczenie->query("select * from budynki where nick='$login'");
+                if($rezultat2) 
+                    while ( $rows = $rezultat2->fetch_assoc() ) {
+                        $_SESSION['castle_lvl']=$rows['castle'];
+                        $_SESSION['altar_lvl']=$rows['altar'];
+                        $_SESSION['house_lvl']=$rows['house'];
+                        $_SESSION['forge_lvl']=$rows['forge'];
+                        $_SESSION['barrack_lvl']=$rows['barrack'];
+                        $_SESSION['forge_lvl']=$rows['forge'];
+                    }	
 					unset($_SESSION['blad']);
 					$rezultat->free_result();
-					header('Location: gra.php');
+					header('Location: podglad.php');
 				}
 				else {
 				$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
@@ -60,6 +69,7 @@
 		}
 		
 		$polaczenie->close();
+        
 	}
 	
 ?>

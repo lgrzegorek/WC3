@@ -93,7 +93,7 @@ CREATE TABLE `uzytkownicy` (
   `pass` text COLLATE utf8_polish_ci NOT NULL,
   `email` text COLLATE utf8_polish_ci NOT NULL,
   `drewno` int(11) NOT NULL,
-  `kamien` int(11) NOT NULL,
+  `zloto` int(11) NOT NULL,
   `zywnosc` int(11) NOT NULL,
   `ostatnieLogowanie` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
@@ -102,7 +102,7 @@ CREATE TABLE `uzytkownicy` (
 -- Zrzut danych tabeli `uzytkownicy`
 --
 
-INSERT INTO `uzytkownicy` (`id`, `user`, `pass`, `email`, `drewno`, `kamien`, `zywnosc`, `ostatnieLogowanie`) VALUES
+INSERT INTO `uzytkownicy` (`id`, `user`, `pass`, `email`, `drewno`, `zloto`, `zywnosc`, `ostatnieLogowanie`) VALUES
 (26, 'adam', '$2y$10$bWUIczQkytnU65M0sVbzY.3fivRlZKKGP9XQMydikJ5sTYW6CTeKO', 'aiouds@gmail.com', 100, 100, 100, '2017-06-10 02:09:54'),
 (27, 'bartek', '$2y$10$JmwwgVfI3Q8NEAf9ks1E5u3ej.4gHj2kiaoste3vR.vnAkncbWtgu', 'bartek@gmail.com', 100, 100, 100, '2017-06-09 22:48:17'),
 (25, 'ksdjoldjgs', '$2y$10$TVec0dzmmI87FPW2wDRtdO0fbEozIPI08U/ywPqdxwZHjYHXQmZYu', 'klggmn@gmail.com', 100, 100, 100, '2017-06-08 18:23:50');

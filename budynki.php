@@ -1,5 +1,6 @@
 <?php
 	include ('menu2.php');
+    include ('skrypt.php');
 ?>
 
 <div class="zakladka_opis">
@@ -8,7 +9,7 @@
             Nazwa
         </div>
         <div class="level">
-            Poziom:
+            Poziom: 
         </div>
    
    
@@ -32,7 +33,7 @@
             Ratusz
         </div>
         <div class="level">
-            <b>1</b>
+            <b><?php echo $_SESSION['castle_lvl'] ?></b>
         </div>
    
     <div class="zakladka_img">
@@ -41,10 +42,10 @@
     <div class="opis">
         Ratusz pozwala na rekrutację robotników.
     </div>
-  <div class="wymagania">Złoto: 300 <br> Drewno: 300</div>
+  <div class="wymagania"><?php oblicz($_SESSION['castle_lvl'],500,500)?></div>
     <input type="text" style="width: 30px;">
-    <div class="ulepsz">
-         <button type="button" class="btn btn-success">Ulepsz</button>
+    <div class="ulepsz" id="upRatusz">
+      <?php wypisz()?>
     </div>
     <div class="czas">3h 22m</div>
 </div>
@@ -54,7 +55,7 @@
             Koszary
         </div>
         <div class="level">
-             <b>1</b>
+             <b><?php echo $_SESSION['barrack_lvl'] ?></b>
         </div>
     
    
@@ -64,7 +65,7 @@
     <div class="opis">
         Koszary umożliwiają rekrutację jednostek, wraz ze wzrostem poziomu rekrutacja przebiega szybciej, a także daje możliwość rekrutacji kolejnych jednostek.
     </div>
-    <div class="wymagania">Złoto: 300 <br> Drewno: 300</div>
+    <div class="wymagania"><?php oblicz($_SESSION['barrack_lvl'],300,350)?></div>
     <input type="text" style="width: 30px;">
     <div class="ulepsz">
          <button type="button" class="btn btn-success">Ulepsz</button>
@@ -77,7 +78,7 @@
             Ołtarz 
         </div>
         <div class="level">
-            <b>1</b>
+            <b><?php echo $_SESSION['altar_lvl'] ?></b>
         </div>
     
    
@@ -87,7 +88,7 @@
     <div class="opis">
         Ratusz pozwala na przywołanie, a także wskrzeszenie bohaterów. Co 10 poziomów możliwe jest przywołanie kolejnego bohatera.
     </div>
-    <div class="wymagania">Złoto: 300 <br> Drewno: 300</div>
+    <div class="wymagania"><?php oblicz($_SESSION['altar_lvl'],300,150)?></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
         <button type="button" class="btn btn-success">Ulepsz</button>
@@ -100,7 +101,7 @@
             Kuźnia
         </div>
         <div class="level">
-         <b>1</b>
+         <b><?php echo $_SESSION['forge_lvl'] ?></b>
         </div>
   
    
@@ -110,7 +111,7 @@
     <div class="opis">
         Kuźnia pozwala na dokonywanie badań w zakresie ulepszeń jednostek, wyższe poziomy kuźni odblokowują wyższe poziomy ulepszeń.
     </div>
-     <div class="wymagania">Złoto: 300 <br> Drewno: 300</div>
+     <div class="wymagania"><?php oblicz($_SESSION['forge_lvl'],300,300)?></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
         <button type="button" class="btn btn-success">Ulepsz</button>
@@ -123,7 +124,7 @@
             Farma
         </div>
         <div class="level">
-            <b>1</b>
+            <b><?php echo $_SESSION['house_lvl'] ?></b>
         
     </div>
    
@@ -133,7 +134,7 @@
     <div class="opis">
         Farmy wytwarzają żywność, która jest potrzebna do utrzymania jednostek. Każda farma dostarcza 10 jednostek pożywienia.
     </div>
-     <div class="wymagania">Złoto: 300 <br> Drewno: 300</div>
+     <div class="wymagania"><?php oblicz($_SESSION['house_lvl'],250,300)?></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
         <button type="button" class="btn btn-success">Buduj</button>

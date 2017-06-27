@@ -1,6 +1,10 @@
 
 
 <!DOCTYPE html>
+
+<?php 
+    session_start();
+?>
 <html lang="pl">
 <head>
     <meta charset="utf-8" />
@@ -31,9 +35,9 @@
 </div>
 
         <div id="zasoby"> 
-            <div class="zasob" style="color:gold;">  <img src="Grafika/icon/gold.png"> Złoto: 203</div> 
-            <div class="zasob" style="color:darkgoldenrod;"> <img src="Grafika/icon/wood.png">Drewno: 2402 </div>
-            <div class="zasob" style="color:coral;"><img src="Grafika/icon/meat.png">Żywność: 23/100</div>
+            <div class="zasob" style="color:gold;">  <img src="Grafika/icon/gold.png"><?php echo "Złoto:".$_SESSION["zloto"]?></div> 
+            <div class="zasob" style="color:darkgoldenrod;"> <img src="Grafika/icon/wood.png"><?php echo "Drewno:".$_SESSION["drewno"]?> </div>
+            <div class="zasob" style="color:coral;"><img src="Grafika/icon/meat.png"><?php echo "Żywność:".$_SESSION["zywnosc"]?></div>
         </div>
 
     

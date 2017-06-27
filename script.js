@@ -21,7 +21,7 @@ function startData(){
     var today = new Date();
     var dzien = today.getDate();
     var miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
-    document.getElementById('datka').innerHTML = dzien + ' ' + miesiace[today.getMonth()] + ' ' + today.getFullYear();
+    document.getElementById('datka').innerHTML = dzien + '  x ' + miesiace[today.getMonth()] + '   ' + today.getFullYear();
   }
 
 
