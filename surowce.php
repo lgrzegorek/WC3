@@ -1,9 +1,36 @@
 <?php
 	include ('menu2.php');
+	
+	
+	require_once "connect.php";
+			$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+			$login = $_SESSION['user'];
+			$rezultat = $polaczenie->query("select * from uzytkownicy where user='$login'");
+			if ($rezultat) {
+				 while ( $rows = $rezultat->fetch_assoc() ) {
+                        $_SESSION['rasa']=$rows['rasa'];
+                    }	
+			}
+			
+			if ($_SESSION['rasa'] = "Orkowie"){
+			$rezultat2 = $polaczenie->query("select * from orkowie where nick='$login'");
+                if($rezultat2) 
+                    while ( $rows = $rezultat2->fetch_assoc() ) {
+                        $_SESSION['robotnicy']=$rows['robotnicy'];    
+                    }	
+			}
+			
+			if ($_SESSION['rasa'] = "Ludzie"){
+			$rezultat3 = $polaczenie->query("select * from ludzie where nick='$login'");
+                if($rezultat3) 
+                    while ( $rows = $rezultat3->fetch_assoc() ) {
+                        $_SESSION['robotnicy']=$rows['robotnicy'];    
+                    }	
+			}
 ?>
 <h1> Zasoby </h1>
 <div class="chopki">
-    <img src="Grafika/ludzie/jednostki/worker.png"> Dostępni pracownicy: 10
+    <img src="Grafika/ludzie/jednostki/worker.png"> Dostępni pracownicy: <?php echo $_SESSION['robotnicy']; ?>
 </div>
 
 <div class="gold_mine">
