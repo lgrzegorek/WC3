@@ -34,8 +34,21 @@
     <div class="row">
         <div class="col-md-2"><div id="datka"></div></div>
         <div class="col-md-2"><div id="clock"></div></div>
-        <div class="col-md-2">Imieniny </div>
-        <div class="col-md-2">Zarejestrowani</div>
+        <div class="col-md-2"><div id="imieniny"></div></div>
+        <!-- skrytp wczytujący ilosc zarejestrowanych użytkowników z bazy danych -->
+        <div class="col-md-2">Zarejestrowani gracze: 
+            <?php
+
+            $link = mysql_connect("localhost", "root", ""); 
+            mysql_select_db("warcraft", $link);
+
+            $result = mysql_query("SELECT * FROM uzytkownicy", $link);
+            $num_rows = mysql_num_rows($result);
+
+            echo "$num_rows";
+
+            ?>
+        </div>
         <div class="col-md-2">
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" style="height:auto;">Login</button>
                 <div id="id01" class="modal">

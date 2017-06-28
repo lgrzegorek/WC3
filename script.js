@@ -3,6 +3,30 @@ window.onload=start;
 function start(){
   startTime();
   startData();
+  startImieniny();
+}
+
+function startImieniny() {
+  var today = new Date();
+  var dzien = today.getDate();
+  var miesiac = today.getMonth();
+  var imiona = [
+    ['0','0'],  // styczen
+    ['0','0'],  // luty
+    ['0','0'],  // ... reszta do uzupełnienia
+    ['0','0'],
+    ['0','0'],
+    ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','Ireneusza', 'Pawła', 'Lucyny'], // czerwiec
+    ['Haliny', 'Jagody', 'Tomasza', 'Malwiny', 'Atanazego', 'Odo', 'Dominika', 'Adriana', 'Weroniki', 'Olgi', 'Filipa', 'Paulina', 'Sary', 'Marcela', 'Dawida', 'Mariki', 'Bogdana', 'Emiliana', 'Radomiły', 'Hieronima', 'Daniela', 'Leny', 'Brygidy', 'Krystyny', 'Jakuba', 'Mirosławy', 'Natalii', 'Wiktora', 'Marty', 'Julity', 'Ignacego']
+    ['Justyna', 'Gustawa', 'Nikodema', 'Dominika', 'Oswalda', 'Sławy', 'Konrada', 'Emiliana', 'Ireny', 'Wawrzyńca', 'Zuzany', 'Lecha', 'Kasjany', 'Maksymiliana', 'Miriam'],
+    ['0','0'],  // wrzesien
+    ['0','0'],  // ..
+    ['0','0'],
+    ['0','0']   // grudzien
+  ]
+  document.getElementById('imieniny').innerHTML = 'Dziś dzień: ' + imiona[miesiac][dzien-1];
+  console.log(dzien);
+  console.log(miesiac);
 }
 
 function startTime() {
@@ -21,7 +45,7 @@ function startData(){
     var today = new Date();
     var dzien = today.getDate();
     var miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
-    document.getElementById('datka').innerHTML = dzien + '  x ' + miesiace[today.getMonth()] + '   ' + today.getFullYear();
+    document.getElementById('datka').innerHTML = dzien + '   ' + miesiace[today.getMonth()] + '   ' + today.getFullYear();
   }
 
 

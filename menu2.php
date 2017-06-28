@@ -25,9 +25,24 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">Data</div>
+        <div class="col-md-2"><div id="datka"></div></div>
         <div class="col-md-2"><div id=clock></div></div>
-        <div class="col-md-2">Rankingi</div>
+        <div class="col-md-2">Top złoto: 
+            <?php
+
+            $link = mysql_connect("localhost", "root", ""); 
+            mysql_select_db("warcraft", $link);
+
+            $result = mysql_query("SELECT user, zloto FROM uzytkownicy WHERE zloto = (SELECT MAX(zloto) FROM uzytkownicy)", $link);
+            $row = mysql_fetch_array( $result );
+            $topplayer = $row['user'];
+            $topgold = $row['zloto'];
+
+            echo $topgold;
+            echo ' gracz: ';
+            echo $topplayer;
+            ?>
+        </div>
         <div class="col-md-2">Aktywni</div>
         <div class="col-md-2">Wiadomości</div>
         <div class="col-md-2">Notatki</div>
