@@ -81,12 +81,12 @@
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 0, 0, 0, 0, 0)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
-						if ($rasa == "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',NULL,0,0,0,0,0,0,0)")) {
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
+						if ($rasa == "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',NULL,0,0,0,0,0,0,5)")) {
 							$_SESSION['udanarejestracja'] = true;
 							header("Location: witamy.php");
 						}
-						else if ($rasa == "Ludzie" && $polaczenie2->query("insert into ludzie values('$nick',NULL,0,0,0,0,0,0,0)")) {
+						else if ($rasa == "Ludzie" && $polaczenie2->query("insert into ludzie values('$nick',NULL,0,0,0,0,0,0,5)")) {
 							$_SESSION['udanarejestracja'] = true;
 							header("Location: witamy.php");
 						}
