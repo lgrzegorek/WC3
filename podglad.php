@@ -2,7 +2,7 @@
 	include ('menu2.php');
 ?>
 <?php
-	echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+	echo "<p>Witaj ".$_SESSION['user'].'!</p>';
 	echo "<p><b>Drewno</b>: ".$_SESSION['drewno'];
 	echo " | <b>Złoto</b>: ".$_SESSION['zloto'];
 	echo " | <b>Żywność</b>: ".$_SESSION['zywnosc']."</p>";
@@ -11,7 +11,7 @@
 ?>
 
 <div>
-	<img style="height: 100%; width: 100%; object-fit: contain" src="Grafika/ludzie/miasto/human.jpeg">
+	<img style="height: 60%; width: 60%; object-fit: contain" src="Grafika/ludzie/miasto/human.jpeg">
 </div>
 
 <div>

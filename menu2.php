@@ -43,9 +43,9 @@
             echo $topplayer;
             ?>
         </div>
-        <div class="col-md-2">Aktywni</div>
+        <div class="col-md-2">Notatki</div>
         <div class="col-md-2">
-            <button id="wiadomosciBtn">Wiadomosci</button>
+            <button id="wiadomosciBtn" style="background-color: transparent;">Wiadomosci</button>
             <!-- The Modal -->
                 <div id="myModal" class="modal3">
 
@@ -64,7 +64,7 @@
                 </div>
             <script type="text/javascript" src="info.js"></script>      <!-- skrypt obslugujacy guziczek -->
         </div>
-        <div class="col-md-2">Notatki</div>
+        <div class="col-md-2"><a href="logout.php">Wyloguj się!</a></div>
     </div>        
 </div>
 
