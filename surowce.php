@@ -1,5 +1,6 @@
 <?php
 	include ('menu2.php');
+	include ('czas.php');
 ?>
 <h1> Zasoby </h1>
 <div class="chopki">
