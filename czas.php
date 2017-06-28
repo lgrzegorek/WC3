@@ -12,7 +12,7 @@
 		
 	
 	while($ostLog = mysql_fetch_array($wynik)) { 
-        //echo "Ostatnie logowanie: ".$ostLog['ostatnieLogowanie']."<br />"; 
+        echo "Ostatnie logowanie: ".$ostLog['ostatnieLogowanie']."<br />"; 
 		$_SESSION['ostatnieLogowanie'] = $ostLog['ostatnieLogowanie'];
 		$_SESSION['drewno'] = $ostLog['drewno'];
 		$_SESSION['zloto'] = $ostLog['zloto'];
@@ -21,7 +21,7 @@
 
 	
 	$dataczas = new DateTime();
-	//echo "Data i czas serwera: ".$dataczas->format('Y-m-d H:i:s');
+	echo "Data i czas serwera: ".$dataczas->format('Y-m-d H:i:s');
 	/*$ostatnie = DateTime::createFromFormat('Y-m-d H:i:s', $_SESSION['ostatnieLogowanie']);
 	$roznica = $dataczas->diff($ostatnie);
 	echo "<br/>Roznica: ".$roznica->format('%d dni, %h godz, %i min %s sek');*/
@@ -29,7 +29,7 @@
 	$timeOstatni = strtotime($_SESSION['ostatnieLogowanie']);
 	$timeTeraz = strtotime(date('Y-m-d H:i:s'));
 	$roznicaSekundy = $timeTeraz - $timeOstatni;
-	//echo "<br>Roznica w sekundach: ".$roznicaSekundy;
+	echo "<br>Roznica w sekundach: ".$roznicaSekundy;
 	
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");

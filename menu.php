@@ -50,7 +50,7 @@
             ?>
         </div>
         <div class="col-md-2">
-            <button onclick="document.getElementById('id01').style.display='block'" style=" background-color: transparent; text-align: center;">ZALOGUJ</button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" style="height:auto;">Login</button>
                 <div id="id01" class="modal">
                     <form class="modal-content animate" action="zaloguj.php" method="post">
                         <div class="container">

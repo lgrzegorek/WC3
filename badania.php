@@ -1,6 +1,6 @@
 <?php
 	include ('menu2.php');
-	include ('czas.php');
+   
 ?>
 <div class="zakladka_opis">
    

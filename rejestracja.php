@@ -37,7 +37,6 @@
 		}
 		
 		$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
-
 		
 		//Sprawdzanie checkboxa
 		if (!isset($_POST['regulamin'])) {

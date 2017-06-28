@@ -1,6 +1,5 @@
 <?php
 	include ('menu2.php');
-	include ('czas.php');
 ?>
 
 <div id="obrona">

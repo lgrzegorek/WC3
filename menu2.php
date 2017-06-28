@@ -4,6 +4,7 @@
 
 <?php 
     session_start();
+    include('skrypt.php');
 ?>
 <html lang="pl">
 <head>
@@ -43,9 +44,9 @@
             echo $topplayer;
             ?>
         </div>
-        <div class="col-md-2">Notatki</div>
+        <div class="col-md-2">Aktywni</div>
         <div class="col-md-2">
-            <button id="wiadomosciBtn" style="background-color: transparent;">Wiadomosci</button>
+            <button id="wiadomosciBtn">Wiadomosci</button>
             <!-- The Modal -->
                 <div id="myModal" class="modal3">
 
@@ -64,7 +65,7 @@
                 </div>
             <script type="text/javascript" src="info.js"></script>      <!-- skrypt obslugujacy guziczek -->
         </div>
-        <div class="col-md-2"><a href="logout.php">Wyloguj się!</a></div>
+        <div class="col-md-2">Notatki</div>
     </div>        
 </div>
 

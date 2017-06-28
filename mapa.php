@@ -1,6 +1,5 @@
 <?php
 	include ('menu2.php');
-	include ('czas.php');
 ?>
 
 <img src="Grafika/mapfull.png" usemap="#citymap">
