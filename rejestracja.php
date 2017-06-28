@@ -25,6 +25,7 @@
 		}
 		
 		//Poprawnosc hasla
+
 		$haslo1 = $_POST['haslo1'];
 		$haslo2 = $_POST['haslo2'];
 		if (strlen($haslo1)<3 || strlen($haslo2)>20) {
@@ -54,6 +55,7 @@
 			$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 			$polaczenie1 = new mysqli($host, $db_user, $db_password, $db_name);
 			$polaczenie2 = new mysqli($host, $db_user, $db_password, $db_name);
+			$polaczenie3 = new mysqli($host, $db_user, $db_password, $db_name);
 			if ($polaczenie->connect_errno!=0) {
 				throw new Exception(mysqli_connect_errno());
 			}
@@ -79,7 +81,7 @@
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 0, 0, 0, 0, 0)")){
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',100, 100, 100, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 0, 0, 0, 0, 0)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
 						if ($rasa == "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',NULL,0,0,0,0,0,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
 							header("Location: witamy.php");
