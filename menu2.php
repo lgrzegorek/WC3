@@ -44,7 +44,26 @@
             ?>
         </div>
         <div class="col-md-2">Aktywni</div>
-        <div class="col-md-2">Wiadomości</div>
+        <div class="col-md-2">
+            <button id="wiadomosciBtn">Wiadomosci</button>
+            <!-- The Modal -->
+                <div id="myModal" class="modal3">
+
+                <!-- Modal content -->
+                    <div class="modal3-content">
+                        <span class="close">&times;</span>
+                        <p> AKTUALNE WIADOMOŚCI:
+                            <?php
+                                $myfile = fopen("info.txt", "r") or die("Unable to open file!");
+                                $pageText = fread($myfile,filesize("info.txt"));
+                                echo nl2br($pageText);
+                                fclose($myfile);
+                            ?>
+                        </p>
+                    </div>
+                </div>
+            <script type="text/javascript" src="info.js"></script>      <!-- skrypt obslugujacy guziczek -->
+        </div>
         <div class="col-md-2">Notatki</div>
     </div>        
 </div>
