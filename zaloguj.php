@@ -40,9 +40,10 @@
 					$_SESSION['drewno'] = $wiersz['drewno'];
 					$_SESSION['zloto'] = $wiersz['zloto'];
 					$_SESSION['email'] = $wiersz['email'];
+					$_SESSION['rasa'] = $wiersz['rasa'];
 					//$_SESSION['dnipremium'] = $wiersz['dnipremium'];
 				$rezultat2 = $polaczenie->query("select * from budynki where nick='$login'");
-                if($rezultat2) 
+                if($rezultat2){ 
                     while ( $rows = $rezultat2->fetch_assoc() ) {
                         $_SESSION['castle_lvl']=$rows['castle'];
                         $_SESSION['altar_lvl']=$rows['altar'];
@@ -58,6 +59,18 @@
 					$rezultat->free_result();
 					header('Location: podglad.php');
 				}
+                $rezultat2 = $polaczenie->query("select * from badania where nick='$login'");
+                    if ($rezultat2){
+                       while ( $rows = $rezultat2->fetch_assoc() ) {
+                        $_SESSION['t_drewna']=$rows['Tdrewna'];
+                        $_SESSION['t_wydobycia']=$rows['Twydobycia'];
+                        $_SESSION['t_uzbrojenia']=$rows['Tuzbrojenia'];
+                        $_SESSION['t_bronipalnej']=$rows['TbroniPalnej'];
+                        $_SESSION['t_opancerzenia']=$rows['Topancerzenia'];
+                        $_SESSION['t_opancerzenia1']=$rows['Topancerzenia1'];
+                        $_SESSION['t_budownictwa'] = $rows['Tbudownictwa'];
+                    }	 
+                    }
 				else {
 				$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
 				header('Location: index.php');
@@ -71,7 +84,7 @@
 		}
 		
 		$polaczenie->close();
-        
+        }
 	}
 	
 ?>
