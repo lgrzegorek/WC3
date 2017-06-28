@@ -44,7 +44,6 @@ require_once "connect.php";
 	while($ostLog = mysql_fetch_array($wynik)) { 
 		$_SESSION['drewno'] = $ostLog['drewno'];
 		$_SESSION['zloto'] = $ostLog['zloto'];
-		$_SESSION['zywnosc'] = $ostLog['zywnosc'];
 	}
 function oblicz($lvl,$budynek,$a){
     $pow=pow(1.5,$lvl);
@@ -56,10 +55,11 @@ function oblicz($lvl,$budynek,$a){
         case 'house': $zloto=250; $drewno=300; break;
         case 'magazyn_z': $zloto=200; $drewno=400; break;
         case 'magazyn_d': $zloto=200; $drewno=400; break;
+        case 'badania': $zloto=400; $drewno=400; break;    
             
     }
-    $zloto=$zloto*$pow;
-    $drewno=$drewno*$pow;
+    $zloto=round($zloto*$pow);
+    $drewno=round($drewno*$pow);
     if ($a){
         echo "Złoto: ".$zloto."<br> Drewno: ".$drewno;
     }
@@ -79,6 +79,7 @@ function czas($lvl, $budynek){
         case 'house': $minuty=(int)($pow*40);break;
         case 'magazyn_z': $minuty=(int)($pow*30);break;
         case 'magazyn_d': $minuty=(int)($pow*30);break;
+        case 'badania': $minuty=(int)($pow*30);break;
     }
     
     $godziny=$minuty/60;
