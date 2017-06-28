@@ -14,6 +14,9 @@
 	while($ostLog = mysql_fetch_array($wynik)) { 
         echo "Ostatnie logowanie: ".$ostLog['ostatnieLogowanie']."<br />"; 
 		$_SESSION['ostatnieLogowanie'] = $ostLog['ostatnieLogowanie'];
+		$_SESSION['drewno'] = $ostLog['drewno'];
+		$_SESSION['zloto'] = $ostLog['zloto'];
+		$_SESSION['zywnosc'] = $ostLog['zywnosc'];
 	}
 
 	
@@ -31,4 +34,17 @@
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
 	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
+	
+	
+	
+	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
+	$mnoznik = $roznicaSekundy;
+	$_SESSION['mnoznik'] = $mnoznik;
+	$sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik', zloto=zloto+'$mnoznik', zywnosc=zywnosc+'$mnoznik' where user = '$user'");
+	
+	while($ostLog = mysql_fetch_array($wynik)) { 
+		$_SESSION['drewno'] = $ostLog['drewno'];
+		$_SESSION['zloto'] = $ostLog['zloto'];
+		$_SESSION['zywnosc'] = $ostLog['zywnosc'];
+	}
 ?>
