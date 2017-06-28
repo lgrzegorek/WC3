@@ -812,3 +812,8 @@ img.hover-shadow {
     margin: 1%;
     display:inline-block;
     width: auto;
+}
+#wiadomosciBtn{
+    background-color: rgba(0,0,0,0.5);
+    padding-left: 30%;
+}
