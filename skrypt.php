@@ -16,7 +16,6 @@ require_once "connect.php";
 		$_SESSION['ostatnieLogowanie'] = $ostLog['ostatnieLogowanie'];
 		$_SESSION['drewno'] = $ostLog['drewno'];
 		$_SESSION['zloto'] = $ostLog['zloto'];
-		$_SESSION['zywnosc'] = $ostLog['zywnosc'];
 	}
 
 	
@@ -40,7 +39,7 @@ require_once "connect.php";
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
 	$mnoznik = $roznicaSekundy;
 	$_SESSION['mnoznik'] = $mnoznik;
-	$sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik', zloto=zloto+'$mnoznik', zywnosc=zywnosc+'$mnoznik' where user = '$user'");
+	$sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik', zloto=zloto+'$mnoznik'where user = '$user'");
 	
 	while($ostLog = mysql_fetch_array($wynik)) { 
 		$_SESSION['drewno'] = $ostLog['drewno'];
@@ -55,6 +54,9 @@ function oblicz($lvl,$budynek,$a){
         case 'altar': $zloto=300; $drewno=150; break;
         case 'forge': $zloto=300; $drewno=300; break;
         case 'house': $zloto=250; $drewno=300; break;
+        case 'magazyn_z': $zloto=200; $drewno=400; break;
+        case 'magazyn_d': $zloto=200; $drewno=400; break;
+            
     }
     $zloto=$zloto*$pow;
     $drewno=$drewno*$pow;
@@ -75,6 +77,8 @@ function czas($lvl, $budynek){
         case 'altar': $minuty=(int)($pow*40);break;
         case 'forge': $minuty=(int)($pow*50);break;
         case 'house': $minuty=(int)($pow*40);break;
+        case 'magazyn_z': $minuty=(int)($pow*30);break;
+        case 'magazyn_d': $minuty=(int)($pow*30);break;
     }
     
     $godziny=$minuty/60;
@@ -84,7 +88,7 @@ function czas($lvl, $budynek){
     if ($godziny==0){ 
         echo $minuty."min.";
     }
-    if ($minuty==0){ 
+    else if ($minuty==0){ 
         echo $godziny."godź.";
     }
     else{ 

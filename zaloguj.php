@@ -39,7 +39,6 @@
 					$_SESSION['user'] = $wiersz['user'];
 					$_SESSION['drewno'] = $wiersz['drewno'];
 					$_SESSION['zloto'] = $wiersz['zloto'];
-					$_SESSION['zywnosc'] = $wiersz['zywnosc'];
 					$_SESSION['email'] = $wiersz['email'];
 					//$_SESSION['dnipremium'] = $wiersz['dnipremium'];
 				$rezultat2 = $polaczenie->query("select * from budynki where nick='$login'");
@@ -51,6 +50,9 @@
                         $_SESSION['forge_lvl']=$rows['forge'];
                         $_SESSION['barrack_lvl']=$rows['barrack'];
                         $_SESSION['forge_lvl']=$rows['forge'];
+                        $_SESSION['max_zywnosc'] = $rows['house_lvl']*10;
+                        $_SESSION['magazyn_zlota']= $rows['magazynZlota'];
+                        $_SESSION['magazyn_drewna']= $rows['magazynDrewna'];
                     }	
 					unset($_SESSION['blad']);
 					$rezultat->free_result();
