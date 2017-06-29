@@ -1,5 +1,7 @@
 <?php 
-require_once "connect.php";
+
+function obliczZasoby(){
+    require_once "connect.php";
 	mysqli_report(MYSQLI_REPORT_STRICT);
 	$user = $_SESSION['user'];
 
@@ -25,7 +27,6 @@ require_once "connect.php";
 	$timeOstatni = strtotime($timeOstatni);
 	$timeTeraz = strtotime(date('Y-m-d H:i:s'));
 	$roznicaSekundy = $timeTeraz - $timeOstatni;
-	echo $roznicaSekundy;
 	
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
 	$mnoznik = $roznicaSekundy;
@@ -39,7 +40,7 @@ require_once "connect.php";
     
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
 	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
-	    
+}
 	
 function oblicz($lvl,$budynek,$a){
     $pow=pow(1.5,$lvl);
