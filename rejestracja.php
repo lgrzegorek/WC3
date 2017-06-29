@@ -77,17 +77,46 @@
 					$_SESSION['e_nick'] = "Istnieje już gracz o podanym nicku.";
 				}
 				
+				//Czy wspolrzedna istnieje <1;36>
+				$rezultat = $polaczenie->query("select wspolrzedna from uzytkownicy");
+				if (!$rezultat) throw new Exception($polaczenie->error);
+				$ile_wspolrzednych = $rezultat->num_rows;
+
+				
+				
+				if ($ile_wspolrzednych>0){
+					while($r = $rezultat->fetch_assoc()) {
+						echo $r['wspolrzedna']." ";
+						$tab[] = $r['wspolrzedna'];
+					}
+			//		echo "<br>".serialize($tab);
+				}
+				$x = (int) $tab[0] + (int) $tab[1];
+				echo "<br>x:".$x;
+				$i = 0;
+				natsort($tab);
+				for ($j=1; $j<37-count($tab); $j++){
+					if($tab[$i]=!$j+$i){
+						$tab3[$j]=$j+$i;
+					}
+					else{
+						$i++;
+					}
+				}
+				echo "<br>".serialize($tab3);
+				$ilea = rand(1,count($tab3));
+				$wspolrzedna= $tab3[$ilea];
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$rasa','$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$rasa', '$wspolrzedna','$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
 						if ($rasa == "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',NULL,0,0,0,0,0,0,5,0,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
-							header("Location: witamy.php");
+							//header("Location: witamy.php");
 						}
 						else if ($rasa == "Ludzie" && $polaczenie2->query("insert into ludzie values('$nick',NULL,0,0,0,0,0,0,5,0,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
-							header("Location: witamy.php");
+							//header("Location: witamy.php");
 						}
 					}
 					else {
