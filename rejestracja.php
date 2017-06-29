@@ -25,7 +25,6 @@
 		}
 		
 		//Poprawnosc hasla
-
 		$haslo1 = $_POST['haslo1'];
 		$haslo2 = $_POST['haslo2'];
 		if (strlen($haslo1)<3 || strlen($haslo2)>20) {
@@ -81,7 +80,7 @@
 				
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$rasa','$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")){
 						if ($rasa == "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',NULL,0,0,0,0,0,0,5,0,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
 							header("Location: witamy.php");
