@@ -84,6 +84,9 @@
                                 $_SESSION['doktorzy']=$rows['doktorzyVodo'];
                                 $_SESSION['jezdzcy']=$rows['jezdzcy'];
                                 $_SESSION['robotnicy'] = $rows['robotnicy'];
+                                $_SESSION['robotnicy_zloto']= $rows['robotnicyZloto'];
+                                $_SESSION['robotnicy_drewno']= $rows['robotnicyDrewno'];
+                                $_SESSION['robotnicy_budowa']= $rows['robotnicyBudowa'];
                                 $_SESSION['zywnosc']=$_SESSION['siepacze']*2+$_SESSION['lowcy_glow']*1+$_SESSION['katapulty']*1+$_SESSION['szamani']*2+$_SESSION['doktorzy']*2+$_SESSION['jezdzcy']*2+$_SESSION['robotnicy']; 
                             }
                         $rezultat2->free_result();
@@ -100,6 +103,9 @@
                                 $_SESSION['czarodziejki']=$rows['czarodziejki'];
                                 $_SESSION['rycerze']=$rows['rycerze'];
                                 $_SESSION['robotnicy'] = $rows['robotnicy'];
+                                $_SESSION['robotnicy_zloto']= $rows['robotnicyZloto'];
+                                $_SESSION['robotnicy_drewno']= $rows['robotnicyDrewno'];
+                                $_SESSION['robotnicy_budowa']= $rows['robotnicyBudowa'];
                                 $_SESSION['zywnosc']=$_SESSION['miecznicy']*2+$_SESSION['strzelcy']*1+$_SESSION['kanonierzy']*1+$_SESSION['kaplani']*2+$_SESSION['czarodziejki']*2+$_SESSION['rycerze']*2+$_SESSION['robotnicy']; 
                             }
                         $rezultat2->free_result();
