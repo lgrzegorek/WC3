@@ -29,14 +29,21 @@ function obliczZasoby(){
 	$roznicaSekundy = $timeTeraz - $timeOstatni;
 	
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
-	$mnoznik = $roznicaSekundy;
+	$mnoznik_drewno = ($roznicaSekundy/12)*$_SESSION['robotnicy_drewno'];
+	$mnoznik_zloto = ($roznicaSekundy/12)*$_SESSION['robotnicy_zloto'];
+    $pojemnosc_zloto=$_SESSION['magazyn_zlota']*5000;
+    $pojemnosc_drewno=$_SESSION['magazyn_drewna']*5000;
     $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
-	$sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik', zloto=zloto+'$mnoznik'where user = '$user'");
 	
-	
-		$_SESSION['drewno'] = $_SESSION['drewno']+ $mnoznik;
-		$_SESSION['zloto'] =$_SESSION['zloto']+ $mnoznik;
-        
+    if ($_SESSION['drewno'] < $pojemnosc_drewno) {
+    $sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik_drewno', zloto=zloto+'$mnoznik_zloto'where user = '$user'");
+		$_SESSION['drewno'] = $_SESSION['drewno']+ $mnoznik_drewno;
+    }
+    if ($_SESSION['zloto'] < $pojemnosc_zloto) {
+    $sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik_drewno', zloto=zloto+'$mnoznik_zloto'where user = '$user'");
+		$_SESSION['zloto'] =$_SESSION['zloto']+ $mnoznik_zloto;
+    }
+    
     
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
 	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
