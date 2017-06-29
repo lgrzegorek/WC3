@@ -2,16 +2,6 @@
 	include ('menu2.php');
 ?>
 
-    <?php
-        $user = $_SESSION['user'];
-        $link = mysql_connect("localhost", "root", ""); 
-        mysql_select_db("warcraft", $link);
-
-        $result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
-        $row = mysql_fetch_array( $result );
-        $rasa = $row['rasa'];
-    ?>
-
 <div class="zakladka_opis">
    
         <div class="nazwa">
@@ -90,7 +80,7 @@
     
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/ulepszenia/up2.png">
         <?php else : ?>
             <img src="Grafika/ludzie/ulepszenia/up3.png">
@@ -117,7 +107,7 @@
    
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/ulepszenia/up4.png">
         <?php else : ?>
             <img src="Grafika/ludzie/ulepszenia/up5.png">
@@ -144,7 +134,7 @@
     
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/ulepszenia/up3.png">
         <?php else : ?>
             <img src="Grafika/ludzie/ulepszenia/up4.png">
@@ -172,7 +162,7 @@
     
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/ulepszenia/up5.png">
         <?php else : ?>
             <img src="Grafika/ludzie/ulepszenia/up6.png">
@@ -199,7 +189,7 @@
     
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/ulepszenia/up6.png">
         <?php else : ?>
             <img src="Grafika/ludzie/ulepszenia/up2.png">

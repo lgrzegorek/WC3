@@ -2,16 +2,6 @@
 	include ('menu2.php');
 ?>
 
-    <?php
-        $user = $_SESSION['user'];
-        $link = mysql_connect("localhost", "root", ""); 
-        mysql_select_db("warcraft", $link);
-
-        $result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
-        $row = mysql_fetch_array( $result );
-        $rasa = $row['rasa'];
-    ?>
-
 <div class="zakladka_opis">
    
         <div class="nazwa">
@@ -30,7 +20,7 @@
     </div>
   <div class="wymagania">Wymagania:</div>
     <div class="chopki">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/jednostki/worker.png">
         <?php else : ?>
             <img src="Grafika/ludzie/jednostki/worker.png">
@@ -52,7 +42,7 @@
         </div>
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/budowle/hall.png">
         <?php else : ?>
             <img src="Grafika/ludzie/budowle/castle.png">
@@ -79,7 +69,7 @@
     
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/budowle/barracks.png">
         <?php else : ?>
             <img src="Grafika/ludzie/budowle/barracks.png">
@@ -106,7 +96,7 @@
     
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/budowle/altar.png">
         <?php else : ?>
             <img src="Grafika/ludzie/budowle/altar.png">
@@ -156,7 +146,7 @@
     </div>
    
     <div class="zakladka_img">
-        <?php if ($rasa == 'Orkowie') : ?>
+        <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
             <img src="Grafika/orkowie/budowle/house.png">
         <?php else : ?>
             <img src="Grafika/ludzie/budowle/house.png">

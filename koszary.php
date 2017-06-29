@@ -1,18 +1,9 @@
 <?php
 	include ('menu2.php');
 ?>
-    <?php
-        $user = $_SESSION['user'];
-        $link = mysql_connect("localhost", "root", ""); 
-        mysql_select_db("warcraft", $link);
-
-        $result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
-        $row = mysql_fetch_array( $result );
-        $rasa = $row['rasa'];
-    ?>
 
 <div class="jednostka">
-    <?php if ($rasa == 'Orkowie') : ?>
+    <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
         <b> Siepacz </b> <br>
         <img src="Grafika/orkowie/jednostki/grunt.png">
     <?php else : ?>
@@ -41,7 +32,7 @@
 </div>
 
 <div class="jednostka">
-    <?php if ($rasa == 'Orkowie') : ?>
+    <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
         <b> Łowca Głów </b> <br>
         <img src="Grafika/orkowie/jednostki/headhunter.png">
     <?php else : ?>
@@ -71,7 +62,7 @@
 </div>
 
 <div class="jednostka">
-    <?php if ($rasa == 'Orkowie') : ?>
+    <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
         <b> Jeźdźcy Wilków </b> <br>
         <img src="Grafika/orkowie/jednostki/rider.png">
     <?php else : ?>
@@ -99,11 +90,11 @@
 
 </div>
 <div class="jednostka">
-    <?php if ($rasa == 'Orkowie') : ?>
-        <b> Kodo </b> <br>
+    <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
+        <b> Katapulty </b> <br>
         <img src="Grafika/orkowie/jednostki/kodo.png">
     <?php else : ?>
-        <b> Kanonierzy</b> <br>
+        <b> Kanonierzy </b> <br>
         <img src="Grafika/ludzie/jednostki/canon.png">
     <?php endif; ?>
     <div class="parametry">
@@ -128,12 +119,12 @@
 </div>
 
 <div class="jednostka">
-    <?php if ($rasa == 'Orkowie') : ?>
-        <b> Wiwerny </b> <br>
-        <img src="Grafika/orkowie/jednostki/wyvern.png">
+    <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
+        <b> Doktorzy Voodoo </b> <br>
+        <img src="Grafika/orkowie/jednostki/vodo.png">
     <?php else : ?>
-        <b> Jeździec gryfa </b><br>
-        <img src="Grafika/ludzie/jednostki/gryph.png">
+        <b> Czarodziejki </b><br>
+        <img src="Grafika/ludzie/jednostki/wizard.png">
     <?php endif; ?>
     <div class="parametry">
         Atk:6 <br>
@@ -157,7 +148,7 @@
 </div>
 
 <div class="jednostka">
-    <?php if ($rasa == 'Orkowie') : ?>
+    <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
         <b> Szamani </b> <br>
         <img src="Grafika/orkowie/jednostki/shaman.png">
     <?php else : ?>

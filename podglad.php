@@ -12,15 +12,7 @@
 
 <div>
 	<?php
-		$user = $_SESSION['user'];
-		$link = mysql_connect("localhost", "root", ""); 
-    	mysql_select_db("warcraft", $link);
-
-		$result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
-		$row = mysql_fetch_array( $result );
-		$rasa = $row['rasa'];
-
-	if ($rasa == 'Orkowie') : ?>
+	if ($_SESSION['rasa'] == 'Orkowie') : ?>
 		<img style="height: 50%; width: 50%; object-fit: contain" src="Grafika/orkowie/miasto/orc.jpeg">
 	<?php else : ?>
 		<img style="height: 50%; width: 50%; object-fit: contain" src="Grafika/ludzie/miasto/human.jpeg">
