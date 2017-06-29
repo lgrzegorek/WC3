@@ -1,10 +1,24 @@
 <?php
 	include ('menu2.php');
 ?>
+    <?php
+        $user = $_SESSION['user'];
+        $link = mysql_connect("localhost", "root", ""); 
+        mysql_select_db("warcraft", $link);
+
+        $result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
+        $row = mysql_fetch_array( $result );
+        $rasa = $row['rasa'];
+    ?>
 
 <div class="jednostka">
-    <b> Miecznik </b> <br>
-    <img src="Grafika/ludzie/jednostki/footman.png">
+    <?php if ($rasa == 'Orkowie') : ?>
+        <b> Siepacz </b> <br>
+        <img src="Grafika/orkowie/jednostki/grunt.png">
+    <?php else : ?>
+        <b> Miecznik </b> <br>
+        <img src="Grafika/ludzie/jednostki/footman.png">
+    <?php endif; ?>
     <div class="parametry">
         Atk: 4<br>
         Obr: 5<br>
@@ -27,8 +41,13 @@
 </div>
 
 <div class="jednostka">
-    <b>Strzelec</b> <br>
-    <img src="Grafika/ludzie/jednostki/sniper.png">
+    <?php if ($rasa == 'Orkowie') : ?>
+        <b> Łowca Głów </b> <br>
+        <img src="Grafika/orkowie/jednostki/headhunter.png">
+    <?php else : ?>
+        <b> Strzelec </b> <br>
+        <img src="Grafika/ludzie/jednostki/sniper.png">
+    <?php endif; ?>
     <div class="parametry">
         Atk:5 <br>
         Obr:1 <br>
@@ -52,8 +71,13 @@
 </div>
 
 <div class="jednostka">
-    <b> Rycerz </b> <br>
-    <img src="Grafika/ludzie/jednostki/knight.png">
+    <?php if ($rasa == 'Orkowie') : ?>
+        <b> Jeźdźcy Wilków </b> <br>
+        <img src="Grafika/orkowie/jednostki/rider.png">
+    <?php else : ?>
+        <b> Rycerz </b> <br>
+        <img src="Grafika/ludzie/jednostki/knight.png">
+    <?php endif; ?>
     <div class="parametry">
         Atk:7 <br>
         Obr:5 <br>
@@ -75,8 +99,13 @@
 
 </div>
 <div class="jednostka">
-    <b> Kanonierzy</b> <br>
-    <img src="Grafika/ludzie/jednostki/canon.png">
+    <?php if ($rasa == 'Orkowie') : ?>
+        <b> Kodo </b> <br>
+        <img src="Grafika/orkowie/jednostki/kodo.png">
+    <?php else : ?>
+        <b> Kanonierzy</b> <br>
+        <img src="Grafika/ludzie/jednostki/canon.png">
+    <?php endif; ?>
     <div class="parametry">
         Atk:6 <br>
         Obr:0 <br>
@@ -99,8 +128,13 @@
 </div>
 
 <div class="jednostka">
-    <b> Jeździec gryfa </b><br>
-    <img src="Grafika/ludzie/jednostki/gryph.png">
+    <?php if ($rasa == 'Orkowie') : ?>
+        <b> Wiwerny </b> <br>
+        <img src="Grafika/orkowie/jednostki/wyvern.png">
+    <?php else : ?>
+        <b> Jeździec gryfa </b><br>
+        <img src="Grafika/ludzie/jednostki/gryph.png">
+    <?php endif; ?>
     <div class="parametry">
         Atk:6 <br>
         Obr:3 <br>
@@ -123,8 +157,13 @@
 </div>
 
 <div class="jednostka">
-    <b> Kapłan </b> <br>
-    <img src="Grafika/ludzie/jednostki/priest.png">
+    <?php if ($rasa == 'Orkowie') : ?>
+        <b> Szamani </b> <br>
+        <img src="Grafika/orkowie/jednostki/shaman.png">
+    <?php else : ?>
+        <b> Kapłani </b> <br>
+        <img src="Grafika/ludzie/jednostki/priest.png">
+    <?php endif; ?>
     <div class="parametry">
         Atk:7 <br>
         Obr:3 <br>

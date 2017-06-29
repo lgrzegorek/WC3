@@ -24,7 +24,7 @@ function startImieniny() {
     ['0','0'],
     ['0','0']   // grudzien
   ]
-  document.getElementById('imieniny').innerHTML = 'Dziś dzień: ' + imiona[miesiac][dzien-1];
+  document.getElementById('imieniny').innerHTML = 'Dziś imieniny: ' + imiona[miesiac][dzien-1];
   console.log(dzien);
   console.log(miesiac);
 }

@@ -1,8 +1,16 @@
 <?php
 	include ('menu2.php');
-
-  
 ?>
+
+    <?php
+        $user = $_SESSION['user'];
+        $link = mysql_connect("localhost", "root", ""); 
+        mysql_select_db("warcraft", $link);
+
+        $result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
+        $row = mysql_fetch_array( $result );
+        $rasa = $row['rasa'];
+    ?>
 
 <div class="zakladka_opis">
    
@@ -21,7 +29,13 @@
         Opis 
     </div>
   <div class="wymagania">Wymagania:</div>
-    <div class="chopki"><img src="Grafika/ludzie/jednostki/worker.png"></div>
+    <div class="chopki">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/jednostki/worker.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/jednostki/worker.png">
+        <?php endif; ?>
+    </div>
   <div class="akcja"> Akcja:</div>
   <div class="czas" style="text-align:left;">Czas:</div>
     
@@ -38,7 +52,11 @@
         </div>
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/budowle/castle.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/budowle/hall.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/budowle/castle.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Ratusz pozwala na rekrutację robotników.
@@ -61,7 +79,11 @@
     
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/budowle/barracks.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/budowle/barracks.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/budowle/barracks.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Koszary umożliwiają rekrutację jednostek, wraz ze wzrostem poziomu rekrutacja przebiega szybciej, a także daje możliwość rekrutacji kolejnych jednostek.
@@ -84,7 +106,11 @@
     
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/budowle/altar.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/budowle/altar.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/budowle/altar.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Ratusz pozwala na przywołanie, a także wskrzeszenie bohaterów. Co 10 poziomów możliwe jest przywołanie kolejnego bohatera.
@@ -130,7 +156,11 @@
     </div>
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/budowle/house.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/budowle/house.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/budowle/house.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Farmy wytwarzają żywność, która jest potrzebna do utrzymania jednostek. Każda farma dostarcza 10 jednostek pożywienia.

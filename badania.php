@@ -1,7 +1,17 @@
 <?php
 	include ('menu2.php');
-   
 ?>
+
+    <?php
+        $user = $_SESSION['user'];
+        $link = mysql_connect("localhost", "root", ""); 
+        mysql_select_db("warcraft", $link);
+
+        $result = mysql_query ("SELECT rasa FROM uzytkownicy WHERE user = '$user'", $link);
+        $row = mysql_fetch_array( $result );
+        $rasa = $row['rasa'];
+    ?>
+
 <div class="zakladka_opis">
    
         <div class="nazwa">
@@ -80,7 +90,11 @@
     
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/ulepszenia/up3.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/ulepszenia/up2.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/ulepszenia/up3.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Technologia uzbrojenia zwiększa atak jednostek walczących wręcz.
@@ -103,7 +117,11 @@
    
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/ulepszenia/up5.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/ulepszenia/up4.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/ulepszenia/up5.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Technologia broni palnej zwiększa atak jednostek walczących na dystans.
@@ -126,7 +144,11 @@
     
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/ulepszenia/up4.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/ulepszenia/up3.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/ulepszenia/up4.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Technologia opancerzenia zwięsza pancerz lekko uzbrojonych jednostek.
@@ -150,7 +172,11 @@
     
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/ulepszenia/up6.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/ulepszenia/up5.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/ulepszenia/up6.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Technologia opancerzenia zwięsza pancerz cięzko uzbrojonych jednostek.
@@ -173,7 +199,11 @@
     
    
     <div class="zakladka_img">
-        <img src="Grafika/ludzie/ulepszenia/up2.png">
+        <?php if ($rasa == 'Orkowie') : ?>
+            <img src="Grafika/orkowie/ulepszenia/up6.png">
+        <?php else : ?>
+            <img src="Grafika/ludzie/ulepszenia/up2.png">
+        <?php endif; ?>
     </div>
     <div class="opis">
         Technologia budownictwa pozwala na szybsze budowanie budynków.

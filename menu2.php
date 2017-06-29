@@ -64,7 +64,7 @@
                 </div>
             <script type="text/javascript" src="info.js"></script>      <!-- skrypt obslugujacy guziczek -->
         </div>
-        <div class="col-md-2">Notatki</div>
+        <div class="col-md-2"><a href="logout.php">Wyloguj się!</a></div>
     </div>        
 </div>
 
