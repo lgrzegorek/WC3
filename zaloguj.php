@@ -51,13 +51,12 @@
                         $_SESSION['forge_lvl']=$rows['forge'];
                         $_SESSION['barrack_lvl']=$rows['barrack'];
                         $_SESSION['forge_lvl']=$rows['forge'];
-                        $_SESSION['max_zywnosc'] = $rows['house_lvl']*10;
+                        $_SESSION['max_zywnosc'] = $rows['house']*10;
                         $_SESSION['magazyn_zlota']= $rows['magazynZlota'];
                         $_SESSION['magazyn_drewna']= $rows['magazynDrewna'];
-                    }	
-					unset($_SESSION['blad']);
-					$rezultat->free_result();
-					header('Location: podglad.php');
+                    }
+                       $rezultat2->free_result();
+					
 				}
                 $rezultat2 = $polaczenie->query("select * from badania where nick='$login'");
                     if ($rezultat2){
@@ -69,9 +68,47 @@
                         $_SESSION['t_opancerzenia']=$rows['Topancerzenia'];
                         $_SESSION['t_opancerzenia1']=$rows['Topancerzenia1'];
                         $_SESSION['t_budownictwa'] = $rows['Tbudownictwa'];
-                    }	 
                     }
-				else {
+                        unset($_SESSION['blad']);
+					   $rezultat2->free_result();
+					   $rezultat->free_result();
+                    }
+                    if($_SESSION['rasa']=='Orkowie'){    
+                        $rezultat2 = $polaczenie->query("select * from orkowie where nick='$login'");
+                        if($rezultat2){ 
+                            while ( $rows = $rezultat2->fetch_assoc() ) {
+                                $_SESSION['siepacze']=$rows['siepacze'];
+                                $_SESSION['lowcy_glow']=$rows['lowcyGlow'];
+                                $_SESSION['katapulty']=$rows['katapulty'];
+                                $_SESSION['szamani']=$rows['szamani'];
+                                $_SESSION['doktorzy']=$rows['doktorzyVodo'];
+                                $_SESSION['jezdzcy']=$rows['jezdzcy'];
+                                $_SESSION['robotnicy'] = $rows['robotnicy'];
+                                $_SESSION['zywnosc']=$_SESSION['siepacze']*2+$_SESSION['lowcy_glow']*1+$_SESSION['katapulty']*1+$_SESSION['szamani']*2+$_SESSION['doktorzy']*2+$_SESSION['jezdzcy']*2+$_SESSION['robotnicy']; 
+                            }
+                        $rezultat2->free_result();
+                        }
+                    }
+                    else{
+                        $rezultat2 = $polaczenie->query("select * from ludzie where nick='$login'");
+                        if($rezultat2){ 
+                            while ( $rows = $rezultat2->fetch_assoc() ) {
+                                $_SESSION['miecznicy']=$rows['miecznicy'];
+                                $_SESSION['strzelcy']=$rows['strzelcy'];
+                                $_SESSION['kanonierzy']=$rows['artyleria'];
+                                $_SESSION['kaplani']=$rows['kaplani'];
+                                $_SESSION['czarodziejki']=$rows['czarodziejki'];
+                                $_SESSION['rycerze']=$rows['rycerze'];
+                                $_SESSION['robotnicy'] = $rows['robotnicy'];
+                                $_SESSION['zywnosc']=$_SESSION['miecznicy']*2+$_SESSION['strzelcy']*1+$_SESSION['kanonierzy']*1+$_SESSION['kaplani']*2+$_SESSION['czarodziejki']*2+$_SESSION['rycerze']*2+$_SESSION['robotnicy']; 
+                            }
+                        $rezultat2->free_result();
+                        }
+                        
+                    }
+                	   header('Location: podglad.php');    
+                }
+                else {
 				$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
 				header('Location: index.php');
 				}
@@ -85,6 +122,6 @@
 		
 		$polaczenie->close();
         }
-	}
+	
 	
 ?>
