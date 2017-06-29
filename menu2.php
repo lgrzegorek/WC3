@@ -23,7 +23,7 @@
 
 </head>
 <body background = "Grafika/tlo.jpg">
-
+<?php obliczZasoby() ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2"><div id="datka"></div></div>
@@ -71,7 +71,7 @@
         <div id="zasoby"> 
             <div class="zasob" style="color:gold;">  <img src="Grafika/icon/gold.png"><?php echo "Złoto:".$_SESSION["zloto"]?></div> 
             <div class="zasob" style="color:darkgoldenrod;"> <img src="Grafika/icon/wood.png"><?php echo "Drewno:".$_SESSION["drewno"]?> </div>
-            <div class="zasob" style="color:coral;"><img src="Grafika/icon/meat.png"><?php echo "Żywność:".$_SESSION["max_zywnosc"]?></div>
+            <div class="zasob" style="color:coral;"><img src="Grafika/icon/meat.png"><?php echo "Żywność:".$_SESSION['zywnosc']."/".$_SESSION["max_zywnosc"]?></div>
         </div>
 
     
