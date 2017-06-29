@@ -813,7 +813,15 @@ img.hover-shadow {
     display:inline-block;
     width: auto;
 }
+
 #wiadomosciBtn{
     background-color: rgba(0,0,0,0.5);
     padding-left: 30%;
+}
+
+#map {
+    position: relative;
+}
+.map_title {
+    position: absolute;
 }
