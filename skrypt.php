@@ -10,13 +10,10 @@ require_once "connect.php";
 	}
 	else echo "Nie mogę połączyć się z bazą.";
 		
-	
-	while($ostLog = mysql_fetch_array($wynik)) { 
-        
-		$_SESSION['ostatnieLogowanie'] = $ostLog['ostatnieLogowanie'];
-		$_SESSION['drewno'] = $ostLog['drewno'];
-		$_SESSION['zloto'] = $ostLog['zloto'];
-	}
+	$timeOstatni=0;
+	while($ostLog = mysql_fetch_array($wynik))         
+		$timeOstatni= $ostLog['ostatnieLogowanie'];
+
 
 	
 	$dataczas = new DateTime();
@@ -25,26 +22,25 @@ require_once "connect.php";
 	$roznica = $dataczas->diff($ostatnie);
 	echo "<br/>Roznica: ".$roznica->format('%d dni, %h godz, %i min %s sek');*/
 	
-	$timeOstatni = strtotime($_SESSION['ostatnieLogowanie']);
+	$timeOstatni = strtotime($timeOstatni);
 	$timeTeraz = strtotime(date('Y-m-d H:i:s'));
 	$roznicaSekundy = $timeTeraz - $timeOstatni;
-	
-	
-	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
-	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
-	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
-	
-	
+	echo $roznicaSekundy;
 	
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
 	$mnoznik = $roznicaSekundy;
-	$_SESSION['mnoznik'] = $mnoznik;
+    $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 	$sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik', zloto=zloto+'$mnoznik'where user = '$user'");
 	
-	while($ostLog = mysql_fetch_array($wynik)) { 
-		$_SESSION['drewno'] = $ostLog['drewno'];
-		$_SESSION['zloto'] = $ostLog['zloto'];
-	}
+	
+		$_SESSION['drewno'] = $_SESSION['drewno']+ $mnoznik;
+		$_SESSION['zloto'] =$_SESSION['zloto']+ $mnoznik;
+        
+    
+	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
+	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
+	    
+	
 function oblicz($lvl,$budynek,$a){
     $pow=pow(1.5,$lvl);
     switch ($budynek){
