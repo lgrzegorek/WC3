@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Cze 2017, 21:56
+-- Czas generowania: 29 Cze 2017, 14:12
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 5.6.30
 
@@ -43,8 +43,9 @@ CREATE TABLE `badania` (
 --
 
 INSERT INTO `badania` (`nick`, `id`, `Tdrewna`, `Twydobycia`, `Tuzbrojenia`, `TbroniPalnej`, `Topancerzenia`, `Topancerzenia1`, `Tbudownictwa`) VALUES
-('bartek', 6, 0, 0, 0, 0, 0, 0, 0),
-('daniel', 7, 0, 0, 0, 0, 0, 0, 0);
+('bartek', 6, 3, 0, 2, 0, 0, 0, 0),
+('daniel', 7, 0, 0, 0, 0, 0, 0, 0),
+('qwerty', 8, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,8 @@ CREATE TABLE `budynki` (
 
 INSERT INTO `budynki` (`nick`, `id`, `rasa`, `altar`, `barrack`, `castle`, `forge`, `house`, `magazynZlota`, `magazynDrewna`) VALUES
 ('bartek', 24, 'Ludzie', 0, 0, 1, 0, 1, 1, 1),
-('daniel', 25, 'Orkowie', 0, 0, 1, 0, 1, 1, 1);
+('daniel', 25, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
+('qwerty', 26, 'Orkowie', 0, 0, 1, 0, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +129,8 @@ CREATE TABLE `orkowie` (
 --
 
 INSERT INTO `orkowie` (`nick`, `id`, `siepacze`, `lowcyGlow`, `katapulty`, `szamani`, `doktorzyVodo`, `jezdzcy`, `robotnicy`, `robotnicyZloto`, `robotnicyDrewno`, `robotnicyBudowa`) VALUES
-('daniel', 14, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0);
+('daniel', 14, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0),
+('qwerty', 15, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -152,8 +155,9 @@ CREATE TABLE `uzytkownicy` (
 --
 
 INSERT INTO `uzytkownicy` (`id`, `user`, `rasa`, `pass`, `email`, `drewno`, `zloto`, `zywnosc`, `ostatnieLogowanie`) VALUES
+(55, 'qwerty', 'Orkowie', '$2y$10$.uJL/Lai.1fC0LRuKyIbButfvEIfF4xd2dlLadnaL3sINHdRDEcEu', 'qlkf@sdfj.pl', 1026, 1026, 0, '2017-06-29 14:11:42'),
 (54, 'daniel', 'Orkowie', '$2y$10$CqkFFvp7gRvY29Uvgd8AoO6NwF1aGggp9et6GYsrJ4wx0nwP/Ae3O', 'ajsf@pl.pl', 1396, 1396, 0, '2017-06-28 21:47:25'),
-(53, 'bartek', 'Ludzie', '$2y$10$/ArIOP7qs9WnzABxSISilOgxqpUND.ykuYoy56HvZNNyHgyk8vijy', 'askhdl@hjk.pl', 3220, 3220, 0, '2017-06-28 21:51:39');
+(53, 'bartek', 'Ludzie', '$2y$10$/ArIOP7qs9WnzABxSISilOgxqpUND.ykuYoy56HvZNNyHgyk8vijy', 'askhdl@hjk.pl', 5896, 5896, 0, '2017-06-28 22:36:15');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -198,12 +202,12 @@ ALTER TABLE `uzytkownicy`
 -- AUTO_INCREMENT dla tabeli `badania`
 --
 ALTER TABLE `badania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT dla tabeli `budynki`
 --
 ALTER TABLE `budynki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT dla tabeli `ludzie`
 --
@@ -213,12 +217,12 @@ ALTER TABLE `ludzie`
 -- AUTO_INCREMENT dla tabeli `orkowie`
 --
 ALTER TABLE `orkowie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
