@@ -64,14 +64,23 @@
                 </div>
             <script type="text/javascript" src="info.js"></script>      <!-- skrypt obslugujacy guziczek -->
         </div>
-        <div class="col-md-2"><a href="logout.php">Wyloguj się!</a></div>
+        <div class="col-md-2">Notatki</div>
     </div>        
 </div>
 
         <div id="zasoby"> 
-            <div class="zasob" style="color:gold;">  <img src="Grafika/icon/gold.png"><?php echo "Złoto:".$_SESSION["zloto"]?></div> 
-            <div class="zasob" style="color:darkgoldenrod;"> <img src="Grafika/icon/wood.png"><?php echo "Drewno:".$_SESSION["drewno"]?> </div>
-            <div class="zasob" style="color:coral;"><img src="Grafika/icon/meat.png"><?php echo "Żywność:".$_SESSION['zywnosc']."/".$_SESSION["max_zywnosc"]?></div>
+            <div class="zasob"
+                 <?php if ($_SESSION['zloto'] < $_SESSION['magazyn_zlota']*5000) echo 'style="color:gold;"'; else echo 'style="color:red;"';?>>  
+                <img src="Grafika/icon/gold.png"><?php echo "Złoto:".floor($_SESSION["zloto"])?>
+            </div> 
+            <div class="zasob"
+                <?php if ($_SESSION['drewno'] < $_SESSION['magazyn_drewna']*5000) echo 'style="color:darkgoldenrod;"'; else echo 'style="color:red;"';?>> 
+                <img src="Grafika/icon/wood.png"><?php echo "Drewno:".floor($_SESSION["drewno"])?> 
+            </div>
+            <div class="zasob" 
+                 <?php if ($_SESSION['zywnosc'] < $_SESSION['max_zywnosc']) echo 'style="color:coral;"'; else echo 'style="color:red;"';?>>
+                <img src="Grafika/icon/meat.png"><?php echo "Żywność:".$_SESSION['zywnosc']."/".$_SESSION["max_zywnosc"]?>
+            </div>
         </div>
 
     
