@@ -27,22 +27,34 @@ function obliczZasoby(){
 	$timeOstatni = strtotime($timeOstatni);
 	$timeTeraz = strtotime(date('Y-m-d H:i:s'));
 	$roznicaSekundy = $timeTeraz - $timeOstatni;
-	
+	$drewno=0;
+    $zloto=0;
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
 	$mnoznik_drewno = ($roznicaSekundy/12)*$_SESSION['robotnicy_drewno'];
 	$mnoznik_zloto = ($roznicaSekundy/12)*$_SESSION['robotnicy_zloto'];
     $pojemnosc_zloto=$_SESSION['magazyn_zlota']*5000;
     $pojemnosc_drewno=$_SESSION['magazyn_drewna']*5000;
     $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
-	
-    if ($_SESSION['drewno'] < $pojemnosc_drewno) {
-    $sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik_drewno', zloto=zloto+'$mnoznik_zloto'where user = '$user'");
-		$_SESSION['drewno'] = $_SESSION['drewno']+ $mnoznik_drewno;
+	$wynik= $polaczenie->query("select * from uzytkownicy where user ='$user'");
+          while ( $rows = $wynik->fetch_assoc() ){
+              $drewno=$rows['drewno'];
+              $zloto=$rows['zloto'];
+          }
+    $nowe_drewno=$drewno+$mnoznik_drewno;
+    $nowe_zloto=$zloto+$mnoznik_zloto;
+    
+    if($nowe_drewno>$pojemnosc_drewno){
+        $nowe_drewno=$pojemnosc_drewno;
     }
-    if ($_SESSION['zloto'] < $pojemnosc_zloto) {
-    $sql = $polaczenie->query("update uzytkownicy set drewno=drewno+'$mnoznik_drewno', zloto=zloto+'$mnoznik_zloto'where user = '$user'");
-		$_SESSION['zloto'] =$_SESSION['zloto']+ $mnoznik_zloto;
+    if($nowe_zloto>$pojemnosc_zloto){
+        $nowe_zloto=$pojemnosc_zloto;
     }
+    
+    
+    $sql = $polaczenie->query("update uzytkownicy set drewno='$nowe_drewno', zloto='$nowe_zloto'where user = '$user'");
+		$_SESSION['drewno'] = $nowe_drewno;
+        $_SESSION['zloto']=$nowe_zloto;
+    
     
     
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
