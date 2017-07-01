@@ -17,7 +17,7 @@ function startImieniny() {
     ['0','0'],
     ['0','0'],
     ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','Ireneusza', 'Pawła', 'Lucyny'], // czerwiec
-    ['Haliny', 'Jagody', 'Tomasza', 'Malwiny', 'Atanazego', 'Odo', 'Dominika', 'Adriana', 'Weroniki', 'Olgi', 'Filipa', 'Paulina', 'Sary', 'Marcela', 'Dawida', 'Mariki', 'Bogdana', 'Emiliana', 'Radomiły', 'Hieronima', 'Daniela', 'Leny', 'Brygidy', 'Krystyny', 'Jakuba', 'Mirosławy', 'Natalii', 'Wiktora', 'Marty', 'Julity', 'Ignacego']
+    ['Haliny', 'Jagody', 'Tomasza', 'Malwiny', 'Atanazego', 'Odo', 'Dominika', 'Adriana', 'Weroniki', 'Olgi', 'Filipa', 'Paulina', 'Sary', 'Marcela', 'Dawida', 'Mariki', 'Bogdana', 'Emiliana', 'Radomiły', 'Hieronima', 'Daniela', 'Leny', 'Brygidy', 'Krystyny', 'Jakuba', 'Mirosławy', 'Natalii', 'Wiktora', 'Marty', 'Julity', 'Ignacego'],
     ['Justyna', 'Gustawa', 'Nikodema', 'Dominika', 'Oswalda', 'Sławy', 'Konrada', 'Emiliana', 'Ireny', 'Wawrzyńca', 'Zuzany', 'Lecha', 'Kasjany', 'Maksymiliana', 'Miriam'],
     ['0','0'],  // wrzesien
     ['0','0'],  // ..
