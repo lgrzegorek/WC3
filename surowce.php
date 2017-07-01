@@ -38,7 +38,7 @@
     <div class="gold_mine_2">
         <div class="chopeczki" style="display:inline-block">
             <br>
-          <?php echo "<img src=Grafika/".$_SESSION['rasa']."/jednostki/worker.png>  Pracownicy w tartaku:<div id='robotnicy_drewno' style='display:inline-block'></div>"?>
+          <?php echo "<img src=Grafika/".$_SESSION['rasa']."/jednostki/worker.png>  Pracownicy w tartaku: <div id='robotnicy_drewno' style='display:inline-block; margin-right: 55px;'></div>"?>
             <br>
             <img src="Grafika/icon/up.jpg" onclick="zamien('drewno','dodaj')">
             <img src="Grafika/icon/down.jpg" onclick="zamien('drewno','odejmij')">
