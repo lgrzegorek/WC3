@@ -6,13 +6,13 @@
 <div class="jednostka">
 
         <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
-            <b> Siepacz </b> <br><br>
+            <b> Siepacze </b> <br><br>
             <img src="Grafika/orkowie/jednostki/grunt.png">
             <div class="parametry">
                 Ilość: <?php echo $_SESSION['siepacze']?><br>
             </div>
         <?php else : ?>
-            <b> Miecznik </b> <br><br>
+            <b> Piechurzy </b> <br><br>
             <img src="Grafika/ludzie/jednostki/footman.png">
             <div class="parametry">
                 Ilość: <?php echo $_SESSION['miecznicy']?><br>
@@ -30,7 +30,7 @@
                 Ilość: <?php echo $_SESSION['katapulty']?><br>
             </div>
         <?php else : ?>
-            <b> Strzelec </b> <br><br>
+            <b> Strzelcy </b> <br><br>
             <img src="Grafika/ludzie/jednostki/sniper.png">
             <div class="parametry">
                 Ilość: <?php echo $_SESSION['strzelcy']?><br>

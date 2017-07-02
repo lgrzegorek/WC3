@@ -51,7 +51,7 @@
 
 
 <div class="potwierdz">
-    <input type="submit" value="zapisz" style="color:black";>
+    <input type="submit" value="zapisz" style="color:black"; onclick="wykonaj()">
 </div>
 
 <?php
@@ -74,6 +74,7 @@
                             zloto++;
                             document.getElementById("robotnicy_zloto").innerHTML=zloto;
                             document.getElementById("robotnicy").innerHTML=wszyscy;
+                            $.post('surowce.php', {variable: zloto});
                      }
                      else if (drewno>0){
                              drewno--;
@@ -114,7 +115,12 @@
                     document.getElementById("robotnicy").innerHTML=wszyscy;
                 }
             }
+       
         }
-             
+    function wykonaj(){
+          $.post('wykonaj.php',{postzloto:zloto,postdrewno:drewno,postwszyscy:wszyscy},function(){});
+        location.reload();
+  
+    }
     
     </script>

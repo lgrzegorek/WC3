@@ -16,9 +16,9 @@ function obliczZasoby(){
 	while($ostLog = mysql_fetch_array($wynik))         
 		$timeOstatni= $ostLog['ostatnieLogowanie'];
 
-
-	
+    $rasa=$_SESSION['rasa'];
 	$dataczas = new DateTime();
+    $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 	
 	/*$ostatnie = DateTime::createFromFormat('Y-m-d H:i:s', $_SESSION['ostatnieLogowanie']);
 	$roznica = $dataczas->diff($ostatnie);
@@ -30,11 +30,11 @@ function obliczZasoby(){
 	$drewno=0;
     $zloto=0;
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
+    
 	$mnoznik_drewno = ($roznicaSekundy/12)*$_SESSION['robotnicy_drewno'];
 	$mnoznik_zloto = ($roznicaSekundy/12)*$_SESSION['robotnicy_zloto'];
     $pojemnosc_zloto=$_SESSION['magazyn_zlota']*5000;
     $pojemnosc_drewno=$_SESSION['magazyn_drewna']*5000;
-    $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 	$wynik= $polaczenie->query("select * from uzytkownicy where user ='$user'");
           while ( $rows = $wynik->fetch_assoc() ){
               $drewno=$rows['drewno'];
@@ -49,8 +49,13 @@ function obliczZasoby(){
     if($nowe_zloto>$pojemnosc_zloto){
         $nowe_zloto=$pojemnosc_zloto;
     }
-    
-    
+   
+    $chopki=$polaczenie->query("select * from $rasa where nick='$user'");
+          while ( $chopeczki = $chopki->fetch_assoc() ){         
+                $_SESSION['robotnicy_zloto']= $chopeczki['robotnicyZloto'];
+                $_SESSION['robotnicy_drewno']= $chopeczki['robotnicyDrewno'];
+                $_SESSION['robotnicy']= $chopeczki['robotnicy'];
+        }
     $sql = $polaczenie->query("update uzytkownicy set drewno='$nowe_drewno', zloto='$nowe_zloto'where user = '$user'");
 		$_SESSION['drewno'] = $nowe_drewno;
         $_SESSION['zloto']=$nowe_zloto;

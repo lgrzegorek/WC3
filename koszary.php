@@ -7,7 +7,7 @@
         <b> Siepacz </b> <br>
         <img src="Grafika/orkowie/jednostki/grunt.png">
     <?php else : ?>
-        <b> Miecznik </b> <br>
+        <b> Piechur </b> <br>
         <img src="Grafika/ludzie/jednostki/footman.png">
     <?php endif; ?>
     <div class="parametry">
@@ -63,7 +63,7 @@
 
 <div class="jednostka">
     <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
-        <b> Jeźdźcy Wilków </b> <br>
+        <b> Jeździec Wilka </b> <br>
         <img src="Grafika/orkowie/jednostki/rider.png">
     <?php else : ?>
         <b> Rycerz </b> <br>
@@ -91,7 +91,7 @@
 </div>
 <div class="jednostka">
     <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
-        <b> Katapulty </b> <br>
+        <b> Katapulta </b> <br>
         <img src="Grafika/orkowie/jednostki/kodo.png">
     <?php else : ?>
         <b> Kanonierzy </b> <br>
@@ -120,10 +120,10 @@
 
 <div class="jednostka">
     <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
-        <b> Doktorzy Voodoo </b> <br>
+        <b> Doktor Voodoo </b> <br>
         <img src="Grafika/orkowie/jednostki/vodo.png">
     <?php else : ?>
-        <b> Czarodziejki </b><br>
+        <b> Czarodziejka </b><br>
         <img src="Grafika/ludzie/jednostki/wizard.png">
     <?php endif; ?>
     <div class="parametry">
@@ -149,10 +149,10 @@
 
 <div class="jednostka">
     <?php if ($_SESSION['rasa'] == 'Orkowie') : ?>
-        <b> Szamani </b> <br>
+        <b> Szaman </b> <br>
         <img src="Grafika/orkowie/jednostki/shaman.png">
     <?php else : ?>
-        <b> Kapłani </b> <br>
+        <b> Kapłan </b> <br>
         <img src="Grafika/ludzie/jednostki/priest.png">
     <?php endif; ?>
     <div class="parametry">

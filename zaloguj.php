@@ -41,6 +41,7 @@
 					$_SESSION['zloto'] = $wiersz['zloto'];
 					$_SESSION['email'] = $wiersz['email'];
 					$_SESSION['rasa'] = $wiersz['rasa'];
+                    $_SESSION['wspolrzedna'] = $wiersz['wspolrzedna'];
 					//$_SESSION['dnipremium'] = $wiersz['dnipremium'];
 				$rezultat2 = $polaczenie->query("select * from budynki where nick='$login'");
                 if($rezultat2){ 

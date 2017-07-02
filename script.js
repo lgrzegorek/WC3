@@ -1,9 +1,12 @@
+
+
 window.onload=start;
 
 function start(){
   startTime();
   startData();
   startImieniny();
+  wypisz();
 }
 
 function startImieniny() {
@@ -91,4 +94,3 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
-

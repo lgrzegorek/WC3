@@ -456,15 +456,12 @@ span.psw {
 .lumber_mill >h1{
     color:darkgoldenrod;
 }
-.gold_mine{
-    align-items: flex-start;
-}
 .gold_mine_2 img{
     width:auto;
     height: auto;
 }
 .chopki{
-    text-align: left;
+    text-align: center;
 }
 .rekrutuj{
     display: inline-block;
