@@ -38,7 +38,7 @@
             Ratusz
         </div>
         <div class="level">
-            <b><?php echo $_SESSION['castle_lvl'] ?></b>
+            <b><div id="lvl_0"></div></b>
         </div>
    
     <div class="zakladka_img">
@@ -51,12 +51,12 @@
     <div class="opis">
         Ratusz pozwala na rekrutację robotników.
     </div>
-  <div class="wymagania"><?php oblicz($_SESSION['castle_lvl'],'castle',true)?></div>
+  <div class="wymagania"><div id="wymagania_0"></div></div>
     <input type="text" style="width: 30px;">
     <div class="ulepsz" id="upRatusz">
-      <?php wypisz($_SESSION['castle_lvl'],'castle')?>
+      <div id="ulepsz_0"></div>
     </div>
-    <div class="czas"><?php czas($_SESSION['castle_lvl'],'castle') ?></div>
+    <div class="czas"><div id="czas_0"></div></div>
 </div>
 <div class="zakladka">
      
@@ -64,7 +64,7 @@
             Koszary
         </div>
         <div class="level">
-             <b><?php echo $_SESSION['barrack_lvl'] ?></b>
+              <b><div id="lvl_1"></div></b>
         </div>
     
    
@@ -78,12 +78,12 @@
     <div class="opis">
         Koszary umożliwiają rekrutację jednostek, wraz ze wzrostem poziomu rekrutacja przebiega szybciej, a także daje możliwość rekrutacji kolejnych jednostek.
     </div>
-    <div class="wymagania"><?php oblicz($_SESSION['barrack_lvl'],'barrack',true)?></div>
+    <div class="wymagania"><div id="wymagania_1"></div></div>
     <input type="text" style="width: 30px;">
     <div class="ulepsz">
-          <?php wypisz($_SESSION['barrack_lvl'],'barrack')?>
+         <div id="ulepsz_1"></div>
     </div>
-      <div class="czas"><?php czas($_SESSION['barrack_lvl'],'barrack') ?></div>
+      <div class="czas"><div id="czas_1"></div></div>
 </div>
 <div class="zakladka">
    
@@ -91,7 +91,7 @@
             Ołtarz 
         </div>
         <div class="level">
-            <b><?php echo $_SESSION['altar_lvl'] ?></b>
+            <b><div id="lvl_2"></div></b>
         </div>
     
    
@@ -105,12 +105,12 @@
     <div class="opis">
         Ratusz pozwala na przywołanie, a także wskrzeszenie bohaterów. Co 10 poziomów możliwe jest przywołanie kolejnego bohatera.
     </div>
-    <div class="wymagania"><?php oblicz($_SESSION['altar_lvl'],'altar',true)?></div>
+    <div class="wymagania"><div id="wymagania_2"></div></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
-        <?php wypisz($_SESSION['altar_lvl'],'altar')?>
+        <div id="ulepsz_2"></div>
     </div>
-     <div class="czas"><?php czas($_SESSION['altar_lvl'],'altar') ?></div>
+     <div class="czas"><div id="czas_2"></div></div>
 </div>
 <div class="zakladka">
     
@@ -118,7 +118,7 @@
             Kuźnia
         </div>
         <div class="level">
-         <b><?php echo $_SESSION['forge_lvl'] ?></b>
+         <b><div id="lvl_3"></div></b>
         </div>
   
    
@@ -128,12 +128,12 @@
     <div class="opis">
         Kuźnia pozwala na dokonywanie badań w zakresie ulepszeń jednostek, wyższe poziomy kuźni odblokowują wyższe poziomy ulepszeń.
     </div>
-     <div class="wymagania"><?php oblicz($_SESSION['forge_lvl'],'forge',true)?></div>
+     <div class="wymagania"><div id="wymagania_3"></div></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
-         <?php wypisz($_SESSION['forge_lvl'],'forge')?>
+         <div id="ulepsz_3"></div>
     </div>
-    <div class="czas"><?php czas($_SESSION['forge_lvl'],'forge') ?></div>
+    <div class="czas"><div id="czas_3"></div></div>
 </div>
 <div class="zakladka">
     
@@ -141,7 +141,7 @@
             Farma
         </div>
         <div class="level">
-            <b><?php echo $_SESSION['house_lvl'] ?></b>
+            <b><div id="lvl_4"></div></b>
         
     </div>
    
@@ -155,19 +155,19 @@
     <div class="opis">
         Farmy wytwarzają żywność, która jest potrzebna do utrzymania jednostek. Każda farma dostarcza 10 jednostek pożywienia.
     </div>
-     <div class="wymagania"><?php oblicz($_SESSION['house_lvl'],'house',true)?></div>
+     <div class="wymagania"><div id="wymagania_4"></div></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
-         <?php wypisz($_SESSION['house_lvl'],'house')?>
+         <div id="ulepsz_4"></div>
     </div>
-     <div class="czas"><?php czas($_SESSION['house_lvl'],'house') ?></div>
+     <div class="czas"><div id="czas_4"></div></div>
 </div>
 <div class="zakladka">
     <div class="nazwa">
         Magazyn złota
     </div>
     <div class="level">
-        <b><?php echo $_SESSION['magazyn_zlota'] ?></b>
+         <b><div id="lvl_5"></div></b>
     </div>
     <div class="zakladka_img">
         <img src="Grafika/ludzie/budowle/magazyn_zlota.jpg">
@@ -176,14 +176,14 @@
         W magazynie złota przechowywane jest złoto. Im wyższy poziom magazynu tym więcej złota można posiadać.
     </div>
     <div class="wymagania">
-        <?php oblicz($_SESSION['magazyn_zlota'],'magazyn_z',true)?>
+        <div id="wymagania_5"></div>
     </div>
     <input type="text" style="width: 30px;">
     <div class="ulepsz">
-         <?php wypisz($_SESSION['magazyn_zlota'],'magazyn_z')?>
+         <div id="ulepsz_5"></div>
     </div>
     <div class="czas">
-        <?php czas($_SESSION['magazyn_zlota'],'magazyn_z') ?>
+        <div id="czas_5"></div>
     </div>
 </div>
 
@@ -193,7 +193,7 @@
             Magazyn drewna
         </div>
         <div class="level">
-            <b><?php echo $_SESSION['magazyn_drewna'] ?></b>
+             <b><div id="lvl_6"></div></b>
         
     </div>
    
@@ -203,13 +203,63 @@
     <div class="opis">
         W magazynie drewna przechowywane jest drewno. Im wyższy poziom magazynu tym więcej drewna można posiadać.
     </div>
-     <div class="wymagania"><?php oblicz($_SESSION['magazyn_drewna'],'magazyn_d',true)?></div>
+     <div class="wymagania"><div id="wymagania_6"></div></div>
      <input type="text" style="width: 30px;">
     <div class="ulepsz">
-         <?php wypisz($_SESSION['magazyn_drewna'],'magazyn_d')?>
+         <div id="ulepsz_6"></div>
     </div>
-     <div class="czas"><?php czas($_SESSION['magazyn_drewna'],'magazyn_d') ?></div>
+     <div class="czas"><div id="czas_6"></div></div>
 </div>
 <?php
 	include ('stopka.php');
 ?>
+
+<script>
+var lvle=[<?php echo json_encode($_SESSION['castle_lvl']); ?>,<?php echo json_encode($_SESSION['barrack_lvl']); ?>,<?php echo json_encode($_SESSION['altar_lvl']); ?>,<?php echo json_encode($_SESSION['forge_lvl']); ?>,<?php echo json_encode($_SESSION['house_lvl']); ?>,<?php echo json_encode($_SESSION['zloto_lvl']); ?>,<?php echo json_encode($_SESSION['drewno_lvl']); ?>];
+var zasoby=[<?php echo json_encode($_SESSION['zloto']); ?>,<?php echo json_encode($_SESSION['drewno']); ?>];
+var zloto_arr1=[500,300,300,300,250,200,200];    
+var drewno_arr1=[500,350,150,300,300,400,400];
+var czas_arr1=[30,25,20,25,20,15,15,15];    
+var zloto_arr=[0,0,0,0,0,0,0];
+var drewno_arr=[0,0,0,0,0,0,0];
+var czas_arr=[0,0,0,0,0,0,0];
+    
+    for (i=0; i<7; i++){
+        document.getElementById('lvl_'+i).innerHTML=lvle[i];
+        if (lvle[i]!=0){
+        power=Math.pow(1.5,lvle[i]);
+        zloto_arr[i]=Math.round(zloto_arr1[i]*power);
+        drewno_arr[i]=Math.round(drewno_arr1[i]*power);
+        czas_arr[i]=Math.round(czas_arr1[i]*power);
+            
+        }
+        else {
+            zloto_arr[i]=zloto_arr1[i];
+            drewno_arr[i]=drewno_arr1[i];
+            czas_arr[i]=czas_arr1[i];
+        }
+        document.getElementById('wymagania_'+i).innerHTML="<img src='Grafika/icon/gold.png' style='width:20px; height:20px;' > "+zloto_arr[i]+"<br> <img src='Grafika/icon/wood.png' style='width:20px; height:20px;'> "+drewno_arr[i];  
+        if (Math.floor(czas_arr[i]/60)==0){
+            document.getElementById('czas_'+i).innerHTML=czas_arr[i]%60+"min.";
+        }
+        else if(czas_arr[i]%60==0){
+             document.getElementById('czas_'+i).innerHTML=floor(czas_arr[i]/60)+"godz.";
+        }
+        else{
+             document.getElementById('czas_'+i).innerHTML=czas_arr[i]+"godz.<br>"+czas_arr[i]%60+"min.";
+        }
+        if(zasoby[0]>zloto_arr[i]&&zasoby[1]>drewno_arr[i]){
+            document.getElementById('ulepsz_'+i).innerHTML="<button type='button' class='btn btn-success' onclick='buduj("+i+")'>Ulepsz</button>";
+        }
+        else{
+             document.getElementById('ulepsz_'+i).innerHTML='<button type="button" class="btn btn-danger">Brak zasobów</button>';
+        }
+    }
+   
+    function buduj(bud){
+        $.post('buduj.php',{post_zloto:zloto_arr[bud],post_drewno:drewno_arr[bud],post_lvl:lvle[bud],budynek:bud},function(data){ alert( "Data Loaded: " + data );});
+        location.reload();
+    }
+
+
+</script>

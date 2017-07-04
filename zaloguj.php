@@ -51,10 +51,9 @@
                         $_SESSION['house_lvl']=$rows['house'];
                         $_SESSION['forge_lvl']=$rows['forge'];
                         $_SESSION['barrack_lvl']=$rows['barrack'];
-                        $_SESSION['forge_lvl']=$rows['forge'];
                         $_SESSION['max_zywnosc'] = $rows['house']*10;
-                        $_SESSION['magazyn_zlota']= $rows['magazynZlota'];
-                        $_SESSION['magazyn_drewna']= $rows['magazynDrewna'];
+                        $_SESSION['zloto_lvl']= $rows['magazynZlota'];
+                        $_SESSION['drewno_lvl']= $rows['magazynDrewna'];
                     }
                        $rezultat2->free_result();
 					

@@ -30,11 +30,13 @@ function obliczZasoby(){
 	$drewno=0;
     $zloto=0;
 	//Mnoznik do zmiany w zaleznosci od technologii i robotnikow
-    
-	$mnoznik_drewno = ($roznicaSekundy/12)*$_SESSION['robotnicy_drewno'];
-	$mnoznik_zloto = ($roznicaSekundy/12)*$_SESSION['robotnicy_zloto'];
-    $pojemnosc_zloto=$_SESSION['magazyn_zlota']*5000;
-    $pojemnosc_drewno=$_SESSION['magazyn_drewna']*5000;
+        $techD=1+($_SESSION['t_drewna']/10);
+        $techZ=1+($_SESSION['t_wydobycia']/10);
+        
+	$mnoznik_drewno = ($roznicaSekundy/60)*$_SESSION['robotnicy_drewno']*$techD;
+	$mnoznik_zloto = ($roznicaSekundy/60)*$_SESSION['robotnicy_zloto']*$techZ;
+    $pojemnosc_zloto=$_SESSION['zloto_lvl']*5000;
+    $pojemnosc_drewno=$_SESSION['drewno_lvl']*5000;
 	$wynik= $polaczenie->query("select * from uzytkownicy where user ='$user'");
           while ( $rows = $wynik->fetch_assoc() ){
               $drewno=$rows['drewno'];

@@ -1,6 +1,7 @@
 <?php
 	include ('menu2.php');		
 ?>
+
 <h1> Zasoby </h1>
 
         
@@ -26,7 +27,7 @@
         <br>
 
       <img src="Grafika/icon/mining_level.png" style="width:100px; height:100px;"> Technologia wydobycia złota: <?php echo $_SESSION['t_wydobycia']; ?> <br>
-        Aktualne wydobycie [złoto/min]:
+        Aktualne wydobycie [złoto/min]:<div id="wydobycie_zloto"></div>
     </div> 
     
 </div>
@@ -44,7 +45,7 @@
             <img src="Grafika/icon/down.jpg" onclick="zamien('drewno','odejmij')">
         </div>
         <img src="Grafika/icon/lumber_level.png" style="width:100px; height:100px;"> Technologia pozyskiwania drewna: <?php echo $_SESSION['t_drewna']; ?> <br>
-        Aktualne pozyskiwanie [drewno/min]:
+        Aktualne pozyskiwanie [drewno/min]:<div id="wydobycie_drewno"></div>
     </div>
     
 </div>
@@ -62,9 +63,15 @@
             var wszyscy = <?php echo json_encode($_SESSION['robotnicy']); ?>;
             var zloto = <?php echo json_encode($_SESSION['robotnicy_zloto']); ?>;
             var drewno = <?php echo json_encode($_SESSION['robotnicy_drewno']); ?>;
+            var tdrewna = <?php echo json_encode($_SESSION['t_drewna']); ?>;
+            var tzlota = <?php echo json_encode($_SESSION['t_wydobycia']); ?>;
             document.getElementById('robotnicy').innerHTML=wszyscy; 
             document.getElementById('robotnicy_zloto').innerHTML=zloto;
             document.getElementById('robotnicy_drewno').innerHTML=drewno;
+        var wydobycie_d= (1+(tdrewna/10))*drewno*60;
+        var wydobycie_z= (1+(tzlota/10))*zloto*60;
+        document.getElementById("wydobycie_drewno").innerHTML=Math.floor(wydobycie_d);
+        document.getElementById("wydobycie_zloto").innerHTML=Math.floor(wydobycie_z);
         
         function zamien(surowiec, akcja){
             if (akcja=='dodaj'){
@@ -122,5 +129,6 @@
         location.reload();
   
     }
+   
     
     </script>

@@ -54,14 +54,14 @@
                 <div id="id01" class="modal">
                     <form class="modal-content animate" action="zaloguj.php" method="post">
                         <div class="container">
-                            <label><b>Username</b></label><br>
+                            <label><b>Użytkownik</b></label><br>
                             <input type="text" placeholder="Login" name="login" required><br>
-                            <label><b>Password</b></label><br>
+                            <label><b>Hasło</b></label><br>
                             <input type="password" placeholder="Hasło" name="haslo" required><br>
-                            <input type="checkbox" checked="checked"> Remember me <br>
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'"   class="cancelbtn">Cancel</button>
+                            <input type="checkbox" checked="checked">Zapamiętaj logowanie<br>
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"   class="cancelbtn">Anuluj</button>
                             <input type="submit" class="login2" value="Login"><br>
-                            <span class="psw"><a href="#">Forgot password?</a></span>
+                            
                         </div>
                     </form>
                 </div>

@@ -7,6 +7,7 @@ function start(){
   startData();
   startImieniny();
   wypisz();
+  
 }
 
 function startImieniny() {

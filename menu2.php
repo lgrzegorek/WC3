@@ -22,7 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.maphilight.min.js"></script>
-
+    <title>WC3- Gra przeglądarkowa</title>
 </head>
 <body background = "Grafika/tlo.jpg">
 <?php obliczZasoby() ?>
@@ -72,11 +72,11 @@
 
         <div id="zasoby"> 
             <div class="zasob"
-                 <?php if ($_SESSION['zloto'] < $_SESSION['magazyn_zlota']*5000) echo 'style="color:gold;"'; else echo 'style="color:red;"';?>>  
+                 <?php if ($_SESSION['zloto'] < $_SESSION['zloto_lvl']*5000) echo 'style="color:gold;"'; else echo 'style="color:red;"';?>>  
                 <img src="Grafika/icon/gold.png"><?php echo "Złoto:".floor($_SESSION["zloto"])?>
             </div> 
             <div class="zasob"
-                <?php if ($_SESSION['drewno'] < $_SESSION['magazyn_drewna']*5000) echo 'style="color:darkgoldenrod;"'; else echo 'style="color:red;"';?>> 
+                <?php if ($_SESSION['drewno'] < $_SESSION['drewno_lvl']*5000) echo 'style="color:darkgoldenrod;"'; else echo 'style="color:red;"';?>> 
                 <img src="Grafika/icon/wood.png"><?php echo "Drewno:".floor($_SESSION["drewno"])?> 
             </div>
             <div class="zasob" 
