@@ -30,7 +30,7 @@
             Technologia drewna
         </div>
         <div class="level">
-            <?php echo $_SESSION['t_drewna'] ?>
+            <div id='lvl0'></div>
         </div>
    
     <div class="zakladka_img">
@@ -39,11 +39,11 @@
     <div class="opis">
         Technologia drewna pozwala bardziej efektywnie zdobywać drewno.
     </div>
-  <div class="wymagania"><?php oblicz($_SESSION['t_drewna'],'badania',true)?></div>
+  <div class="wymagania"><div id='wymagania0'></div></div>
     <div class="ulepsz">
-        <?php wypisz($_SESSION['t_drewna'],'badania')?>
+       <div id='ulepsz0'></div>
     </div>
-   <div class="czas"><?php czas($_SESSION['t_drewna'],'badania') ?></div>
+    <div class="czas"><div id='czas0'></div></div>
 </div>
 
 <div class="zakladka">
@@ -52,7 +52,7 @@
             Technologia wydobycia
         </div>
         <div class="level">
-           <?php echo $_SESSION['t_wydobycia'] ?>
+           <div id='lvl1'></div>
         </div>
   
    
@@ -62,11 +62,11 @@
     <div class="opis">
         Technologia wydobycia pozwala bardziej efektywnie wydobywać złoto.
     </div>
-  <div class="wymagania"><?php oblicz($_SESSION['t_wydobycia'],'badania',true)?></div>
+  <div class="wymagania"><div id='wymagania1'></div></div>
     <div class="ulepsz">
-         <?php wypisz($_SESSION['t_wydobycia'],'badania')?>
+          <div id='ulepsz1'></div>
     </div>
-    <div class="czas"><?php czas($_SESSION['t_wydobycia'],'badania') ?></div>
+    <div class="czas"><div id='czas1'></div></div>
 </div>
 
 <div class="zakladka">
@@ -75,7 +75,7 @@
             Technologia uzbrojenia
         </div>
         <div class="level">
-            <?php echo $_SESSION['t_uzbrojenia'] ?>
+            <div id='lvl2'></div>
         </div>
     
    
@@ -89,11 +89,11 @@
     <div class="opis">
         Technologia uzbrojenia zwiększa atak jednostek walczących wręcz.
     </div>
-   <div class="wymagania"><?php oblicz($_SESSION['t_uzbrojenia'],'badania',true)?></div>
+   <div class="wymagania"><div id='wymagania2'></div></div>
     <div class="ulepsz">
-         <?php wypisz($_SESSION['t_uzbrojenia'],'badania')?>
+        <div id='ulepsz2'></div>
     </div>
-    <div class="czas"><?php czas($_SESSION['t_uzbrojenia'],'badania') ?></div>
+    <div class="czas"><div id='czas2'></div></div>
 </div>
 
 <div class="zakladka">
@@ -102,7 +102,7 @@
             Technologia broni palnej
         </div>
         <div class="level">
-           <?php echo $_SESSION['t_bronipalnej'] ?>
+           <div id='lvl3'></div>
         </div>
    
    
@@ -116,11 +116,11 @@
     <div class="opis">
         Technologia broni palnej zwiększa atak jednostek walczących na dystans.
     </div>
-   <div class="wymagania"><?php oblicz($_SESSION['t_bronipalnej'],'badania',true)?></div>
+   <div class="wymagania"><div id='wymagania3'></div></div>
     <div class="ulepsz">
-         <?php wypisz($_SESSION['t_bronipalnej'],'badania')?>
+          <div id='ulepsz3'></div>
     </div>
-     <div class="czas"><?php czas($_SESSION['t_bronipalnej'],'badania') ?></div>
+    <div class="czas"><div id='czas3'></div></div>
 </div>
 
 <div class="zakladka">
@@ -129,7 +129,7 @@
             Technologia opancerzenia
         </div>
         <div class="level">
-            <?php echo $_SESSION['t_opancerzenia'] ?>
+            <div id='lvl4'></div>
         </div>
     
    
@@ -143,11 +143,11 @@
     <div class="opis">
         Technologia opancerzenia zwięsza pancerz lekko uzbrojonych jednostek.
     </div>
-   <div class="wymagania"><?php oblicz($_SESSION['t_opancerzenia'],'badania',true)?></div>
+   <div class="wymagania"><div id='wymagania4'></div></div>
     <div class="ulepsz">
-         <?php wypisz($_SESSION['t_opancerzenia'],'badania')?>
+         <div id='ulepsz4'></div>
     </div>
-     <div class="czas"><?php czas($_SESSION['t_opancerzenia1'],'badania') ?></div>
+    <div class="czas"><div id='czas4'></div></div>
 </div>
 
 
@@ -157,7 +157,7 @@
             Technologia opancerzenia 2.
         </div>
         <div class="level">
-           <?php echo $_SESSION['t_opancerzenia1'] ?>
+           <div id='lvl5'></div>
         </div>
     
    
@@ -171,11 +171,11 @@
     <div class="opis">
         Technologia opancerzenia zwięsza pancerz cięzko uzbrojonych jednostek.
     </div>
-   <div class="wymagania"><?php oblicz($_SESSION['t_opancerzenia1'],'badania',true)?></div>
+   <div class="wymagania"><div id='wymagania5'></div></div>
     <div class="ulepsz">
-        <?php wypisz($_SESSION['t_opancerzenia1'],'badania')?>
+         <div id='ulepsz5'></div>
     </div>
-    <div class="czas"><?php czas($_SESSION['t_opancerzenia1'],'badania') ?></div>
+    <div class="czas"><div id='czas5'></div></div>
 </div>
 
 <div class="zakladka">
@@ -184,7 +184,7 @@
             Technologia budownictwa
         </div>
         <div class="level">
-            <?php echo $_SESSION['t_budownictwa'] ?>
+            <div id='lvl6'></div>
         </div>
     
    
@@ -198,12 +198,44 @@
     <div class="opis">
         Technologia budownictwa pozwala na szybsze budowanie budynków.
     </div>
-   <div class="wymagania"><?php oblicz($_SESSION['t_budownictwa'],'badania',true)?></div>
+   <div class="wymagania"><div id='wymagania6'></div></div>
     <div class="ulepsz">
-         <?php wypisz($_SESSION['t_budownictwa'],'badania')?>
+         <div id='ulepsz6'></div>
     </div>
-    <div class="czas"><?php czas($_SESSION['t_budownictwa'],'badania') ?></div>
+    <div class="czas"><div id='czas6'></div></div>
 </div>
 <?php
 	include ('stopka.php');
 ?>
+<script>
+    var levele=[<?php echo json_encode($_SESSION['t_drewna']); ?>,<?php echo json_encode($_SESSION['t_wydobycia']); ?>,<?php echo json_encode($_SESSION['t_uzbrojenia']); ?>,<?php echo json_encode($_SESSION['t_bronipalnej']); ?>,<?php echo json_encode($_SESSION['t_opancerzenia']); ?>,<?php echo json_encode($_SESSION['t_opancerzenia1']); ?>,<?php echo json_encode($_SESSION['t_budownictwa']); ?>];
+    var surowce=[<?php echo json_encode($_SESSION['zloto']); ?>,<?php echo json_encode($_SESSION['drewno']); ?>];
+    for (var i=0; i<7; i++){
+        document.getElementById('lvl'+i).innerHTML=levele[i];
+        power=Math.pow(1.5,levele[i]);
+        czas=Math.round(power*30);
+        zasoby=Math.round(400*power);
+        document.getElementById('wymagania'+i).innerHTML="<img src='Grafika/icon/gold.png' style='width:20px; height:20px;' >"+zasoby+"<br> <img src='Grafika/icon/wood.png' style='width:20px; height:20px;'>"+zasoby;
+        if (surowce[0]>=zasoby && surowce[1]>=zasoby){
+           document.getElementById('ulepsz'+i).innerHTML="<button type='button' class='btn btn-success' onclick='badaj("+i+")'>Badaj</button>";
+        }
+        else{
+             document.getElementById('ulepsz'+i).innerHTML='<button type="button" class="btn btn-danger">Brak zasobów</button>';
+        }
+        if (Math.floor(czas/60)==0){
+            document.getElementById('czas'+i).innerHTML=czas%60+"min.";
+        }
+        else if(czas%60==0){
+             document.getElementById('czas'+i).innerHTML=floor(czas/60)+"godz.";
+        }
+        else{
+             document.getElementById('czas'+i).innerHTML=Math.floor(czas/60)+"godz.<br>"+czas%60+"min.";
+        }
+    }
+    function badaj(num){
+        $.post('badaj.php',{post_lvl:levele[num],badanie:num},function(){});
+        location.reload();
+    }
+
+
+</script>
