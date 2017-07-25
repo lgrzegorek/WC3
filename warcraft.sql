@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 29 Cze 2017, 17:43
+-- Czas generowania: 25 Lip 2017, 23:35
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 5.6.30
 
@@ -29,53 +29,29 @@ SET time_zone = "+00:00";
 CREATE TABLE `badania` (
   `nick` text NOT NULL,
   `id` int(11) NOT NULL,
-  `Tdrewna` int(11) NOT NULL,
-  `Twydobycia` int(11) NOT NULL,
-  `Tuzbrojenia` int(11) NOT NULL,
-  `TbroniPalnej` int(11) NOT NULL,
-  `Topancerzenia` int(11) NOT NULL,
-  `Topancerzenia1` int(11) NOT NULL,
-  `Tbudownictwa` int(11) NOT NULL
+  `t_drewna` int(11) NOT NULL,
+  `t_wydobycia` int(11) NOT NULL,
+  `t_uzbrojenia` int(11) NOT NULL,
+  `t_broniPalnej` int(11) NOT NULL,
+  `t_opancerzenia` int(11) NOT NULL,
+  `t_opancerzenia1` int(11) NOT NULL,
+  `t_budownictwa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `badania`
 --
 
-INSERT INTO `badania` (`nick`, `id`, `Tdrewna`, `Twydobycia`, `Tuzbrojenia`, `TbroniPalnej`, `Topancerzenia`, `Topancerzenia1`, `Tbudownictwa`) VALUES
-('bartek', 6, 3, 0, 2, 0, 0, 0, 0),
-('daniel', 7, 0, 0, 0, 0, 0, 0, 0),
-('qwerty', 8, 0, 0, 0, 0, 0, 0, 0),
-('wewewe', 9, 0, 0, 0, 0, 0, 0, 0),
-('uyuy', 10, 0, 0, 0, 0, 0, 0, 0),
-('popopo', 11, 0, 0, 0, 0, 0, 0, 0),
-('tgtgtg', 12, 0, 0, 0, 0, 0, 0, 0),
-('ijijij', 13, 0, 0, 0, 0, 0, 0, 0),
-('hbhb', 14, 0, 0, 0, 0, 0, 0, 0),
-('kjkjkj', 15, 0, 0, 0, 0, 0, 0, 0),
-('sjgf', 16, 0, 0, 0, 0, 0, 0, 0),
-('ajsdgkj', 17, 0, 0, 0, 0, 0, 0, 0),
-('lkagsljgf', 18, 0, 0, 0, 0, 0, 0, 0),
-('jsfdgkg', 19, 0, 0, 0, 0, 0, 0, 0),
-('asdasd', 20, 0, 0, 0, 0, 0, 0, 0),
-('asfasdf', 21, 0, 0, 0, 0, 0, 0, 0),
-('sdfgjh', 22, 0, 0, 0, 0, 0, 0, 0),
-('zxcxz', 23, 0, 0, 0, 0, 0, 0, 0),
-('vcbx', 24, 0, 0, 0, 0, 0, 0, 0),
-('cxbcv', 25, 0, 0, 0, 0, 0, 0, 0),
-('wefds', 26, 0, 0, 0, 0, 0, 0, 0),
-('asxcvz', 27, 0, 0, 0, 0, 0, 0, 0),
-('msaasdhkn', 28, 0, 0, 0, 0, 0, 0, 0),
-('asdaszxc', 29, 0, 0, 0, 0, 0, 0, 0),
-('dsdsd', 30, 0, 0, 0, 0, 0, 0, 0),
-('owyqdhn', 31, 0, 0, 0, 0, 0, 0, 0),
-('safvzxcx', 32, 0, 0, 0, 0, 0, 0, 0),
-('zcxhulwqke', 33, 0, 0, 0, 0, 0, 0, 0),
-('aqwerqwerweq', 34, 0, 0, 0, 0, 0, 0, 0),
-('zxzcvafasfds', 35, 0, 0, 0, 0, 0, 0, 0),
-('asdasd', 36, 0, 0, 0, 0, 0, 0, 0),
-('zxczxczxc', 37, 0, 0, 0, 0, 0, 0, 0),
-('cxzcxzcxz', 38, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `badania` (`nick`, `id`, `t_drewna`, `t_wydobycia`, `t_uzbrojenia`, `t_broniPalnej`, `t_opancerzenia`, `t_opancerzenia1`, `t_budownictwa`) VALUES
+('luis', 61, 0, 0, 0, 0, 0, 0, 0),
+('kupa', 62, 0, 0, 0, 0, 0, 0, 0),
+('daniel', 63, 0, 0, 0, 0, 0, 0, 0),
+('arek', 64, 0, 0, 0, 0, 0, 0, 0),
+('mama', 65, 2, 1, 1, 0, 1, 1, 0),
+('kupka', 66, 0, 0, 0, 0, 0, 0, 0),
+('bareek', 67, 0, 0, 0, 0, 0, 0, 0),
+('bartek', 68, 1, 0, 0, 0, 0, 0, 0),
+('adam', 69, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -101,39 +77,48 @@ CREATE TABLE `budynki` (
 --
 
 INSERT INTO `budynki` (`nick`, `id`, `rasa`, `altar`, `barrack`, `castle`, `forge`, `house`, `magazynZlota`, `magazynDrewna`) VALUES
-('bartek', 24, 'Ludzie', 0, 0, 1, 0, 1, 1, 1),
-('daniel', 25, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('qwerty', 26, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('wewewe', 27, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('uyuy', 28, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('popopo', 29, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('tgtgtg', 30, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('ijijij', 31, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('hbhb', 32, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('kjkjkj', 33, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('sjgf', 34, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('ajsdgkj', 35, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('lkagsljgf', 36, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('jsfdgkg', 37, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('asdasd', 38, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('asfasdf', 39, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('sdfgjh', 40, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('zxcxz', 41, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('vcbx', 42, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('cxbcv', 43, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('wefds', 44, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('asxcvz', 45, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('msaasdhkn', 46, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('asdaszxc', 47, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('dsdsd', 48, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('owyqdhn', 49, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('safvzxcx', 50, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('zcxhulwqke', 51, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('aqwerqwerweq', 52, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('zxzcvafasfds', 53, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('asdasd', 54, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('zxczxczxc', 55, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('cxzcxzcxz', 56, 'Ludzie', 0, 0, 1, 0, 1, 1, 1);
+('luis', 79, 'Orkowie', 0, 0, 2, 0, 1, 1, 1),
+('kupa', 80, 'Orkowie', 2, 3, 2, 3, 1, 1, 1),
+('daniel', 81, 'Orkowie', 2, 3, 3, 0, 1, 1, 1),
+('arek', 82, 'Orkowie', 0, 0, 2, 0, 1, 1, 1),
+('mama', 83, 'Orkowie', 2, 4, 3, 2, 1, 2, 2),
+('kupka', 84, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
+('bareek', 85, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
+('bartek', 86, 'Orkowie', 0, 0, 1, 1, 1, 1, 1),
+('adam', 87, 'Ludzie', 0, 0, 1, 0, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `kolejki`
+--
+
+CREATE TABLE `kolejki` (
+  `budowy` text NOT NULL,
+  `czas_budowy` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `badania` text NOT NULL,
+  `czas_badania` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `jednostek` text NOT NULL,
+  `czas_jednostek` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `kolejka_jednostek` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `nick` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `kolejki`
+--
+
+INSERT INTO `kolejki` (`budowy`, `czas_budowy`, `badania`, `czas_badania`, `jednostek`, `czas_jednostek`, `kolejka_jednostek`, `id`, `nick`) VALUES
+('0', '2017-07-12 22:00:00', '0', '2017-07-12 22:00:00', '0', '2017-07-12 22:00:00', '0', 21, 'luis'),
+('barrack', '2017-07-12 22:12:20', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', 22, 'kupa'),
+('castle', '2017-07-16 12:29:38', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', 23, 'daniel'),
+('castle', '2017-07-16 12:07:28', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', 24, 'arek'),
+('0', '2017-07-25 19:00:47', '0', '2017-07-25 19:00:47', '0', '0000-00-00 00:00:00', '0', 25, 'mama'),
+('castle', '2017-07-16 21:14:20', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', 26, 'kupka'),
+('barrack', '2017-07-16 21:05:26', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', 27, 'bareek'),
+('0', '2017-07-25 19:03:37', '0', '2017-07-25 19:03:35', '0', '0000-00-00 00:00:00', '0', 28, 'bartek'),
+('barrack', '2017-07-25 19:05:01', 't_broniPalnej', '2017-07-25 19:07:01', '0', '0000-00-00 00:00:00', '0', 29, 'adam');
 
 -- --------------------------------------------------------
 
@@ -161,8 +146,7 @@ CREATE TABLE `ludzie` (
 --
 
 INSERT INTO `ludzie` (`nick`, `id`, `miecznicy`, `strzelcy`, `artyleria`, `kaplani`, `czarodziejki`, `rycerze`, `robotnicy`, `robotnicyZloto`, `robotnicyDrewno`, `robotnicyBudowa`) VALUES
-('bartek', 6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0),
-('cxzcxzcxz', 7, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0);
+('adam', 1, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -190,37 +174,14 @@ CREATE TABLE `orkowie` (
 --
 
 INSERT INTO `orkowie` (`nick`, `id`, `siepacze`, `lowcyGlow`, `katapulty`, `szamani`, `doktorzyVodo`, `jezdzcy`, `robotnicy`, `robotnicyZloto`, `robotnicyDrewno`, `robotnicyBudowa`) VALUES
-('daniel', 14, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0),
-('qwerty', 15, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('wewewe', 16, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('uyuy', 17, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('popopo', 18, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('tgtgtg', 19, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('ijijij', 20, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('hbhb', 21, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('kjkjkj', 22, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('sjgf', 23, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('ajsdgkj', 24, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('lkagsljgf', 25, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('jsfdgkg', 26, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('asdasd', 27, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('asfasdf', 28, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('sdfgjh', 29, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('zxcxz', 30, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('vcbx', 31, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('cxbcv', 32, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('wefds', 33, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('asxcvz', 34, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('msaasdhkn', 35, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('asdaszxc', 36, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('dsdsd', 37, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('owyqdhn', 38, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('safvzxcx', 39, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('zcxhulwqke', 40, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('aqwerqwerweq', 41, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('zxzcvafasfds', 42, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('asdasd', 43, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
-('zxczxczxc', 44, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0);
+('luis', 66, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0),
+('kupa', 67, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
+('daniel', 68, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0),
+('arek', 69, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
+('mama', 70, 0, 0, 0, 0, 0, 0, 0, 4, 1, 0),
+('kupka', 71, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0),
+('bareek', 72, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0),
+('bartek', 73, 0, 0, 0, 0, 0, 0, 1, 1, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -246,11 +207,15 @@ CREATE TABLE `uzytkownicy` (
 --
 
 INSERT INTO `uzytkownicy` (`id`, `user`, `rasa`, `wspolrzedna`, `pass`, `email`, `drewno`, `zloto`, `zywnosc`, `ostatnieLogowanie`) VALUES
-(54, 'daniel', 'Orkowie', 36, '$2y$10$CqkFFvp7gRvY29Uvgd8AoO6NwF1aGggp9et6GYsrJ4wx0nwP/Ae3O', 'ajsf@pl.pl', 1396, 1396, 0, '2017-06-28 21:47:25'),
-(53, 'bartek', 'Ludzie', 3, '$2y$10$/ArIOP7qs9WnzABxSISilOgxqpUND.ykuYoy56HvZNNyHgyk8vijy', 'askhdl@hjk.pl', 5896, 5896, 0, '2017-06-28 22:36:15'),
-(85, 'cxzcxzcxz', 'Ludzie', 32, '$2y$10$y47Sg3C8lqCqXYNfsD/5HuZa0WpjKklFjmbZDQ23Pa0fhGmKSYFmS', 'cxzcxzcxz@pl.pl', 1000, 1000, 0, '2017-06-29 17:37:34'),
-(84, 'zxczxczxc', 'Orkowie', 13, '$2y$10$wmGGNn2FQAs8psGY9.JeTuram8FTdUPRcOjN5qPAZwluXNYmZCi42', 'zxczxczxc@pl.pl', 1000, 1000, 0, '2017-06-29 17:37:06'),
-(83, 'asdasd', 'Orkowie', 5, '$2y$10$3CDE3F5Ita.jvzcAQR1amuByCW8HTbz76y61xxNAa/mwsXpslhut6', 'asdasd@pl.pl', 1000, 1000, 0, '2017-06-29 17:34:18');
+(113, 'kupka', 'Orkowie', 34, '$2y$10$scfWeT040qkO7QistjkqTuuXOIexo0KX77MPFiElB1ZFeun7seg5e', 'popopo@po.pw', 280, 270, 0, '2017-07-16 22:33:22'),
+(109, 'kupa', 'Orkowie', 25, '$2y$10$9pzPAjUXUucXpZz9KKwuve2AwMHpIkr5LNK9VBgoYPEhpJVzBlyse', 'kupakupa@pl.pl', 1012, 950, 0, '2017-07-12 23:17:11'),
+(110, 'daniel', 'Orkowie', 35, '$2y$10$Z6rSxW6wl/clPcqUoETvZOvsb4pS4Q.aZyUdClaALgE/eeRah8H.u', 'asdd@kp.pl', 2873, 517, 0, '2017-07-16 13:21:55'),
+(111, 'arek', 'Orkowie', 27, '$2y$10$T4Aur0L/KiNM1aRlbfeBW.qnu2qAzd4sE18slSMPEEHYpOklIoOfW', 'asd@pl.ps', 250, 250, 0, '2017-07-16 22:28:33'),
+(112, 'mama', 'Orkowie', 22, '$2y$10$TdzIGDVdzjIKV0cUhZ0afeD5a5k5w6Xrudmdb4kHODF7UtscH5VvS', 'mamam@mamam.ma', 282, 7045, 0, '2017-07-25 21:00:54'),
+(115, 'bartek', 'Orkowie', 23, '$2y$10$a/grKB/A2xkade4x3WAo5O.EN30tBTBCYrae9pI.rejB44IESBte2', 'bartek@op.pl', 306, 305, 0, '2017-07-25 21:04:08'),
+(108, 'luis', 'Orkowie', 1, '$2y$10$Z5VgQ5GWkeP7W0fzNxxAD.z4NpV5Xjk8FqhmNdtEMbw/vAfmlc3q2', 'luis@gm.pl', 437, 535, 0, '2017-07-12 18:25:48'),
+(114, 'bareek', 'Orkowie', 5, '$2y$10$gMRUSQHPE5hGR5apfw5EpOUU223.bE6VSYjaTPni64PwIerQMv.Wm', 'okdaodk@pd.pl', 650, 700, 0, '2017-07-16 22:40:29'),
+(116, 'adam', 'Ludzie', 12, '$2y$10$CvugqpLuag27n2bfGUaiFO7OaQgo0hj4JD7HQ6uNkWH1REVKxp.Ga', 'qwerty@aw.pl', 256, 304, 0, '2017-07-25 21:05:30');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -267,6 +232,14 @@ ALTER TABLE `badania`
 --
 ALTER TABLE `budynki`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kolejki`
+--
+ALTER TABLE `kolejki`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`),
+  ADD KEY `id_2` (`id`);
 
 --
 -- Indexes for table `ludzie`
@@ -295,27 +268,32 @@ ALTER TABLE `uzytkownicy`
 -- AUTO_INCREMENT dla tabeli `badania`
 --
 ALTER TABLE `badania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 --
 -- AUTO_INCREMENT dla tabeli `budynki`
 --
 ALTER TABLE `budynki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+--
+-- AUTO_INCREMENT dla tabeli `kolejki`
+--
+ALTER TABLE `kolejki`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT dla tabeli `ludzie`
 --
 ALTER TABLE `ludzie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT dla tabeli `orkowie`
 --
 ALTER TABLE `orkowie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
