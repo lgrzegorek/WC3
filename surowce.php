@@ -68,10 +68,10 @@
             document.getElementById('robotnicy').innerHTML=wszyscy; 
             document.getElementById('robotnicy_zloto').innerHTML=zloto;
             document.getElementById('robotnicy_drewno').innerHTML=drewno;
-        var wydobycie_d= (1+(tdrewna/10))*drewno*60;
-        var wydobycie_z= (1+(tzlota/10))*zloto*60;
-        document.getElementById("wydobycie_drewno").innerHTML=Math.floor(wydobycie_d);
-        document.getElementById("wydobycie_zloto").innerHTML=Math.floor(wydobycie_z);
+        var wydobycie_d= (1+(tdrewna/10))*drewno*3;
+        var wydobycie_z= (1+(tzlota/10))*zloto*3;
+        document.getElementById("wydobycie_drewno").innerHTML=Math.round(wydobycie_d);
+        document.getElementById("wydobycie_zloto").innerHTML=Math.round(wydobycie_z);
         
         function zamien(surowiec, akcja){
             if (akcja=='dodaj'){
@@ -125,8 +125,10 @@
        
         }
     function wykonaj(){
-          $.post('wykonaj.php',{postzloto:zloto,postdrewno:drewno,postwszyscy:wszyscy},function(){});
-        location.reload();
+          $.post('wykonaj.php',{postzloto:zloto,postdrewno:drewno,postwszyscy:wszyscy},function(){
+              location.reload();
+          });
+        
   
     }
    

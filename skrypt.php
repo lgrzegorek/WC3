@@ -1,5 +1,21 @@
 <?php 
 
+function kolejka_budowy(){
+    require "connect.php";
+	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+    $nick=$_SESSION['user'];
+    $rezultat = $polaczenie->query("select * from kolejki where nick='$nick'");
+    
+         while ( $rows = $rezultat->fetch_assoc() ) {
+                        $_SESSION['budynek']=$rows['budowy'];
+                        $_SESSION['data_budynku']=$rows['czas_budowy'];
+                        $_SESSION['badanie']=$rows['badania'];
+                        $_SESSION['data_badania']=$rows['czas_badania'];
+         }
+    $polaczenie->close();  
+}
+
+
 function obliczZasoby(){
     require_once "connect.php";
 	mysqli_report(MYSQLI_REPORT_STRICT);
@@ -33,10 +49,10 @@ function obliczZasoby(){
         $techD=1+($_SESSION['t_drewna']/10);
         $techZ=1+($_SESSION['t_wydobycia']/10);
         
-	$mnoznik_drewno = ($roznicaSekundy/60)*$_SESSION['robotnicy_drewno']*$techD;
-	$mnoznik_zloto = ($roznicaSekundy/60)*$_SESSION['robotnicy_zloto']*$techZ;
-    $pojemnosc_zloto=$_SESSION['zloto_lvl']*5000;
-    $pojemnosc_drewno=$_SESSION['drewno_lvl']*5000;
+	$mnoznik_drewno = ($roznicaSekundy/20)*$_SESSION['robotnicy_drewno']*$techD;
+	$mnoznik_zloto = ($roznicaSekundy/20)*$_SESSION['robotnicy_zloto']*$techZ;
+    $pojemnosc_zloto=$_SESSION['magazynZlota_lvl']*5000;
+    $pojemnosc_drewno=$_SESSION['magazynDrewna_lvl']*5000;
 	$wynik= $polaczenie->query("select * from uzytkownicy where user ='$user'");
           while ( $rows = $wynik->fetch_assoc() ){
               $drewno=$rows['drewno'];
@@ -66,6 +82,7 @@ function obliczZasoby(){
     
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
 	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
+    $polaczenie->close();
 }
 	
 function oblicz($lvl,$budynek,$a){

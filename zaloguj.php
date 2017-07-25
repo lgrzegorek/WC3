@@ -52,8 +52,8 @@
                         $_SESSION['forge_lvl']=$rows['forge'];
                         $_SESSION['barrack_lvl']=$rows['barrack'];
                         $_SESSION['max_zywnosc'] = $rows['house']*10;
-                        $_SESSION['zloto_lvl']= $rows['magazynZlota'];
-                        $_SESSION['drewno_lvl']= $rows['magazynDrewna'];
+                        $_SESSION['magazynZlota_lvl']= $rows['magazynZlota'];
+                        $_SESSION['magazynDrewna_lvl']= $rows['magazynDrewna'];
                     }
                        $rezultat2->free_result();
 					
@@ -61,13 +61,13 @@
                 $rezultat2 = $polaczenie->query("select * from badania where nick='$login'");
                     if ($rezultat2){
                        while ( $rows = $rezultat2->fetch_assoc() ) {
-                        $_SESSION['t_drewna']=$rows['Tdrewna'];
-                        $_SESSION['t_wydobycia']=$rows['Twydobycia'];
-                        $_SESSION['t_uzbrojenia']=$rows['Tuzbrojenia'];
-                        $_SESSION['t_bronipalnej']=$rows['TbroniPalnej'];
-                        $_SESSION['t_opancerzenia']=$rows['Topancerzenia'];
-                        $_SESSION['t_opancerzenia1']=$rows['Topancerzenia1'];
-                        $_SESSION['t_budownictwa'] = $rows['Tbudownictwa'];
+                        $_SESSION['t_drewna']=$rows['t_drewna'];
+                        $_SESSION['t_wydobycia']=$rows['t_wydobycia'];
+                        $_SESSION['t_uzbrojenia']=$rows['t_uzbrojenia'];
+                        $_SESSION['t_broniPalnej']=$rows['t_broniPalnej'];
+                        $_SESSION['t_opancerzenia']=$rows['t_opancerzenia'];
+                        $_SESSION['t_opancerzenia1']=$rows['t_opancerzenia1'];
+                        $_SESSION['t_budownictwa'] = $rows['t_budownictwa'];
                     }
                         unset($_SESSION['blad']);
 					   $rezultat2->free_result();

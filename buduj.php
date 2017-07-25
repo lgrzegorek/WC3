@@ -1,18 +1,28 @@
 <?php 
     session_start();
-    $nowe_drewno=$_SESSION['drewno']-$_POST['post_drewno'];
-    $nowe_zloto=$_SESSION['zloto']-$_POST['post_zloto'];
+    if ($_POST['post_akcja']=='ulepsz'){
+        $nowe_drewno=$_SESSION['drewno']-$_POST['post_drewno'];
+        $nowe_zloto=$_SESSION['zloto']-$_POST['post_zloto'];
+    }
+    else{
+        $nowe_drewno=$_SESSION['drewno']+$_POST['post_drewno'];
+        $nowe_zloto=$_SESSION['zloto']+$_POST['post_zloto'];
+    }
     $nick=$_SESSION['user'];    
-    $nowy_lvl=$_POST['post_lvl']+1;
+   
 
     switch($_POST['budynek']){
-        case "0": $budynek='castle';   $_SESSION['castle_lvl']=$nowy_lvl; break;
-        case "1": $budynek='barrack';   $_SESSION['barrack_lvl']=$nowy_lvl; break;
-        case "2": $budynek='altar';    $_SESSION['altar_lvl']=$nowy_lvl;break;
-        case "3": $budynek='forge';    $_SESSION['forge_lvl']=$nowy_lvl;break;
-        case "4": $budynek='house';    $_SESSION['house_lvl']=$nowy_lvl;break;
-        case "5": $budynek='magazynZlota';    $_SESSION['zloto_lvl']=$nowy_lvl;break;
-        case "6": $budynek='magazynDrewna';    $_SESSION['drewno_lvl']=$nowy_lvl;break;
+        case "0": $budynek='castle'; break;
+        case "1": $budynek='barrack'; break;
+        case "2": $budynek='altar'; break;
+        case "3": $budynek='forge'; break;
+        case "4": $budynek='house'; break;
+        case "5": $budynek='magazynZlota'; break;
+        case "6": $budynek='magazynDrewna'; break;
+    }
+    if ($_POST['post_akcja']=='ulepsz'){
+        $czas_budowy=time()+60*$_POST['post_czas'];
+        $czas_budowy=date('o-m-d G-i-s',$czas_budowy);
     }
 
 require_once "connect.php";
@@ -21,10 +31,14 @@ require_once "connect.php";
         throw new Exception(mysqli_connect_errno());
     }
     else{
-        
-        
         $rezultat=$polaczenie->query("update uzytkownicy set drewno='$nowe_drewno', zloto='$nowe_zloto' where user='$nick'");
-        $rezultat2=$polaczenie->query("update budynki set $budynek='$nowy_lvl' where nick='$nick'");
+        if ($_POST['post_akcja']=='ulepsz'){
+            $rezultat1=$polaczenie->query("update kolejki set budowy='$budynek', czas_budowy='$czas_budowy' where nick='$nick'");
+        }
+        else{
+              $rezultat1=$polaczenie->query("update kolejki set budowy='0' where nick='$nick'");
+        }
+        
         $_SESSION['drewno']=$nowe_drewno;
         $_SESSION['zloto']=$nowe_zloto;
     }
