@@ -1,5 +1,6 @@
 <?php 
     session_start();
+
     if ($_POST['post_akcja']=='ulepsz'){
         $nowe_drewno=$_SESSION['drewno']-$_POST['post_drewno'];
         $nowe_zloto=$_SESSION['zloto']-$_POST['post_zloto'];

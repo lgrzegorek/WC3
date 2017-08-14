@@ -7,7 +7,7 @@ function start(){
   startData();
   startImieniny();
   wypisz();
-  
+  sprawdz_kolejke();
 }
 
 function startImieniny() {

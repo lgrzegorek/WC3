@@ -1,6 +1,6 @@
 <?php
 	include ('menu2.php');
-    kolejka_budowy();
+    kolejka("budynek");
 ?>
  <div id="kolejka" ></div>
 <div class="zakladka_opis">
@@ -215,7 +215,7 @@
     var zloto_arr=[0,0,0,0,0,0,0];
     var drewno_arr=[0,0,0,0,0,0,0];
     var czas_arr=[0,0,0,0,0,0,0];
-    var budynek=<?php echo json_encode($_SESSION['budynek']); ?>;    
+    var budynek=<?php echo json_encode($_SESSION['budynek']); ?>;
     // Set the date we're counting down to
     var countDownDate = new Date(<?php echo json_encode($_SESSION['data_budynku']); ?>).getTime();
     // Update the count down every 1 second
@@ -244,7 +244,7 @@
     
     if (distance < 0 && budynek!=0) {
         clearInterval(x);
-        document.getElementById("kolejka").innerHTML = "Zbudowano!";
+    document.getElementById("kolejka").innerHTML = "Zbudowano!";
         ulepszono('budynki_'+budynek);
     }
 }, 1000);

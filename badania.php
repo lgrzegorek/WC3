@@ -1,6 +1,6 @@
 <?php
 	include ('menu2.php');
-    kolejka_budowy();
+    kolejka("badanie");
 ?>
 <div id="kolejka"></div>
 

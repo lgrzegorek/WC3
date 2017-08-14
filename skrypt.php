@@ -1,20 +1,67 @@
 <?php 
 
-function kolejka_budowy(){
+function kolejka($co){
     require "connect.php";
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
     $nick=$_SESSION['user'];
     $rezultat = $polaczenie->query("select * from kolejki where nick='$nick'");
     
          while ( $rows = $rezultat->fetch_assoc() ) {
-                        $_SESSION['budynek']=$rows['budowy'];
+      
+                    if($co=="budynek") {
+                        $_SESSION['budynek']=$rows['budowy']; 
                         $_SESSION['data_budynku']=$rows['czas_budowy'];
+                    }
+                    else if($co=="badanie"){
                         $_SESSION['badanie']=$rows['badania'];
                         $_SESSION['data_badania']=$rows['czas_badania'];
-         }
+                    }
+                    else if($co=="jednostki"){
+                        $_SESSION['kolejka_jednostek']=$rows['jednostek'];  
+                        $_SESSION['czas_jednostek']=$rows['czas_jednostek'];
+                        $_SESSION['sekundy']=$rows['dodatkowe_sekundy'];
+                    }
+        }
     $polaczenie->close();  
 }
 
+
+function oblicz_zywnosc(){
+    require "connect.php";
+	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+    $nick=$_SESSION['user'];
+    $rasa=$_SESSION['rasa'];
+    $rezultat = $polaczenie->query("select * from $rasa where nick='$nick'");
+    
+         while ( $rows = $rezultat->fetch_assoc() ) {
+            if($rasa=="orkowie"){
+                $_SESSION['siepacze']=$rows['siepacze'];
+                $_SESSION['lowcy_glow']=$rows['lowcy_glow'];
+                $_SESSION['kodo']=$rows['kodo'];
+                $_SESSION['szamani']=$rows['szamani'];
+                $_SESSION['taureni']=$rows['taureni'];
+                $_SESSION['jezdzcy']=$rows['jezdzcy'];
+                $_SESSION['robotnicy'] = $rows['robotnicy'];
+                $_SESSION['robotnicy_zloto']= $rows['robotnicyZloto'];
+                $_SESSION['robotnicy_drewno']= $rows['robotnicyDrewno'];
+                $_SESSION['zywnosc']=$_SESSION['siepacze']+$_SESSION['lowcy_glow']+$_SESSION['kodo']+$_SESSION['szamani']+$_SESSION['taureni']*2+$_SESSION['jezdzcy']*2+$_SESSION['robotnicy']+$_SESSION['robotnicy_drewno']+$_SESSION['robotnicy_zloto']; 
+            }
+            else{
+                $_SESSION['miecznicy']=$rows['miecznicy'];
+                $_SESSION['strzelcy']=$rows['strzelcy'];
+                $_SESSION['kanonierzy']=$rows['kanonierzy'];
+                $_SESSION['zyrokoptery']=$rows['zyrokoptery'];
+                $_SESSION['czarodziejki']=$rows['czarodziejki'];
+                $_SESSION['rycerze']=$rows['rycerze'];
+                $_SESSION['robotnicy'] = $rows['robotnicy'];
+                $_SESSION['robotnicy_zloto']= $rows['robotnicyZloto'];
+                $_SESSION['robotnicy_drewno']= $rows['robotnicyDrewno'];
+                 $_SESSION['zywnosc']=$_SESSION['miecznicy']+$_SESSION['strzelcy']+$_SESSION['kanonierzy']+$_SESSION['czarodziejki']+$_SESSION['rycerze']*2+$_SESSION['zyrokoptery']+$_SESSION['robotnicy']+$_SESSION['robotnicy_drewno']+$_SESSION['robotnicy_zloto']; 
+             }
+                    
+        }
+    $polaczenie->close();  
+}
 
 function obliczZasoby(){
     require_once "connect.php";

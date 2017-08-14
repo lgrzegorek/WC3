@@ -9,6 +9,7 @@ session_start();
         $nowe_drewno=$_SESSION['drewno']+$zasob;
         $nowe_zloto=$_SESSION['zloto']+$zasob;
     }
+ 
     $nick=$_SESSION['user'];  
     switch($_POST['badanie']){
         case "0": $badanie='t_drewna';    break;

@@ -463,18 +463,49 @@ span.psw {
 .chopki{
     text-align: center;
 }
-.rekrutuj{
-    display: inline-block;
-}
+
 .parametry{
+   display: inline-block;
+    width:30%;
+    height: 100%;
+    padding-top: 2%;
+}
+
+.parametry2{
     display: inline-block;
-    width: 30%;
+    width:45%;
+    padding 1%;
+    text-align: left;   
+    margin-top: 2%;
+    
 }
 .jednostka{
     background-color: rgba(0,0,0,0.5);
-    padding: 2%;
-    display:inline-block;
-    margin: 2%;
+    height: 200px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;  
+    display: flex;
+    flex-wrap: wrap;
+    align-content:center;
+    margin-bottom: 3%;
+}
+.jednostkaimg{
+    width:22%;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+.jednostka_rekrutacja{
+    width: 36%;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.zmiana{
+    display: inline-block;
+    padding: 3%;
 }
 .zakladka_opis{
     margin-left: auto;
@@ -533,6 +564,30 @@ span.psw {
     margin-bottom: 2%;
     padding: 1%;
     text-align: left;
+}
+.ilosc{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0,0,100,0.5);
+    text-align: center;
+    width:10%;
+    height:10%;
+    border: solid yellow 1px;
+    margin-bottom:4%;
+}
+.kolejka_j{
+    height: 75px;
+    width: 90px;
+    padding: 2%;
+    display: inline-block;
+    border: 1px solid yellow;   
+    margin-bottom: 30px;
+    font-size: 0px;
+
+}
+
+.kolejka_j:hover{
+    border-color: red;
 }
 .nazwa{
     display: inline-block;

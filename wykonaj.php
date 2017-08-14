@@ -14,6 +14,7 @@
     else {
             
             $rezultat = $polaczenie->query("update $rasa set robotnicyZloto='$zloto', robotnicyDrewno='$drewno', robotnicy='$wszyscy' where nick='$nick'");
+            
     }
     $polaczenie->close();
 ?>
