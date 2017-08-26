@@ -503,6 +503,22 @@ span.psw {
     margin-top: auto;
     margin-bottom: auto;
 }
+.jednostka_garnizon{
+    display: inline-block;
+    width: 15%;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0.5%;
+    padding: 1%;
+    border: 2px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+    word-spacing: 14px; 
+}
+
+.wyslij_wojska{
+    margin-top: 9%;
+}
 .zmiana{
     display: inline-block;
     padding: 3%;
@@ -580,7 +596,11 @@ span.psw {
     width: 90px;
     padding: 2%;
     display: inline-block;
-    border: 1px solid yellow;   
+    border: 2px solid transparent;
+    border-image-source: url(Grafika/ramka.png);
+    border-image-repeat: stretch;
+    border-image-slice: 20;
+
     margin-bottom: 30px;
     font-size: 0px;
 
@@ -879,4 +899,11 @@ img.hover-shadow {
 }
 .map_title {
     position: absolute;
+}
+.mnoznik{
+    margin-top: 2%;
+    text-align: center;
+}
+.btn{
+    width:100px;
 }

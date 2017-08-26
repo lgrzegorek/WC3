@@ -435,10 +435,11 @@
          
         for(var i=0; i<rekrutacja.length; i++){
             if(rekrutacja[i]=="taureni" || rekrutacja[i]=="rycerze"){
-                if(parseInt(utrzymanie)+2<=zywnosc){
+                if(utrzymanie+2<=zywnosc){
                     if( sprawdz_jednostke(rekrutacja[i])<sekundy){
                         sekundy=sekundy-sprawdz_jednostke(rekrutacja[i]);
                         zrekrutowane++;
+                        utrzymanie+=2;
                     }
                     else{
                         break;
@@ -450,10 +451,11 @@
                 }
             }
             else{
-                if(parseInt(utrzymanie)+1<=zywnosc){
+                if(utrzymanie+1<=zywnosc){
                     if( sprawdz_jednostke(rekrutacja[i])<sekundy){
                         sekundy=sekundy-sprawdz_jednostke(rekrutacja[i]);
                         zrekrutowane++;
+                        utrzymanie++;
                     }
                     else{
                         break;

@@ -34,7 +34,7 @@ function oblicz_zywnosc(){
     $rezultat = $polaczenie->query("select * from $rasa where nick='$nick'");
     
          while ( $rows = $rezultat->fetch_assoc() ) {
-            if($rasa=="orkowie"){
+            if($rasa=="Orkowie"){
                 $_SESSION['siepacze']=$rows['siepacze'];
                 $_SESSION['lowcy_glow']=$rows['lowcy_glow'];
                 $_SESSION['kodo']=$rows['kodo'];
@@ -130,6 +130,24 @@ function obliczZasoby(){
 	$sql = $polaczenie->query("update uzytkownicy set ostatnieLogowanie=now() where user = '$user'");
 	//Teraz trzeba dodac jakies mnozniki, czas znajduje sie w $roznicaSekundy
     $polaczenie->close();
+}
+
+
+function sprawdz_mape(){
+    require "connect.php";
+	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+    $rezultat = $polaczenie->query("select * from uzytkownicy ");
+    $i=0;
+    $wspolrzedne;
+         while ( $rows = $rezultat->fetch_assoc() ) {
+            $wspolrzedne[$i][0]=$rows["user"];
+            $wspolrzedne[$i][1]=$rows["wspolrzedna"];
+            $i++;
+         }
+  
+    array_multisort($wspolrzedne);
+    $_SESSION['wspolrzedne']=$wspolrzedne;
+    $polaczenie->close();  
 }
 	
 function oblicz($lvl,$budynek,$a){

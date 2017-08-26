@@ -11,7 +11,7 @@
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Stylesheet" type="text/css" href="styleee.css" />    
+  
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
     <!-- Latest compiled and minified CSS -->
@@ -22,6 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.maphilight.min.js"></script>
+      <link rel="Stylesheet" type="text/css" href="styleee.css" />    
     <title>WC3- Gra przeglądarkowa</title>
 </head>
 <body background = "Grafika/tlo.jpg">
