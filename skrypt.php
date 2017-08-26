@@ -141,6 +141,9 @@ function sprawdz_mape(){
     $wspolrzedne;
          while ( $rows = $rezultat->fetch_assoc() ) {
             $wspolrzedne[$i][0]=$rows["user"];
+            if(strlen($rows["wspolrzedna"])==1){
+                $rows["wspolrzedna"]="0"+$rows["wspolrzedna"];
+            }
             $wspolrzedne[$i][1]=$rows["wspolrzedna"];
             $i++;
          }
@@ -150,6 +153,16 @@ function sprawdz_mape(){
     $polaczenie->close();  
 }
 	
+function ilu_graczy(){
+    $link = mysql_connect("localhost", "root", ""); 
+    mysql_select_db("warcraft", $link);
+
+    $result = mysql_query("SELECT * FROM uzytkownicy", $link);
+    $num_rows = mysql_num_rows($result);
+
+    echo "$num_rows";
+}
+
 function oblicz($lvl,$budynek,$a){
     $pow=pow(1.5,$lvl);
     switch ($budynek){
@@ -172,6 +185,8 @@ function oblicz($lvl,$budynek,$a){
     $zasob['b']=$drewno;
     return $zasob;    
 }
+
+
 
 function czas($lvl, $budynek){
     $pow=pow(1.5,$lvl);

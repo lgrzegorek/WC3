@@ -174,7 +174,7 @@
    var mnoznik=1;
    var wspolrzedne=<?php echo json_encode($_SESSION['wspolrzedne']); ?>;
    wspolrzedne.sort(compareColumn);
-alert(wspolrzedne);
+    alert(wspolrzedne);
 
    function zmien(jednostka, akcja){
         if (akcja=='dodaj'){

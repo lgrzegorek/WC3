@@ -38,14 +38,8 @@
         <!-- skrytp wczytujący ilosc zarejestrowanych użytkowników z bazy danych -->
         <div class="col-md-2">Zarejestrowani gracze: 
             <?php
-
-            $link = mysql_connect("localhost", "root", ""); 
-            mysql_select_db("warcraft", $link);
-
-            $result = mysql_query("SELECT * FROM uzytkownicy", $link);
-            $num_rows = mysql_num_rows($result);
-
-            echo "$num_rows";
+            include("skrypt.php");
+            ilu_graczy();
 
             ?>
         </div>
