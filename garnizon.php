@@ -154,13 +154,59 @@
     <button type="button" style="width:100px;" class="btn btn-warning" onclick="zmien_mnoznik()">Zmien</button>
 </div> 
 
-<h1> Misja </h1>
+<div class="panelmisji2">
 
+<div class="panelmisji">
+	<h1> Gracz </h1>
+</div>
+<div class="panelmisji">
+	<h1> Misja </h1>
+</div>
+<div class="panelmisji">
+	<h1> Parametry </h1>
+</div>
 
+<?php
+	$wspolrzedne = $_SESSION['wspolrzedne'];
+?>
 
-  <button type="button" class="btn btn-primary">Atakuj</button>
-  <button type="button" class="btn btn-primary">Transportuj</button>
-  <button type="button" class="btn btn-primary">Stacjonuj</button>
+<div class="panelmisji">
+	<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Wybierz gracza: 
+  <span class="caret"></span></button>
+		<ul class="dropdown-menu">
+		
+		<?php
+		for( $i=0 ; $i<sizeof($wspolrzedne) ; $i++ ){
+			for ( $j=0 ; $j<1 ; $j++ ){ ?>
+			<li><a href="#"><?php echo $wspolrzedne[$i][$j] . ' poz. ' . $wspolrzedne[$i][$j+1]; ?></a></li>
+			<?php }
+		} ?>
+		
+		</ul>
+	</div>
+</div>
+
+<div class="panelmisji">
+  <button type="button" class="btn btn-primary" onclick="wybierzakcje(0)">Atakuj</button>
+  <button type="button" class="btn btn-primary" onclick="wybierzakcje(1)">Transportuj</button>
+  <button type="button" class="btn btn-primary" onclick="wybierzakcje(2)">Stacjonuj</button>
+</div>
+
+<div class="panelmisji">
+	<form>
+	<p id="parametr" style="float: left"> </p>
+		<input id="form1" type="number" name="quantity" style="width: 100px; color: black; float: left">
+	<p id="parametr2" style="float: left"> </p>
+		<input id="form2" type="number" name="quantity2" style="width: 100px; color: black; float: left">
+	</form>
+</div>
+
+<div class="jednostka_garnizon">
+    <button type="button" style="width:100px;" class="btn btn-warning" onclick=" "> Wyślij! </button>
+</div> 
+
+</div>
 
 
 <?php
@@ -173,8 +219,31 @@
    var wysylane=[0,0,0,0,0,0];
    var mnoznik=1;
    var wspolrzedne=<?php echo json_encode($_SESSION['wspolrzedne']); ?>;
+   var atak;
    wspolrzedne.sort(compareColumn);
     alert(wspolrzedne);
+	
+	function wybierzakcje(parametr){
+		var atak = parametr;
+		if (parametr == 0){
+		document.getElementById("parametr").innerHTML = "Szybkość:";
+		document.getElementById("form2").style.display = "none";
+		document.getElementById("parametr2").style.display = "none";
+		}
+		else if(parametr == 1){
+		document.getElementById("parametr2").style.display = "unset";
+		document.getElementById("form2").style.display = "unset";
+		document.getElementById("parametr").innerHTML = "Złoto:";
+		document.getElementById("parametr2").innerHTML = "Drewno:";
+		}
+		else{
+		document.getElementById("parametr2").style.display = "unset";
+		document.getElementById("form2").style.display = "unset";
+		document.getElementById("parametr").innerHTML = "Dni:";
+		document.getElementById("parametr2").innerHTML = "Godziny:";
+		}
+	}
+
 
    function zmien(jednostka, akcja){
         if (akcja=='dodaj'){

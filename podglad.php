@@ -3,9 +3,6 @@
 ?>
 <?php
 	echo "<p>Witaj ".$_SESSION['user'].'!</p>';
-	echo "<p><b>Drewno</b>: ".$_SESSION['drewno'];
-	echo " | <b>Złoto</b>: ".$_SESSION['zloto'];
-	echo " | <b>Żywność</b>: ".$_SESSION['zywnosc']."</p>";
 	echo "<p><b>E-mail</b>: ".$_SESSION['email'];
 	echo "<p> </p>";
 ?>

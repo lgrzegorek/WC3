@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 	
 	if (!isset($_SESSION['zalogowany']))
@@ -12,11 +11,7 @@
 	
 <?php
 	include ('menu2.php');
-	echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
-	echo "<p><b>Drewno</b>: ".$_SESSION['drewno'];
-	echo " | <b>Kamień</b>: ".$_SESSION['kamien'];
-	echo " | <b>Żywność</b>: ".$_SESSION['zywnosc']."</p>";
+	echo "<p>Witaj ".$_SESSION['user'];
 	echo "<p><b>E-mail</b>: ".$_SESSION['email'];
 	include ('stopka.php');
-	
 ?>
