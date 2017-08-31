@@ -154,15 +154,14 @@
     <button type="button" style="width:100px;" class="btn btn-warning" onclick="zmien_mnoznik()">Zmien</button>
 </div> 
 
-<div class="panelmisji2">
 
-<div class="panelmisji">
+<div class="panelmisji2">
 	<h1> Gracz </h1>
 </div>
-<div class="panelmisji">
+<div class="panelmisji2">
 	<h1> Misja </h1>
 </div>
-<div class="panelmisji">
+<div class="panelmisji2">
 	<h1> Parametry </h1>
 </div>
 
@@ -171,42 +170,35 @@
 ?>
 
 <div class="panelmisji">
-	<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Wybierz gracza: 
-  <span class="caret"></span></button>
-		<ul class="dropdown-menu">
-		
+	<select id="wyborgracza" style="color: black">
 		<?php
 		for( $i=0 ; $i<sizeof($wspolrzedne) ; $i++ ){
 			for ( $j=0 ; $j<1 ; $j++ ){ ?>
-			<li><a href="#"><?php echo $wspolrzedne[$i][$j] . ' poz. ' . $wspolrzedne[$i][$j+1]; ?></a></li>
+			<option value="<?php echo $wspolrzedne[$i][$j+1] ?>"><?php echo $wspolrzedne[$i][$j] . ' poz. ' . $wspolrzedne[$i][$j+1]; ?></option>
 			<?php }
 		} ?>
-		
-		</ul>
-	</div>
+	</select>
 </div>
-
+	
 <div class="panelmisji">
-  <button type="button" class="btn btn-primary" onclick="wybierzakcje(0)">Atakuj</button>
-  <button type="button" class="btn btn-primary" onclick="wybierzakcje(1)">Transportuj</button>
-  <button type="button" class="btn btn-primary" onclick="wybierzakcje(2)">Stacjonuj</button>
-</div>
-
-<div class="panelmisji">
-	<form>
-	<p id="parametr" style="float: left"> </p>
-		<input id="form1" type="number" name="quantity" style="width: 100px; color: black; float: left">
-	<p id="parametr2" style="float: left"> </p>
-		<input id="form2" type="number" name="quantity2" style="width: 100px; color: black; float: left">
+	<form name="wybormisji">
+		<input type="radio" name="misja" value="0" checked onclick="wybierzakcje(0)"> Atakuj <br>
+		<input type="radio" name="misja" value="1" onclick="wybierzakcje(1)"> Transportuj <br>
+		<input type="radio" name="misja" value="2" onclick="wybierzakcje(2)"> Stacjonuj <br>
 	</form>
 </div>
 
-<div class="jednostka_garnizon">
-    <button type="button" style="width:100px;" class="btn btn-warning" onclick=" "> Wyślij! </button>
-</div> 
-
+<div class="panelmisji">
+	<form name="wyborparametru">
+	<p id="parametr" style="float: left"> </p>
+		<input id="form1" type="number" name="quantity" style="display: none; width: 100px; color: black; float: left">
+	<p id="parametr2" style="float: left"> </p>
+		<input id="form2" type="number" name="quantity2" style="display: none; width: 100px; color: black; float: left">
+	</form>
 </div>
+
+<button type="button" style="width:100px;" class="btn btn-warning" onclick="pobierzparametry()"> Wyślij! </button>
+
 
 
 <?php
@@ -220,31 +212,39 @@
    var mnoznik=1;
    var wspolrzedne=<?php echo json_encode($_SESSION['wspolrzedne']); ?>;
    var atak;
-   wspolrzedne.sort(compareColumn);
-    alert(wspolrzedne);
 	
 	function wybierzakcje(parametr){
-		var atak = parametr;
 		if (parametr == 0){
-		document.getElementById("parametr").innerHTML = "Szybkość:";
+		document.getElementById("parametr").innerHTML = "Szybkość poruszania się [%]:";
+		document.getElementById("form1").style.display = "unset";
 		document.getElementById("form2").style.display = "none";
 		document.getElementById("parametr2").style.display = "none";
 		}
 		else if(parametr == 1){
 		document.getElementById("parametr2").style.display = "unset";
 		document.getElementById("form2").style.display = "unset";
+		document.getElementById("form1").style.display = "unset";
 		document.getElementById("parametr").innerHTML = "Złoto:";
 		document.getElementById("parametr2").innerHTML = "Drewno:";
 		}
 		else{
 		document.getElementById("parametr2").style.display = "unset";
 		document.getElementById("form2").style.display = "unset";
-		document.getElementById("parametr").innerHTML = "Dni:";
-		document.getElementById("parametr2").innerHTML = "Godziny:";
+		document.getElementById("form1").style.display = "unset";
+		document.getElementById("parametr").innerHTML = "Ilość dni:";
+		document.getElementById("parametr2").innerHTML = "Ilość godzin:";
 		}
 	}
-
-
+	
+	function pobierzparametry(){
+		var e = document.getElementById("wyborgracza");
+		var gracz = e.options[e.selectedIndex].value;
+		var misja = document.forms["wybormisji"]["misja"].value;
+		var par1 = document.forms["wyborparametru"]["quantity"].value;
+		var par2 = document.forms["wyborparametru"]["quantity2"].value;
+		alert(gracz + ', ' + misja + ', ' + par1 + ', ' + par2);
+	}
+	
    function zmien(jednostka, akcja){
         if (akcja=='dodaj'){
             if(ilosc[jednostka]-mnoznik>=0){ 

@@ -456,17 +456,16 @@ span.psw {
 .panelmisji{
 	text-align: center;
 	float: left; 
-	width: 33%
+	width: 33%;
+	height: 100px;
 }
 
 .panelmisji2{
-	background-color: rgba(0,0,0,0.3);
-    margin: 0.5%;
-    padding: 1%;
-    border: 2px solid transparent;
-    border-image-source: url(Grafika/ramka.png);
-    border-image-repeat: stretch;
-    border-image-slice: 20;
+	text-align: center;
+	float: left; 
+	width: 33%;
+	height: 80px;
+	color: gold;
 }
 
 .dropdown-menu {
