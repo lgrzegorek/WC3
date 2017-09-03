@@ -23,7 +23,7 @@
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.maphilight.min.js"></script>
       <link rel="Stylesheet" type="text/css" href="styleee.css" />    
-    <title>WC3- Gra przeglądarkowa</title>
+    <title>WC3 - Gra przeglądarkowa</title>
 </head>
 <body background = "Grafika/tlo.jpg">
 <?php obliczZasoby() ?>
@@ -72,7 +72,7 @@
 </div>
 
         <div id="zasoby"> 
-            <div class="zasob"
+            <div class="zasob" id="zasobzloto"
                  <?php if ($_SESSION['zloto'] < $_SESSION['magazynZlota_lvl']*5000) echo 'style="color:gold;"'; else echo 'style="color:red;"';?>>  
                 <img src="Grafika/icon/gold.png"><?php echo "Złoto:".floor($_SESSION["zloto"])?>
             </div> 
@@ -102,3 +102,8 @@
         
      <div id="center">
      
+	 <script type="text/javascript">
+	var goldreader = function(){$('#zasobzloto').load('goldincome.php');};
+	var timer = setInterval(goldreader, 1000);
+	 });
+	 </script>

@@ -918,8 +918,9 @@ img.hover-shadow {
 }
 
 #wiadomosciBtn{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0);
     padding-left: 30%;
+	color: gold;
 }
 
 #map {
