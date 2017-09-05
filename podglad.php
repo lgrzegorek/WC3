@@ -1,5 +1,6 @@
 <?php
 	include ('menu2.php');
+	include('ranking.php');
 ?>
 <?php
 	echo "<p>Witaj ".$_SESSION['user'].'!</p>';
