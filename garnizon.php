@@ -220,7 +220,8 @@
 	function wybierzakcje(parametr){
 		if (parametr == 0){
 		document.getElementById("parametr").innerHTML = "Szybkość poruszania się [%]:";
-		document.getElementById("wartosc1").innerHTML = "<select style='color: black'><option value='10'>10</option><option value='20'>20</option><option value='30'>30</option><option value='40'>40</option><option value='50'>50</option><option value='60'>60</option><option value='70'>70</option><option value='80'>80</option><option value='90'>90</option><option value='100'>100</option></select>";
+
+		document.getElementById("wartosc1").innerHTML = "<select id='wyborspeed' style='color: black'><option value='10'>10</option><option value='20'>20</option><option value='30'>30</option><option value='40'>40</option><option value='50'>50</option><option value='60'>60</option><option value='70'>70</option><option value='80'>80</option><option value='90'>90</option><option value='100'>100</option></select>";
 		document.getElementById("form2").style.display = "none";
 		document.getElementById("parametr2").style.display = "none";
 		}
@@ -237,8 +238,8 @@
 		document.getElementById("parametr2").style.display = "unset";
 		document.getElementById("form2").style.display = "unset";
 		document.getElementById("form1").style.display = "unset";
-		document.getElementById("parametr").innerHTML = "Ilość dni:";
-		document.getElementById("parametr2").innerHTML = "Ilość godzin:";
+		document.getElementById("parametr").innerHTML = "Dni:";
+		document.getElementById("parametr2").innerHTML = "Godzin:";
 		}
 	}
 	
@@ -246,11 +247,25 @@
 		var e = document.getElementById("wyborgracza");
 		var gracz = e.options[e.selectedIndex].value;
 		var misja = document.forms["wybormisji"]["misja"].value;
+		if (misja == 0) { 		
+            var x = document.getElementById("wyborspeed");
+            var par1 = x.options[x.selectedIndex].value; 
+            var par2=0;
+        }
+		else {
 		var par1 = document.forms["wyborparametru"]["quantity"].value;
 		var par2 = document.forms["wyborparametru"]["quantity2"].value;
-		alert(gracz + ', ' + misja + ', ' + par1 + ', ' + par2);
+		}
+		alert(gracz + ', ' + misja + ', ' + par1 + ', ' + par2 + ', ');
+        $.post('wymarsz.php',{jednostki:wysylane, pozycja :gracz, misja:misja,parametr1: par1,parametr2: par2},function(data){
+            alert(data);
+            location.reload();
+        });
 	}
-	
+       
+
+    
+    
    function zmien(jednostka, akcja){
         if (akcja=='dodaj'){
             if(ilosc[jednostka]-mnoznik>=0){ 
@@ -284,13 +299,6 @@
             mnoznik=10
         }
         document.getElementById("mnoznik").innerHTML="Mnożnik: "+mnoznik;
-    }
-    function wymarsz(){
-       $("#x").load("garnizon2.php");
-        for (var i=0 ; i<6; i++){
-            document.getElementById("obraz_"+i).innerHTML= "unuansduansd <img src='Grafika/orkowie/jednostki/bat.png'>";
-            document.getElementById("ilosc_"+i).innerHTML=wysylane[i];
-        }
     }
     function compareColumn(a, b) {
         if (parseInt(a[1]) === parseInt(b[1])) {
