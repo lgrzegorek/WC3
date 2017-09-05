@@ -31,8 +31,8 @@ function oblicz_zywnosc(){
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
     $nick=$_SESSION['user'];
     $rasa=$_SESSION['rasa'];
+    $wspolrzedna=$_SESSION['wspolrzedna'];
     $rezultat = $polaczenie->query("select * from $rasa where nick='$nick'");
-    
          while ( $rows = $rezultat->fetch_assoc() ) {
             if($rasa=="Orkowie"){
                 $_SESSION['siepacze']=$rows['siepacze'];
@@ -58,9 +58,35 @@ function oblicz_zywnosc(){
                 $_SESSION['robotnicy_drewno']= $rows['robotnicyDrewno'];
                  $_SESSION['zywnosc']=$_SESSION['miecznicy']+$_SESSION['strzelcy']+$_SESSION['kanonierzy']+$_SESSION['czarodziejki']+$_SESSION['rycerze']*2+$_SESSION['zyrokoptery']+$_SESSION['robotnicy']+$_SESSION['robotnicy_drewno']+$_SESSION['robotnicy_zloto']; 
              }
+    $rezultat= $polaczenie->query("select * from ruchy_wojsk where z='$wspolrzedna'");
+               while ( $rows = $rezultat->fetch_assoc() ) {
+                    $_SESSION['zywnosc']+= $rows['jednostka_0']+$rows['jednostka_1']+$rows['jednostka_2']*2+$rows['jednostka_3']+$rows['jednostka_4']+$rows['jednostka_5'];
+               }
                     
         }
     $polaczenie->close();  
+}
+function ruchy_wojsk(){
+    require "connect.php";
+	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+    $nick=$_SESSION['user'];
+    $wspolrzedna=$_SESSION['wspolrzedna'];
+    $rezulta = $polaczenie->query("select * from ruchy_wojsk where do='$wspolrzedna'");
+    $i=0;
+        while($rezultat = $rezulta->fetch_assoc()){ 
+            $ruch[$i]['z']=$rezultat['z'];   
+            $ruch[$i]['misja']=$rezultat['misja'];   
+            $ruch[$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
+            $ruch[$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];   
+            $i++;
+        }   
+    $i=0;
+    for($i=0; $i<$rezulta->num_rows; $i++){
+        echo "W stronę Twojego miasta podąża armia z miasta ".$ruch[$i]['z']." jej misja to: ".$ruch[$i]['misja']." oczekiwany czas dotarcia to: ".$ruch[$i]['czas_dotarcia'];
+        if($ruch[$i]['misja']=="stacjonuj")
+            echo " armia pozostanie w Twoim mieście do: ".$ruch[$i]['czas_wymarszu'];
+        echo "<br>";
+    }
 }
 
 function obliczZasoby(){

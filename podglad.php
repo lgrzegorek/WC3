@@ -1,6 +1,7 @@
 <?php
 	include ('menu2.php');
 	include('ranking.php');
+    ruchy_wojsk();
 ?>
 <?php
 	echo "<p>Witaj ".$_SESSION['user'].'!</p>';
@@ -37,8 +38,8 @@ $row = $result->fetch_assoc();
 	</div>
 </div>
 <div>
-	<div class="kolejki"> punkty: </div>
-	<div class="kolejki"> ranking: <?php echo $_SESSION['rankingKoncowy'] ?></div>
+	<div class="kolejki"> punkty: <?php echo $_SESSION['rankingKoncowy'] ?></div>
+	<div class="kolejki"> ranking: </div>
 </div>
 
 <?php
