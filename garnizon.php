@@ -191,9 +191,13 @@
 <div class="panelmisji">
 	<form name="wyborparametru">
 	<p id="parametr" style="float: left"> </p>
-		<input id="form1" type="number" name="quantity" style="display: none; width: 100px; color: black; float: left">
+	
+		<div id="wartosc1"><input id="form1" type="number" name="quantity" style="display: none; width: 100px; color: black; float: left"></div>
+		
 	<p id="parametr2" style="float: left"> </p>
-		<input id="form2" type="number" name="quantity2" style="display: none; width: 100px; color: black; float: left">
+	
+		<div><input id="form2" type="number" name="quantity2" style="display: none; width: 100px; color: black; float: left"></div>
+		
 	</form>
 </div>
 
@@ -216,11 +220,12 @@
 	function wybierzakcje(parametr){
 		if (parametr == 0){
 		document.getElementById("parametr").innerHTML = "Szybkość poruszania się [%]:";
-		document.getElementById("form1").style.display = "unset";
+		document.getElementById("wartosc1").innerHTML = "<select style='color: black'><option value='10'>10</option><option value='20'>20</option><option value='30'>30</option><option value='40'>40</option><option value='50'>50</option><option value='60'>60</option><option value='70'>70</option><option value='80'>80</option><option value='90'>90</option><option value='100'>100</option></select>";
 		document.getElementById("form2").style.display = "none";
 		document.getElementById("parametr2").style.display = "none";
 		}
 		else if(parametr == 1){
+		document.getElementById("wartosc1").innerHTML = "<input id='form1' type='number' name='quantity' style='display: none; width: 100px; color: black; float: left'>"
 		document.getElementById("parametr2").style.display = "unset";
 		document.getElementById("form2").style.display = "unset";
 		document.getElementById("form1").style.display = "unset";
@@ -228,6 +233,7 @@
 		document.getElementById("parametr2").innerHTML = "Drewno:";
 		}
 		else{
+		document.getElementById("wartosc1").innerHTML = "<input id='form1' type='number' name='quantity' style='display: none; width: 100px; color: black; float: left'>"
 		document.getElementById("parametr2").style.display = "unset";
 		document.getElementById("form2").style.display = "unset";
 		document.getElementById("form1").style.display = "unset";
