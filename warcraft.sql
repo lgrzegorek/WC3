@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Wrz 2017, 22:34
+-- Czas generowania: 06 Wrz 2017, 00:33
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 5.6.30
 
@@ -199,6 +199,17 @@ INSERT INTO `orkowie` (`nick`, `id`, `siepacze`, `lowcy_glow`, `kodo`, `szamani`
 ('qrqa', 77, 116, 4, 0, 0, 1, 0, 0, 3, 2),
 ('dasdax', 78, 0, 0, 0, 0, 0, 0, 5, 0, 0),
 ('krzycho5434', 79, 0, 0, 0, 0, 0, 0, 0, 4, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ranking`
+--
+
+CREATE TABLE `ranking` (
+  `nick` text NOT NULL,
+  `punkty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
