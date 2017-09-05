@@ -16,10 +16,24 @@
 	<?php endif; ?>
 </div>
 
+<?php
+$conn = new mysqli("localhost", "root", "", "warcraft");
+$result = $conn->query("SELECT budowy, badania, jednostek FROM kolejki WHERE nick = '" . $_SESSION['user'] . "'");
+
+$row = $result->fetch_assoc();
+	
+?>
+
 <div>
-	<div class="kolejki"> kolejka budowania: </div>
-	<div class="kolejki"> kolejka badań: </div>
-	<div class="kolejki"> kolejka koszar: </div>
+	<div class="kolejki">
+	Kolejka budowania: <?php echo $row['budowy'];?>
+	</div>
+	<div class="kolejki">
+	Kolejka badań: <?php echo $row['badania'];?>
+	</div>
+	<div class="kolejki">
+	Kolejka jednostek: <?php echo $row['jednostek'];?>
+	</div>
 </div>
 <div>
 	<div class="kolejki"> punkty: </div>

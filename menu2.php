@@ -26,7 +26,11 @@
     <title>WC3 - Gra przeglądarkowa</title>
 </head>
 <body background = "Grafika/tlo.jpg">
-<?php obliczZasoby() ?>
+
+<?php
+obliczZasoby();
+?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2"><div id="datka"></div></div>
@@ -76,7 +80,7 @@
                  <?php if ($_SESSION['zloto'] < $_SESSION['magazynZlota_lvl']*5000) echo 'style="color:gold;"'; else echo 'style="color:red;"';?>>  
                 <img src="Grafika/icon/gold.png"><?php echo "Złoto:".floor($_SESSION["zloto"])?>
             </div> 
-            <div class="zasob"
+            <div class="zasob" id="zasobdrewno"
                 <?php if ($_SESSION['drewno'] < $_SESSION['magazynDrewna_lvl']*5000) echo 'style="color:darkgoldenrod;"'; else echo 'style="color:red;"';?>> 
                 <img src="Grafika/icon/wood.png"><?php echo "Drewno:".floor($_SESSION["drewno"])?> 
             </div>
@@ -102,8 +106,22 @@
         
      <div id="center">
      
-	 <script type="text/javascript">
-	var goldreader = function(){$('#zasobzloto').load('goldincome.php');};
-	var timer = setInterval(goldreader, 1000);
-	 });
-	 </script>
+	 <script>
+            var zloto = <?php echo json_encode($_SESSION['robotnicy_zloto']); ?>;
+            var drewno = <?php echo json_encode($_SESSION['robotnicy_drewno']); ?>;
+            var tdrewna = <?php echo json_encode($_SESSION['t_drewna']); ?>;
+            var tzlota = <?php echo json_encode($_SESSION['t_wydobycia']); ?>;
+			
+			var aktualnezloto = <?php echo json_encode($_SESSION['zloto']); ?>;
+			var aktualnedrewno = <?php echo json_encode($_SESSION['drewno']); ?>;
+				
+			var wydobycie_d= (1+(tdrewna/10))*drewno*3;
+			var wydobycie_z= (1+(tzlota/10))*zloto*3;
+			
+			setInterval(function(){ 
+			aktualnezloto = aktualnezloto + (wydobycie_z/60);
+			aktualnedrewno = aktualnedrewno + (wydobycie_d/60);
+			document.getElementById("zasobzloto").innerHTML = "<img src='Grafika/icon/gold.png'>Złoto:"+aktualnezloto;
+			document.getElementById("zasobdrewno").innerHTML = "<img src='Grafika/icon/wood.png'>Drewno:"+aktualnedrewno;
+			}, 1000);
+	</script>
