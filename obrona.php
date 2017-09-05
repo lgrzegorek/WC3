@@ -5,8 +5,10 @@
 <div id="obrona">
     
     <div class="jednostka">
-        <b> Wieża strażnicza </b> <br>
-        <img src="Grafika/ludzie/budowle/tower.png">
+        <div class="jednostkaimg">
+		<b> Wieża strażnicza </b> <br>
+		<img src="Grafika/ludzie/budowle/tower.png">
+		</div>
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
@@ -28,8 +30,10 @@
     </div>
     
     <div class="jednostka">
-        <b> Wieża snajperska </b> <br>
-        <img src="Grafika/ludzie/budowle/tower.png">
+        <div class="jednostkaimg">
+		<b> Wieża snajperska </b> <br>
+		<img src="Grafika/ludzie/budowle/tower.png">
+		</div>
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
@@ -51,8 +55,10 @@
     </div>
     
     <div class="jednostka">
-        <b> Wieża artyleryjska </b> <br>
-        <img src="Grafika/ludzie/budowle/tower.png">
+        <div class="jednostkaimg">
+		<b> Wieża artyleryjska </b> <br>
+		<img src="Grafika/ludzie/budowle/tower.png">
+		</div>
         <div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
