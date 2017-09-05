@@ -114,13 +114,30 @@ obliczZasoby();
 			
 			var aktualnezloto = <?php echo json_encode($_SESSION['zloto']); ?>;
 			var aktualnedrewno = <?php echo json_encode($_SESSION['drewno']); ?>;
+			
+			var magazynZlota_lvl = <?php echo json_encode($_SESSION['magazynZlota_lvl']); ?>;
+			var magazynDrewna_lvl = <?php echo json_encode($_SESSION['magazynDrewna_lvl']); ?>;
 				
 			var wydobycie_d= (1+(tdrewna/10))*drewno*3;
 			var wydobycie_z= (1+(tzlota/10))*zloto*3;
 			
-			setInterval(function(){ 
-			aktualnezloto = aktualnezloto + (wydobycie_z/60);
-			aktualnedrewno = aktualnedrewno + (wydobycie_d/60);
+			var pojemnosc_zloto = magazynZlota_lvl*5000;
+			var pojemnosc_drewno = magazynDrewna_lvl*5000;
+			
+			setInterval(function(){
+				if(aktualnezloto < pojemnosc_zloto){
+					aktualnezloto = aktualnezloto + (wydobycie_z/60);
+				} 
+				else{ 
+					aktualnezloto = pojemnosc_zloto; 
+				}
+				
+				if(aktualnedrewno < pojemnosc_drewno){
+					aktualnedrewno = aktualnedrewno + (wydobycie_d/60);
+				} 
+				else{
+					aktualnedrewno = pojemnosc_drewno; 
+				}
 			document.getElementById("zasobzloto").innerHTML = "<img src='Grafika/icon/gold.png'>Złoto:"+aktualnezloto;
 			document.getElementById("zasobdrewno").innerHTML = "<img src='Grafika/icon/wood.png'>Drewno:"+aktualnedrewno;
 			}, 1000);
