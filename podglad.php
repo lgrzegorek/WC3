@@ -38,7 +38,7 @@ $row = $result->fetch_assoc();
 </div>
 <div>
 	<div class="kolejki"> punkty: </div>
-	<div class="kolejki"> ranking:<?php echo $_SESSION['rankingKoncowy'] ?> </div>
+	<div class="kolejki"> ranking: <?php echo $_SESSION['rankingKoncowy'] ?></div>
 </div>
 
 <?php

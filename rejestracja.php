@@ -55,6 +55,7 @@
 			$polaczenie1 = new mysqli($host, $db_user, $db_password, $db_name);
 			$polaczenie2 = new mysqli($host, $db_user, $db_password, $db_name);
 			$polaczenie3 = new mysqli($host, $db_user, $db_password, $db_name);
+			$polaczenie4 = new mysqli($host, $db_user, $db_password, $db_name);
 			if ($polaczenie->connect_errno!=0) {
 				throw new Exception(mysqli_connect_errno());
 			}
@@ -101,7 +102,7 @@
                     
 				//Jesli walidacja poprawna
 				if ($flaga) {
-					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$rasa', '$wartosc','$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")&& $polaczenie3->query("insert into kolejki values (0, 0, 0, 0,0, 0,0,NULL,'$nick')")){
+					if ($polaczenie->query("insert into uzytkownicy values (NULL, '$nick', '$rasa', '$wartosc','$haslo_hash', '$email',1000, 1000, 0, now())") && $polaczenie1->query("insert into budynki values ('$nick',NULL, '$rasa', 0, 0, 1, 0, 1, 1, 1)") && $polaczenie3->query("insert into badania values ('$nick',NULL, 0, 0, 0, 0, 0, 0, 0)")&& $polaczenie3->query("insert into kolejki values (0, 0, 0, 0,0, 0,0,NULL,'$nick')") && $polaczenie4->query("insert into ranking values ('$nick',0)")){
 						if ($rasa == "Orkowie" && $polaczenie2->query("insert into orkowie values('$nick',NULL,0,0,0,0,0,0,5,0,0)")) {
 							$_SESSION['udanarejestracja'] = true;
                             header("Location: witamy.php");

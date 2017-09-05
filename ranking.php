@@ -7,13 +7,22 @@
 			return $ostatnia + suma($ostatnia-1);
 	}
 	
+	//Wiem, ze jest connect.php ale bez przeklejenia tutaj nie dzialalo
+	$host = "localhost";
+	$db_user = "root";
+	$db_password = "";
+	$db_name = "warcraft";
+	
 	
 	require_once "connect.php";
-	$rankingBadania = ($_SESSION['t_drewna']) + ($_SESSION['t_uzbrojenia']) + ($_SESSION['t_wydobycia']) + ($_SESSION['t_broniPalnej']) + ($_SESSION['t_opancerzenia']) + ($_SESSION['t_opancerzenia1']) + ($_SESSION['t_budownictwa']);
-	
-	$rankingBudynki = ($_SESSION['castle_lvl']) + ($_SESSION['altar_lvl']) + ($_SESSION['house_lvl']) + ($_SESSION['forge_lvl']) + ($_SESSION['barrack_lvl']) + ($_SESSION['magazynZlota_lvl']) + ($_SESSION['magazynDrewna_lvl']);
-	
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+	$polaczenie1 = @new mysqli($host, $db_user, $db_password, $db_name);
+	
+	$rankingBadania = 10*($_SESSION['t_drewna']) + 10*($_SESSION['t_uzbrojenia']) + 10*($_SESSION['t_wydobycia']) + 10*($_SESSION['t_broniPalnej']) + 10*($_SESSION['t_opancerzenia']) + 10*($_SESSION['t_opancerzenia1']) + 10*($_SESSION['t_budownictwa']);
+	
+	$rankingBudynki = 12*($_SESSION['castle_lvl']) + 12*($_SESSION['altar_lvl']) + 12*($_SESSION['house_lvl']) + 12*($_SESSION['forge_lvl']) + 12*($_SESSION['barrack_lvl']) + 12*($_SESSION['magazynZlota_lvl']) + 12*($_SESSION['magazynDrewna_lvl']);
+	
+	
 	$a=0;
 	$b=0;
 	$c=0;
@@ -65,5 +74,17 @@
 
 	$rankingKoncowy = $rankingBadania + $rankingBudynki + $rankingWojsko;
 	$_SESSION['rankingKoncowy'] = $rankingKoncowy;
+	
+    if ($polaczenie1->connect_errno!=0) {
+        throw new Exception(mysqli_connect_errno());
+    }
+    else {
+            
+            $rezultat1 = $polaczenie1->query("update ranking set punkty='$rankingKoncowy' where nick='$user'");
+            
+    }
+    $polaczenie1->close();
+	
+	
 	
 ?>
