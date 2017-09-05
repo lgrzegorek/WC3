@@ -138,7 +138,7 @@ obliczZasoby();
 				else{
 					aktualnedrewno = pojemnosc_drewno; 
 				}
-			document.getElementById("zasobzloto").innerHTML = "<img src='Grafika/icon/gold.png'>Złoto:"+aktualnezloto;
-			document.getElementById("zasobdrewno").innerHTML = "<img src='Grafika/icon/wood.png'>Drewno:"+aktualnedrewno;
+			document.getElementById("zasobzloto").innerHTML = "<img src='Grafika/icon/gold.png'>Złoto:"+Math.floor(aktualnezloto);
+			document.getElementById("zasobdrewno").innerHTML = "<img src='Grafika/icon/wood.png'>Drewno:"+Math.floor(aktualnedrewno);
 			}, 1000);
 	</script>
