@@ -23,7 +23,7 @@
 ?>
 <h1> Twoja pozycja na mapie to: <?php echo $_SESSION['wspolrzedna']?> (numery kolejno rzędami)</h1><br>
 
-<div id="map">
+<div id="map" style="float: left">
 <img src="Grafika/mapfull.png" alt="Cities" usemap="#citymap" class="map">
 </div>
 
