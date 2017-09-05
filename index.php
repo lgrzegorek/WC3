@@ -19,7 +19,7 @@
 		<img src="Grafika/skriny/warcraft_skrin5.jpg" width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Otrzymaj zaliczenie z www.</figcaption> 
 	</figure>
 	<figure>
-		<img src="Grafika/skriny/warcraft_skrin6.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Arka Gdynia ...</figcaption> 
+		<img src="Grafika/skriny/warcraft_skrin6.jpg"  width="495" height="370"  /><figcaption><strong>Warcraft ONLINE:</strong> Spróbój, nie pożałujesz!</figcaption> 
 	</figure>
 	
   </div>  
