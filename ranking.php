@@ -9,7 +9,7 @@
 	
 	
 	require_once "connect.php";
-	$rankingBadania = suma($_SESSION['t_drewna']) + ($_SESSION['t_uzbrojenia']) + ($_SESSION['t_wydobycia']) + ($_SESSION['t_broniPalnej']) + ($_SESSION['t_opancerzenia']) + ($_SESSION['t_opancerzenia1']) + ($_SESSION['t_budownictwa']);
+	$rankingBadania = ($_SESSION['t_drewna']) + ($_SESSION['t_uzbrojenia']) + ($_SESSION['t_wydobycia']) + ($_SESSION['t_broniPalnej']) + ($_SESSION['t_opancerzenia']) + ($_SESSION['t_opancerzenia1']) + ($_SESSION['t_budownictwa']);
 	
 	$rankingBudynki = ($_SESSION['castle_lvl']) + ($_SESSION['altar_lvl']) + ($_SESSION['house_lvl']) + ($_SESSION['forge_lvl']) + ($_SESSION['barrack_lvl']) + ($_SESSION['magazynZlota_lvl']) + ($_SESSION['magazynDrewna_lvl']);
 	
