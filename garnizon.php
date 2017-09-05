@@ -256,7 +256,6 @@
 		var par1 = document.forms["wyborparametru"]["quantity"].value;
 		var par2 = document.forms["wyborparametru"]["quantity2"].value;
 		}
-		alert(gracz + ', ' + misja + ', ' + par1 + ', ' + par2 + ', ');
         $.post('wymarsz.php',{jednostki:wysylane, pozycja :gracz, misja:misja,parametr1: par1,parametr2: par2},function(data){
             alert(data);
             location.reload();
