@@ -82,11 +82,42 @@ function ruchy_wojsk(){
         }   
     $i=0;
     for($i=0; $i<$rezulta->num_rows; $i++){
-        echo "W stronę Twojego miasta podąża armia z miasta ".$ruch[$i]['z']." jej misja to: ".$ruch[$i]['misja']." oczekiwany czas dotarcia to: ".$ruch[$i]['czas_dotarcia'];
+        echo "W stronę Twojego miasta podąża armia z miasta <b>".$ruch[$i]['z']."</b> jej misja to: <b>".$ruch[$i]['misja']."</b> oczekiwany czas dotarcia to: <b>".$ruch[$i]['czas_dotarcia']."</b>";
         if($ruch[$i]['misja']=="stacjonuj")
-            echo " armia pozostanie w Twoim mieście do: ".$ruch[$i]['czas_wymarszu'];
+            echo " armia pozostanie w Twoim mieście do: <b>".$ruch[$i]['czas_wymarszu']."</b>";
         echo "<br>";
     }
+    
+    $rezulta = $polaczenie->query("select * from ruchy_wojsk where z='$wspolrzedna'");
+    $i=0;
+        while($rezultat = $rezulta->fetch_assoc()){ 
+            $ruch[$i]['do']=$rezultat['do'];   
+            $ruch[$i]['misja']=$rezultat['misja'];   
+            $ruch[$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
+            $ruch[$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];      
+            $ruch[$i]['zloto']=$rezultat['zloto'];   
+            $ruch[$i]['drewno']=$rezultat['drewno'];   
+            $ruch[$i]['faza']=$rezultat['faza'];   
+            $ruch[$i]['jednostka_0']=$rezultat['jednostka_0'];   
+            $ruch[$i]['jednostka_1']=$rezultat['jednostka_1'];   
+            $ruch[$i]['jednostka_2']=$rezultat['jednostka_2'];   
+            $ruch[$i]['jednostka_3']=$rezultat['jednostka_3'];   
+            $ruch[$i]['jednostka_4']=$rezultat['jednostka_4'];   
+            $ruch[$i]['jednostka_5']=$rezultat['jednostka_5'];   
+            $i++;
+        }   
+      for($i=0; $i<$rezulta->num_rows; $i++){
+        echo "Twoje wojska podążają w stronę miasta: <b>".$ruch[$i]['z']."</b> misja to: <b>".$ruch[$i]['misja']." </b> ";
+            if($ruch[$i]['misja']=="transportuj"){
+                echo " wojska transportują złoto: <b>".$ruch[$i]['zloto']."</b>. i drewno: <b>".$ruch[$i]['drewno']."</b>";
+            }
+        echo "oczekiwany czas dotarcia to: <b>".$ruch[$i]['czas_dotarcia']."</b>";
+        if($ruch[$i]['misja']=="stacjonuj"){
+            echo " armia pozostanie w Tym mieście do: <b>".$ruch[$i]['czas_wymarszu']."</b>";
+        }
+        echo "<br>";
+    }
+    
 }
 
 function obliczZasoby(){
