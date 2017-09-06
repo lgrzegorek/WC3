@@ -53,6 +53,7 @@
                             <label><b>Hasło</b></label><br>
                             <input type="password" placeholder="Hasło" name="haslo" required><br>
                             <input type="checkbox" checked="checked">Zapamiętaj logowanie<br>
+			    <br><a href="forgotPassword.php">Zapomniałeś hasła?</a><br>
                             <button type="button" onclick="document.getElementById('id01').style.display='none'"   class="cancelbtn">Anuluj</button>
                             <input type="submit" class="login2" value="Login"><br>
                             
