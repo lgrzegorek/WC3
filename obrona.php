@@ -80,9 +80,11 @@
     </div>
 
    <div class="jednostka">
+	<div class="jednostkaimg">   
         <b> Działo przeciwpancerne </b> <br>
         <img src="Grafika/ludzie/budowle/tower.png">
-        <div class="parametry">
+	</div>
+	<div class="parametry">
             Atk: 4<br>
             Obr: 5<br>
             HP: 25<br>
