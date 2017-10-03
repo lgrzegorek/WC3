@@ -107,7 +107,7 @@ function ruchy_wojsk(){
             $i++;
         }   
       for($i=0; $i<$rezulta->num_rows; $i++){
-        echo "Twoje wojska podążają w stronę miasta: <b>".$ruch[$i]['z']."</b> misja to: <b>".$ruch[$i]['misja']." </b> ";
+        echo "Twoje wojska podążają w stronę miasta: <b>".$ruch[$i]['do']."</b> misja to: <b>".$ruch[$i]['misja']." </b> ";
             if($ruch[$i]['misja']=="transportuj"){
                 echo " wojska transportują złoto: <b>".$ruch[$i]['zloto']."</b>. i drewno: <b>".$ruch[$i]['drewno']."</b>";
             }
