@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Wrz 2017, 00:33
+-- Czas generowania: 04 Paź 2017, 15:58
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 5.6.30
 
@@ -58,7 +58,10 @@ INSERT INTO `badania` (`nick`, `id`, `t_drewna`, `t_wydobycia`, `t_uzbrojenia`, 
 ('cxzasv', 82, 0, 0, 0, 0, 0, 0, 0),
 ('qrqqa', 83, 2, 0, 0, 0, 0, 0, 0),
 ('dasdax', 84, 0, 0, 0, 0, 0, 0, 0),
-('krzycho5434', 85, 0, 0, 0, 0, 0, 0, 0);
+('krzycho5434', 85, 0, 0, 0, 0, 0, 0, 0),
+('alamakota', 86, 0, 0, 0, 0, 0, 0, 0),
+('olamapsa', 87, 0, 0, 0, 0, 0, 0, 0),
+('danielpedal', 88, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -99,7 +102,10 @@ INSERT INTO `budynki` (`nick`, `id`, `rasa`, `altar`, `barrack`, `castle`, `forg
 ('cxzasv', 100, 'Ludzie', 0, 0, 1, 0, 1, 1, 1),
 ('qrqqa', 101, 'Ludzie', 2, 3, 2, 0, 3, 1, 1),
 ('dasdax', 102, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
-('krzycho5434', 103, 'Orkowie', 0, 0, 1, 0, 1, 1, 1);
+('krzycho5434', 103, 'Orkowie', 0, 0, 1, 0, 1, 1, 1),
+('alamakota', 104, 'Orkowie', 0, 2, 1, 0, 1, 1, 1),
+('olamapsa', 105, 'Ludzie', 0, 0, 1, 0, 1, 1, 1),
+('danielpedal', 106, 'Orkowie', 0, 1, 1, 0, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -133,9 +139,12 @@ INSERT INTO `kolejki` (`budowy`, `czas_budowy`, `badania`, `czas_badania`, `jedn
 ('0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 0, 36, 'czcxzcxz'),
 ('0', '2017-08-18 14:28:18', '0', '0000-00-00 00:00:00', '', '2017-08-18 14:26:00', 0, 37, 'qrqa'),
 ('0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 0, 38, 'cxzasv'),
-('0', '2017-09-05 16:43:25', '0', '2017-08-26 12:31:15', 'miecznicy-strzelcy-strzelcy-strzelcy-strzelcy-strzelcy-strzelcy-', '2017-09-05 16:51:59', 0, 39, 'qrqqa'),
+('0', '2017-09-05 16:43:25', '0', '2017-08-26 12:31:15', 'miecznicy-strzelcy-strzelcy-strzelcy-strzelcy-strzelcy-strzelcy-', '2017-10-03 11:27:13', 0, 39, 'qrqqa'),
 ('0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 0, 40, 'dasdax'),
-('0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 'siepacze-siepacze-siepacze-siepacze-siepacze-lowcy_glow-lowcy_glow-', '2017-09-04 20:56:14', 0, 41, 'krzycho5434');
+('0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 'siepacze-siepacze-siepacze-siepacze-siepacze-lowcy_glow-lowcy_glow-', '2017-09-04 20:56:14', 0, 41, 'krzycho5434'),
+('0', '2017-10-03 11:55:29', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 0, 42, 'alamakota'),
+('0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', '0', '0000-00-00 00:00:00', 0, 43, 'olamapsa'),
+('0', '2017-10-03 13:43:22', 't_drewna', '2017-10-03 13:48:46', 'siepacze-', '2017-10-03 13:47:55', 0, 44, 'danielpedal');
 
 -- --------------------------------------------------------
 
@@ -166,7 +175,8 @@ INSERT INTO `ludzie` (`nick`, `id`, `miecznicy`, `strzelcy`, `kanonierzy`, `zyro
 ('luisek', 3, 0, 0, 0, 0, 0, 0, 5, 0, 0),
 ('plplpl', 4, 0, 0, 0, 0, 0, 0, 5, 0, 0),
 ('cxzasv', 5, 0, 0, 0, 0, 0, 0, 5, 0, 0),
-('qrqqa', 6, 18, 1, 0, 3, 3, 0, 0, 4, 1);
+('qrqqa', 6, 18, 1, 0, 3, 3, 0, 0, 4, 1),
+('olamapsa', 7, 0, 0, 0, 0, 0, 0, 5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -198,7 +208,9 @@ INSERT INTO `orkowie` (`nick`, `id`, `siepacze`, `lowcy_glow`, `kodo`, `szamani`
 ('czcxzcxz', 76, 0, 0, 0, 0, 0, 0, 5, 0, 0),
 ('qrqa', 77, 116, 4, 0, 0, 1, 0, 0, 3, 2),
 ('dasdax', 78, 0, 0, 0, 0, 0, 0, 5, 0, 0),
-('krzycho5434', 79, 0, 0, 0, 0, 0, 0, 0, 4, 1);
+('krzycho5434', 79, 0, 0, 0, 0, 0, 0, 0, 4, 1),
+('alamakota', 80, 0, 0, 0, 0, 0, 0, 5, 0, 0),
+('danielpedal', 81, 0, 0, 0, 0, 0, 0, 5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -208,8 +220,18 @@ INSERT INTO `orkowie` (`nick`, `id`, `siepacze`, `lowcy_glow`, `kodo`, `szamani`
 
 CREATE TABLE `ranking` (
   `nick` text NOT NULL,
-  `punkty` int(11) NOT NULL
+  `punkty` int(11) NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `ranking`
+--
+
+INSERT INTO `ranking` (`nick`, `punkty`, `id`) VALUES
+('alamakota', 72, 1),
+('olamapsa', 48, 2),
+('danielpedal', 60, 3);
 
 -- --------------------------------------------------------
 
@@ -272,7 +294,7 @@ INSERT INTO `uzytkownicy` (`id`, `user`, `rasa`, `wspolrzedna`, `pass`, `email`,
 (127, 'qrqa', 'Orkowie', 3, '$2y$10$6zmpBsEmBCdU5jd1Gz7W/.m4TIdll/tdL7tr92v4Hwrw7ueaH2bQ2', 'qcz@dl.pl', 3779, 3992, 0, '2017-08-18 16:28:19'),
 (128, 'masd', 'Orkowie', 19, '$2y$10$I07n.9R0g/5cIOUI.AQrcuS7HerVNF.KBSgk2YQTujsjjTnI6Xv2S', 'masmdamdas@sd.pl', 1000, 1000, 0, '2017-08-11 19:56:51'),
 (129, 'cxzasv', 'Ludzie', 35, '$2y$10$3TlMutFd9Ntbg.ALanK03.ddNtYw4QByr5wlrp65LObaTnVy/uldW', 'dsadasc@fgm.pld', 1000, 1000, 0, '2017-08-11 19:58:07'),
-(130, 'qrqqa', 'Ludzie', 2, '$2y$10$bkSsFOx8X8IhmML2bkmNLOuTlKf/iLm5KBo/j/jGZvKeinl5YF0b.', 'qweqweqwe@p.pls', 5000, 5000, 0, '2017-09-05 22:33:06'),
+(130, 'qrqqa', 'Ludzie', 2, '$2y$10$bkSsFOx8X8IhmML2bkmNLOuTlKf/iLm5KBo/j/jGZvKeinl5YF0b.', 'qweqweqwe@p.pls', 5000, 5000, 0, '2017-10-03 13:36:12'),
 (117, 'daniel', 'Orkowie', 0, '$2y$10$iol29QZ12J.B5ESHiipR6eW4ltRftA/XUtyFr6rv9hpavju.1L/Qa', 'dsadasc@fgm.pl', 3366, 3402, 0, '2017-07-26 15:42:05'),
 (118, 'arek', 'Ludzie', 30, '$2y$10$mVQJ/E0MS8gOZ4d/hLfFZe76L.7xo0IBNpTt/aWCZuSwETYXgxJRm', 'arek@dsa.pl', 250, 5000, 0, '2017-07-26 15:38:50'),
 (119, 'bartek', 'Orkowie', 14, '$2y$10$luTskef5BkYWry7iDbjkE.yn2ecdeW68IZ1FDHdX4jeLKMINqIOqS', 'saw212@dp.pl', 5000, 5000, 0, '2017-08-11 11:12:35'),
@@ -282,7 +304,10 @@ INSERT INTO `uzytkownicy` (`id`, `user`, `rasa`, `wspolrzedna`, `pass`, `email`,
 (123, 'kurczak', 'Ludzie', 32, '$2y$10$dA3XifyzapMNGaQFz2g9YevkvOCXAHYZs4Lc5rWIiQh/j3aURo2h2', 'kfc@mac.com', 1000, 1000, 0, '2017-08-11 19:48:19'),
 (124, 'xcxz', 'Ludzie', 27, '$2y$10$yO/yPphzLduCA6W9lEM7..AKfpekih2KeYYURX8AVxFl1hwQrp9vy', 'das@fs.pl', 1000, 1000, 0, '2017-08-11 19:49:22'),
 (125, 'cczxczx', 'Orkowie', 9, '$2y$10$bBH3xjmkRaKgME/fv10QQeXKkg3WhSt/KMGTNcm54j566.vNOi63S', 'zxczxxc@pl.pl', 1000, 1000, 0, '2017-08-11 19:50:34'),
-(126, 'czcxzcxz', 'Orkowie', 10, '$2y$10$SNLSuAT8wofnjPCeUCeIq.qpvKRyvWLFvWs4U3Mpy8o9CDFGOwbzG', 'kurrr@tp.pls', 1000, 1000, 0, '2017-08-11 19:51:54');
+(126, 'czcxzcxz', 'Orkowie', 10, '$2y$10$SNLSuAT8wofnjPCeUCeIq.qpvKRyvWLFvWs4U3Mpy8o9CDFGOwbzG', 'kurrr@tp.pls', 1000, 1000, 0, '2017-08-11 19:51:54'),
+(133, 'alamakota', 'Orkowie', 28, '$2y$10$T5NGGdfoQO0rGMOA9Al2pO4FaB3M/cGFgIho6t1DmNx37vu1hzpUi', 'asdkl@gmail.com', 125, 250, 0, '2017-10-03 13:55:30'),
+(134, 'olamapsa', 'Ludzie', 21, '$2y$10$xaG8isjPw5DsFvdmtHcOw.E398TvC6/CPWb7RMvy/CtVueb3BUfuu', 'asjkd@gmail.com', 1000, 1000, 0, '2017-10-03 15:37:26'),
+(135, 'danielpedal', 'Orkowie', 11, '$2y$10$YISsQhcxx40Fr9H8JJDwaeYIr0UnbcgClRs1kbi1MdWflR6Z6pp2.', 'asdghj@gmail.com', 210, 150, 0, '2017-10-04 15:58:07');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -321,6 +346,12 @@ ALTER TABLE `orkowie`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ranking`
+--
+ALTER TABLE `ranking`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `ruchy_wojsk`
 --
 ALTER TABLE `ruchy_wojsk`
@@ -341,27 +372,32 @@ ALTER TABLE `uzytkownicy`
 -- AUTO_INCREMENT dla tabeli `badania`
 --
 ALTER TABLE `badania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 --
 -- AUTO_INCREMENT dla tabeli `budynki`
 --
 ALTER TABLE `budynki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 --
 -- AUTO_INCREMENT dla tabeli `kolejki`
 --
 ALTER TABLE `kolejki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT dla tabeli `ludzie`
 --
 ALTER TABLE `ludzie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT dla tabeli `orkowie`
 --
 ALTER TABLE `orkowie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+--
+-- AUTO_INCREMENT dla tabeli `ranking`
+--
+ALTER TABLE `ranking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT dla tabeli `ruchy_wojsk`
 --
@@ -371,7 +407,7 @@ ALTER TABLE `ruchy_wojsk`
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
