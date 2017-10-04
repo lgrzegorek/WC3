@@ -971,3 +971,17 @@ img.hover-shadow {
 a.logout{float: right;}
 p.success{color:#34A853;}
 p.error{color:#EA4335;}
+
+.mapakolejka {
+	width: 15%;
+	display: inline-block;
+	min-height: 100px;
+	line-height: 100px;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mapakolejka:hover{
+	border-color: red;
+}
