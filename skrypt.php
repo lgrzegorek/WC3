@@ -71,53 +71,56 @@ function ruchy_wojsk(){
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
     $nick=$_SESSION['user'];
     $wspolrzedna=$_SESSION['wspolrzedna'];
-    $rezulta = $polaczenie->query("select * from ruchy_wojsk where do='$wspolrzedna'");
-    $i=0;
-        while($rezultat = $rezulta->fetch_assoc()){ 
-            $ruch[$i]['z']=$rezultat['z'];   
-            $ruch[$i]['misja']=$rezultat['misja'];   
-            $ruch[$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
-            $ruch[$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];   
-            $i++;
-        }   
-    $i=0;
-    for($i=0; $i<$rezulta->num_rows; $i++){
-        echo "W stronę Twojego miasta podąża armia z miasta <b>".$ruch[$i]['z']."</b> jej misja to: <b>".$ruch[$i]['misja']."</b> oczekiwany czas dotarcia to: <b>".$ruch[$i]['czas_dotarcia']."</b>";
-        if($ruch[$i]['misja']=="stacjonuj")
-            echo " armia pozostanie w Twoim mieście do: <b>".$ruch[$i]['czas_wymarszu']."</b>";
-        echo "<br>";
-    }
-    
-    $rezulta = $polaczenie->query("select * from ruchy_wojsk where z='$wspolrzedna'");
-    $i=0;
-        while($rezultat = $rezulta->fetch_assoc()){ 
-            $ruch[$i]['do']=$rezultat['do'];   
-            $ruch[$i]['misja']=$rezultat['misja'];   
-            $ruch[$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
-            $ruch[$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];      
-            $ruch[$i]['zloto']=$rezultat['zloto'];   
-            $ruch[$i]['drewno']=$rezultat['drewno'];   
-            $ruch[$i]['faza']=$rezultat['faza'];   
-            $ruch[$i]['jednostka_0']=$rezultat['jednostka_0'];   
-            $ruch[$i]['jednostka_1']=$rezultat['jednostka_1'];   
-            $ruch[$i]['jednostka_2']=$rezultat['jednostka_2'];   
-            $ruch[$i]['jednostka_3']=$rezultat['jednostka_3'];   
-            $ruch[$i]['jednostka_4']=$rezultat['jednostka_4'];   
-            $ruch[$i]['jednostka_5']=$rezultat['jednostka_5'];   
-            $i++;
-        }   
-      for($i=0; $i<$rezulta->num_rows; $i++){
-        echo "Twoje wojska podążają w stronę miasta: <b>".$ruch[$i]['do']."</b> misja to: <b>".$ruch[$i]['misja']." </b> ";
-            if($ruch[$i]['misja']=="transportuj"){
-                echo " wojska transportują złoto: <b>".$ruch[$i]['zloto']."</b>. i drewno: <b>".$ruch[$i]['drewno']."</b>";
+    $rezulta = $polaczenie->query("select * from ruchy_wojsk where do='$wspolrzedna' and faza='1'");
+        $i=0;
+            while($rezultat = $rezulta->fetch_assoc()){ 
+                $ruch[$i]['z']=$rezultat['z'];
+                $ruch[$i]['misja']=$rezultat['misja'];   
+                $ruch[$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
+                $ruch[$i]['czas_wymarszu']=$rezultat['czas_wymarszu']; 
+                $_SESSION['ruchy_wojsk'][$i]['z']=$rezultat['z'];   
+                $_SESSION['ruchy_wojsk'][$i]['misja']=$rezultat['misja'];   
+                $_SESSION['ruchy_wojsk'][$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
+                $_SESSION['ruchy_wojsk'][$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];   
+                $_SESSION['ruchy_wojsk'][$i]['id']=$rezultat['id'];   
+                $i++;
             }
-        echo "oczekiwany czas dotarcia to: <b>".$ruch[$i]['czas_dotarcia']."</b>";
-        if($ruch[$i]['misja']=="stacjonuj"){
-            echo " armia pozostanie w Tym mieście do: <b>".$ruch[$i]['czas_wymarszu']."</b>";
-        }
-        echo "<br>";
+        $rezulta = $polaczenie->query("select * from ruchy_wojsk where z='$wspolrzedna' or do='$wspolrzedna' and faza='0'");
+            while($rezultat = $rezulta->fetch_assoc()){ 
+                $ruch[$i]['do']=$rezultat['do'];   
+                $ruch[$i]['misja']=$rezultat['misja'];   
+                $ruch[$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
+                $ruch[$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];      
+                $ruch[$i]['zloto']=$rezultat['zloto'];   
+                $ruch[$i]['drewno']=$rezultat['drewno'];   
+                $ruch[$i]['faza']=$rezultat['faza'];   
+                $ruch[$i]['jednostka_0']=$rezultat['jednostka_0'];   
+                $ruch[$i]['jednostka_1']=$rezultat['jednostka_1'];   
+                $ruch[$i]['jednostka_2']=$rezultat['jednostka_2'];   
+                $ruch[$i]['jednostka_3']=$rezultat['jednostka_3'];   
+                $ruch[$i]['jednostka_4']=$rezultat['jednostka_4'];   
+                $ruch[$i]['jednostka_5']=$rezultat['jednostka_5']; 
+                $_SESSION['ruchy_wojsk'][$i]['do']=$rezultat['do'];   
+                $_SESSION['ruchy_wojsk'][$i]['z']=$rezultat['z'];   
+                $_SESSION['ruchy_wojsk'][$i]['misja']=$rezultat['misja'];   
+                $_SESSION['ruchy_wojsk'][$i]['czas_dotarcia']=$rezultat['czas_dotarcia'];   
+                $_SESSION['ruchy_wojsk'][$i]['czas_wymarszu']=$rezultat['czas_wymarszu'];      
+                $_SESSION['ruchy_wojsk'][$i]['zloto']=$rezultat['zloto'];   
+                $_SESSION['ruchy_wojsk'][$i]['drewno']=$rezultat['drewno'];   
+                $_SESSION['ruchy_wojsk'][$i]['faza']=$rezultat['faza'];   
+                $_SESSION['ruchy_wojsk'][$i]['jednostka_0']=$rezultat['jednostka_0'];   
+                $_SESSION['ruchy_wojsk'][$i]['jednostka_1']=$rezultat['jednostka_1'];   
+                $_SESSION['ruchy_wojsk'][$i]['jednostka_2']=$rezultat['jednostka_2'];   
+                $_SESSION['ruchy_wojsk'][$i]['jednostka_3']=$rezultat['jednostka_3'];   
+                $_SESSION['ruchy_wojsk'][$i]['jednostka_4']=$rezultat['jednostka_4'];   
+                $_SESSION['ruchy_wojsk'][$i]['jednostka_5']=$rezultat['jednostka_5'];   
+                $_SESSION['ruchy_wojsk'][$i]['id']=$rezultat['id'];   
+                $i++;
+            }
+        
+    if($i==0){
+        $_SESSION['ruchy_wojsk']=null;
     }
-    
 }
 
 function obliczZasoby(){
